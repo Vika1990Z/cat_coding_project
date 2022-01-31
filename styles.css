@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(103, 185, 196);
+  }
+  h1 {
+    color:rgb(65, 24, 8);
+    text-align: center;
+  }
+  p {
+    border: 2px solid Tomato;
+    padding: 20 px;
+    margin: 60 px;
+    font-family: Times New Roman;
+  }

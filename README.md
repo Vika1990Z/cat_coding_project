@@ -209,23 +209,6 @@ Use `<br>` if you want a line break (a new line) without starting a new paragrap
 <p>This is<br>a paragraph<br>with line breaks.</p>
 ```
 
-### The HTML `<pre>` Element
-
-The HTML `<pre>` element defines preformatted text.  
-The text inside a `<pre>` element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks:
-
-```html
-<pre>
-  My Bonnie lies over the ocean.
-
-  My Bonnie lies over the sea.
-
-  My Bonnie lies over the ocean.
-
-  Oh, bring back my Bonnie to me.
-</pre>
-```
-
 ## HTML Styles
 
 The HTML style attribute is used to add styles to an element, such as color, font, size, and more.
@@ -304,3 +287,493 @@ The CSS text-align property defines the horizontal text alignment for an HTML el
 <h1 style="text-align:center;">Centered Heading</h1>
 <p style="text-align:center;">Centered paragraph.</p>
 ```
+
+## HTML Text Formatting
+
+### HTML Formatting Elements
+
+Formatting elements were designed to display special types of text:
+
+* `<b>` - Bold text without any extra importance  
+* `<strong>` - Important text (typically displayed in bold)  
+* `<i>` - Italic text (text in an alternate voice or mood), (ften used to indicate a technical term, a phrase from another language, a thought, a ship name, etc.)  
+* `<em>` - Emphasized text (tyically displayed in italic)  
+* `<mark>` - Marked text  
+* `<small>` - Smaller text  
+* `<del>` - Deleted text (Browsers will usually strike a line through deleted text)  
+* `<ins>` - Inserted text (Browsers will usually underline inserted text)  
+* `<sub>` - Subscript text (Subscript text appears half a character below the normal line, and is sometimes rendered in a smaller font. Subscript text can be used for chemical formulas, like H2O)  
+* `<sup>` - Superscript text (Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font. Superscript text can be used for footnotes)
+
+### The HTML `<pre>` Element
+
+The HTML `<pre>` element defines preformatted text.  
+The text inside a `<pre>` element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks:
+
+```html
+<pre>
+  My Bonnie lies over the ocean.
+
+  My Bonnie lies over the sea.
+
+  My Bonnie lies over the ocean.
+
+  Oh, bring back my Bonnie to me.
+</pre>
+```
+
+### HTML Quotation and Citation Elements
+
+* `<blockquote>` - element defines a section that is quoted from another source.  
+Browsers usually indent `<blockquote>` elements.  
+
+* `<q>` - tag defines a short quotation.  
+Browsers normally insert quotation marks around the quotation ("").
+
+* `<abbr>` - tag defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".  
+Marking abbreviations can give useful information to browsers, translation systems and search-engines.  
+Use the global title attribute to show the description for the abbreviation/acronym when you mouse over the element.
+
+```html
+<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+```
+
+* `<address>` - tag defines the contact information for the author/owner of a document or an article.  
+The contact information can be an email address, URL, physical address, phone number, social media handle, etc.  
+The text in the `<address>` element usually renders in italic, and browsers will always add a line break before and after the <address> element.
+
+```html
+<address>
+Written by John Doe.<br>
+Visit us at:<br>
+Example.com<br>
+Box 564, Disneyland<br>
+USA
+</address>
+```
+
+* `<cite>` - tag defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).  
+Note: A person's name is not the title of a work.  
+The text in the `<cite>` element usually renders in italic.  
+
+```html
+<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+```
+
+* `<bdo>` - for Bi-Directional Override.  
+The HTML `<bdo>` tag is used to override the current text direction:
+
+```html
+<bdo dir="rtl">This text will be written from right to left</bdo>
+```
+
+## HTML Comments
+
+HTML comments are not displayed in the browser, but they can help document your HTML source code.
+
+### HTML Comment Tag
+
+You can add comments to your HTML source by using the following syntax:
+Comments are also great for debugging HTML, because you can comment out HTML lines of code, one at a time, to search for errors.
+
+```html
+<!-- Write your comments here -->
+```
+
+Notice that there is an exclamation point (!) in the start tag, but not in the end tag.  
+Comments are not displayed by the browser, but they can help document your HTML source code.
+
+### Hide Content
+
+Comments can be used to hide content.  
+Which can be helpful if you hide content temporarily:  
+
+```html
+<p>This is a paragraph.</p>
+
+<!-- <p>This is another paragraph </p> -->
+
+<p>This is a paragraph too.</p>
+```
+
+You can also hide more than one line, everything between the <!-- and the --> will be hidden from the display.
+
+```html
+Hide a section of HTML code:
+
+<p>This is a paragraph.</p>
+<!--
+<p>Look at this cool image:</p>
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+<p>This is a paragraph too.</p>
+```
+
+Comments can be used to hide parts in the middle of the HTML code.
+
+```html
+<p>This <!-- great text --> is a paragraph.</p>
+```
+
+## Colors
+
+HTML colors are specified with predefined color names, or with RGB, HEX, HSL, RGBA, or HSLA values.  
+In HTML, a color can be specified by using a color name: Tomato, Orange, DodgerBlue, MediumSeaGreen, Gray, SlateBlue, Violet, LightGray.  
+HTML supports 140 standard color names.
+
+* Background Color
+
+```html
+<h1 style="background-color:DodgerBlue;">Hello World</h1>
+<p style="background-color:Tomato;">Lorem ipsum...</p>
+```
+
+* Text Color
+
+```html
+<h1 style="color:Tomato;">Hello World</h1>
+<p style="color:DodgerBlue;">Lorem ipsum...</p>
+<p style="color:MediumSeaGreen;">Ut wisi enim...</p>
+```
+
+* Border Color
+
+```html
+<h1 style="border:2px solid Tomato;">Hello World</h1>
+<h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+<h1 style="border:2px solid Violet;">Hello World</h1>
+```
+
+In HTML, colors can also be specified using RGB values, HEX values, HSL values, RGBA values, and HSLA values.
+The following two <div> elements have their background color set with RGBA and HSLA values, which adds an Alpha channel to the color (here we have 50% transparency):
+
+```html
+<h1 style="background-color:rgb(255, 99, 71);">...</h1>
+<h1 style="background-color:#ff6347;">...</h1>
+<h1 style="background-color:hsl(9, 100%, 64%);">...</h1>
+
+<h1 style="background-color:rgba(255, 99, 71, 0.5);">...</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.5);">...</h1>
+```
+
+### RGB Colors
+
+An RGB color value represents RED, GREEN, and BLUE light sources.  
+
+In HTML, a color can be specified as an RGB value, using this formula:  
+`rgb(red, green, blue)`
+
+Each parameter (red, green, and blue) defines the intensity of the color with a value between 0 and 255.  
+This means that there are 256 x 256 x 256 = 16777216 possible colors!  
+
+For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255), and the other two (green and blue) are set to 0.  
+To display black, set all color parameters to 0, like this: rgb(0, 0, 0).  
+To display white, set all color parameters to 255, like this: rgb(255, 255, 255).  
+
+**Shades of Gray** - are often defined using equal values for all three parameters: (rgb(60,60,60), rgb(100,100,100), rgb(140,140,140)...)
+
+### RGBA Colors
+
+RGBA color values are an extension of RGB color values with an Alpha channel - which specifies the opacity for a color.  
+An RGBA color value is specified with:  
+`rgba(red, green, blue, alpha)`
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all): (rgba(255, 99, 71, 0), rgba(255, 99, 71, 0.2), rgba(255, 99, 71, 1)...)
+
+### HEX Colors
+
+In HTML, a color can be specified using a hexadecimal value in the form:
+`#rrggbb`
+
+Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255).  
+
+For example, #ff0000 is displayed as red, because red is set to its highest value (ff), and the other two (green and blue) are set to 00.  
+Another example, #00ff00 is displayed as green, because green is set to its highest value (ff), and the other two (red and blue) are set to 00.  
+To display black, set all color parameters to 00, like this: #000000.  
+To display white, set all color parameters to ff, like this: #ffffff.  
+
+**Shades of Gray** - defined using equal values for all three parameters: (#404040, #a0a0a0, #dcdcdc...).
+
+### HSL Colors
+
+HSL stands for hue, saturation, and lightness.  
+`hsl(hue, saturation, lightness)`
+
+**Hue** is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.  
+
+**Saturation** - the intensity of a color.  
+100% is pure color, no shades of gray (hsl(0, 100%, 50%)).  
+50% is 50% gray, but you can still see the color.  
+0% is completely gray, you can no longer see the color. (hsl(0, 0%, 50%)).  
+
+**Lightness88** - how much light you want to give the color, where 0% means no light (black), 50% means 50% light (neither dark nor light) 100% means full lightness (white).  
+hsl(0, 100%, 0%) - black
+hsl(0, 100%, 100%) - white
+hsl(0, 100%, 50%) - brigth
+
+**Shades of Gray** - defined by setting the hue and saturation to 0, and adjust the lightness from 0% to 100% to get darker/lighter shades: (hsl(0, 0%, 20%), hsl(0, 0%, 40%), hsl(0, 0%, 90%)...)
+
+### HSLA Color
+
+HSLA color values are an extension of HSL color values with an Alpha channel - which specifies the opacity for a color.  
+An HSLA color value is specified with:  
+`hsla(hue, saturation, lightness, alpha)`
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all): (v, hsla(9, 100%, 64%, 0.6), hsla(9, 100%, 64%, 1)...)
+
+## HTML Styles - CSS
+
+CSS stands for Cascading Style Sheets, is used to format the layout of a webpage.  
+
+The word cascading means that a style applied to a parent element will also apply to all children elements within the parent.  
+So, if you set the color of the body text to "blue", all headings, paragraphs, and other text elements within the body will also get the same color (unless you specify something else)!  
+
+### Using CSS
+
+*CSS can be added to HTML documents in 3 ways:*
+
+* **Inline** - by using the style attribute inside HTML elements.  
+An inline CSS is used to apply a unique style to a single HTML element.  
+An inline CSS uses the style attribute of an HTML element.  
+
+```html
+<h1 style="color:blue;">A Blue Heading</h1>
+<p style="color:red;">A red paragraph.</p>
+```
+
+* **Internal** - by using a `<style>` element in the `<head>` section.  
+
+An internal CSS is used to define a style for a single HTML page.  
+An internal CSS is defined in the `<head>` section of an HTML page, within a `<style>` element.  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: red;}
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
+```
+
+* **External** - by using a `<link>` element to link to an external CSS file.  
+An external style sheet is used to define the style for many HTML pages.  
+To use an external style sheet, add a link to it in the `<head>` section of each HTML page:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
+```
+
+The external style sheet can be written in any text editor. The file must not contain any HTML code, and must be saved with a .css extension.
+
+Here is what the "styles.css" file looks like:
+
+```css
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+External style sheets can be referenced with a full URL or with a path relative to the current web page.  
+
+```html
+This example uses a full URL to link to a style sheet:
+<link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
+
+This example links to a style sheet located in the html folder on the current web site: 
+<link rel="stylesheet" href="/html/styles.css">
+
+This example links to a style sheet located in the same folder as the current page:
+<link rel="stylesheet" href="styles.css">
+```
+
+The most common way to add CSS, is to keep the styles in external CSS files.  
+
+### CSS Colors, Fonts and Sizes
+
+The CSS **color** property defines the text color to be used.  
+The CSS **font-family** property defines the font to be used.  
+The CSS **font-size** property defines the text size to be used.  
+
+### CSS Border, Padding and Margin
+
+The CSS **border** property defines a border around an HTML element.  
+The CSS **padding** property defines a padding (space) between the text and the border.  
+The CSS **margin** property defines a margin (space) outside the border.  
+
+```html
+p {
+  border: 2px solid powderblue;
+  padding: 30px;
+  margin: 50px;
+}
+```
+
+## Links
+
+HTML links are hyperlinks.  
+You can click on a link and jump to another document.  
+
+The HTML `<a>` tag defines a hyperlink. It has the following syntax.  
+The most important attribute of the `<a>` element is the `href` attribute, which indicates the link's destination.  
+The link text is the part that will be visible to the reader.  
+
+```html
+<a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+```
+
+By default, the linked page will be displayed in the current browser window.  
+To change this, you must specify another `target` for the link.  
+The `target` attribute specifies where to open the linked document.
+
+The `target` attribute can have one of the following values:
+
+**_self** - Default. Opens the document in the same window/tab as it was clicked.  
+**_blank** - Opens the document in a new window or tab.  
+**_parent** - Opens the document in the parent frame.  
+**_top** - Opens the document in the full body of the window.  
+
+The `title` attribute specifies extra information about an element.  
+The information is most often shown as a tooltip text when the mouse moves over the element.  
+
+```html
+<a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
+```
+
+### Image as a Link
+
+To use an image as a link, just put the `<img>` tag inside the `<a>` tag:
+
+```html
+<a href="default.asp">
+<img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+</a>
+```
+
+### Link to an Email Address
+
+Use `mailto:` inside the `href` attribute to create a link that opens the user's email program (to let them send a new email):
+
+```html
+<a href="mailto:someone@example.com">Send email</a>
+```
+
+### Button as a Link
+
+To use an HTML button as a link, you have to add some JavaScript code.  
+JavaScript allows you to specify what happens at certain events, such as a click of a button:
+
+```html
+<button onclick="document.location='default.asp'">HTML Tutorial</button>
+```
+
+### HTML Link Colors, Buttons
+
+By default, a link will appear like this (in all browsers):
+
+* An unvisited link is underlined and blue;
+* A visited link is underlined and purple;
+* An active link is underlined and red.  
+
+You can change the link state colors, by using CSS:
+
+```css
+<style>
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+```
+
+* A link can also be styled as a button, by using CSS:
+
+```css
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+```
+
+### HTML Links - Create Bookmarks
+
+HTML links can be used to create bookmarks, so that readers can jump to specific parts of a web page.  
+Bookmarks can be useful if a web page is very long.  
+To create a bookmark - first create the bookmark, then add a link to it.  
+When the link is clicked, the page will scroll down or up to the location with the bookmark.
+
+Example:  
+First, use the id attribute to create a bookmark:
+
+```html
+<h2 id="C4">Chapter 4</h2>
+```
+
+Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page:
+
+```html
+<a href="#C4">Jump to Chapter 4</a>
+```
+
+You can also add a link to a bookmark on another page:
+
+```html
+<a href="html_demo.html#C4">Jump to Chapter 4</a>
+```
+
+
