@@ -971,5 +971,74 @@ Each `<source>` element has a media attribute that defines when the image is the
 Note: Always specify an `<img>` element as the last child element of the `<picture>` element.  
 The `<img>` element is used by browsers that do not support the `<picture>` element, or if none of the `<source>` tags match.
 
+**When to use the Picture Element**:  
 
+1. Bandwidth
+If you have a small screen or device, it is not necessary to load a large image file.  
+The browser will use the first `<source>` element with matching attribute values, and ignore any of the following elements.
+
+2. Format Support
+Some browsers or devices may not support all image formats.  
+By using the `<picture>` element, you can add images of all formats, and the browser will use the first format it recognizes, and ignore any of the following elements.
+
+## Favicon
+
+A favicon is a small image displayed next to the page title in the browser tab.  
+A common name for a favicon image is "favicon.ico".  
+Next, add a `<link>` element to your "index.html" file, after the `<title>` element, like this:
+
+```html
+<html>
+<head>
+  <title>My Page Title</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+```
+
+## Tables
+
+A table in HTML consists of table cells inside rows and columns.  
+
+Each table cell is defined by a `<td>` and a `</td>` tag.  
+Everything between `<td>` and `</td>` are the content of the table cell.  
+
+Each table row starts with a `<tr>` and end with a `</tr>` tag.  
+You can have as many rows as you like in a table, just make sure that the number of cells are the same in each row.  
+
+Sometimes you want your cells to be headers, in those cases use the `<th>` tag instead of the `<td>` tag.  
+By default, the text in `<th>` elements are bold and centered, but you can change that with CSS.
+
+```html
+<table>
+  <tr>
+    <th>Person 1</th>
+    <th>Person 2</th>
+    <th>Person 3</th>
+  </tr>
+  <tr>
+    <td>Emil</td>
+    <td>Tobias</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>14</td>
+    <td>10</td>
+  </tr>
+</table>
+```
+
+**HTML Table Tags**:  
+| Tag | Description |
+| --- | ----------- |
+| `<table>` | Defines a table |
+| `<th>` | Defines a header cell in a table |
+| `<tr>` | Defines a row in a table |
+| `<td>` | Defines a cell in a table |
+| `<caption>` | Defines a table caption |
+| `<colgroup>` | Specifies a group of one or more columns in a table for formatting |
+| `<col>` | Specifies column properties for each column within a `<colgroup>` element |
+| `<thead>` | Groups the header content in a table |
+| `<tbody>` | Groups the body content in a table |
+| `<tfoot>` | Groups the footer content in a table |
 
