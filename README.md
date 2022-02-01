@@ -113,10 +113,18 @@ The `<img>` tag should also contain the width and height attributes, which speci
 <img src="img_girl.jpg" width="500" height="600">
 ```
 
+Alternatively, you can use the `style` attribute to specify the width and height of an image:
+Use the CSS `float` property to let the image float to the left or to the right:
+
+```html
+<img src="img_girl.jpg" alt="Girl in a jacket" style="float:right;width:500px;height:600px;">
+```
+
 ### The alt Attribute
 
-The required alt attribute for the `<img>` tag specifies an alternate text for an image, if the image for some reason cannot be displayed.  
-This can be due to slow connection, or an error in the src attribute, or if the user uses a screen reader.
+The required `alt` attribute for the `<img>` tag specifies an alternate text for an image, if the image for some reason cannot be displayed.  
+This can be due to slow connection, or an error in the src attribute, or if the user uses a screen reader.  
+The value of the `alt` attribute should describe the image:  
 
 ```html
 <img src="img_girl.jpg" alt="Girl with a jacket">
@@ -775,5 +783,193 @@ You can also add a link to a bookmark on another page:
 ```html
 <a href="html_demo.html#C4">Jump to Chapter 4</a>
 ```
+
+## Images
+
+The HTML `<img>` tag is used to embed an image in a web page.  
+Images are not technically inserted into a web page; images are linked to web pages.  
+The `<img>` tag creates a holding space for the referenced image.  
+The `<img>` tag is empty, it contains attributes only, and does not have a closing tag.  
+
+The `<img>` tag has two required attributes:
+
+* `src` - Specifies the path to the image;  
+* `alt` - Specifies an alternate text for the image, if the user for some reason cannot view it.  
+
+```html
+<img src="url" alt="alternatetext">
+```
+
+The `<img>` tag can have additional attributes:
+
+* `style` - Specifies the width and height of an image.
+
+```html
+<img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;">
+```
+
+Alternatively, you can use the `width` and `height` attributes:
+
+```html
+<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+```
+
+Note: Always specify the width and height of an image. If width and height are not specified, the web page might flicker while the image loads.  
+However, we suggest using the style attribute.  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  width: 100%;
+}
+</style>
+</head>
+<body>
+
+<img src="html5.gif" alt="HTML5 Icon" width="128" height="128">
+
+<img src="html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+
+</body>
+</html>
+```
+
+Use the CSS float property to let the image float to the right or to the left of a text:
+
+```html
+<p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+The image will float to the right of the text.</p>
+```
+
+### Common Image Formats
+
+| Abbreviation | File Format | File Extension |
+| ------------ | ----------- | -------------- |
+| APNG | Animated Portable Network Graphics | .apng |
+| GIF | Graphics Interchange Format | .gif |
+| ICO | Microsoft Icon | .ico, .cur |
+| JPEG | Joint Photographic Expert Group image | .jpg, .jpeg, .jfif, .pjpeg, .pjp |
+| PNG | Portable Network Graphics | .png |
+| SVG | Scalable Vector Graphics | .svg |
+
+### Image Maps
+
+The HTML `<map>` tag defines an image map.  
+An image map is an image with clickable areas.  
+The areas are defined with one or more `<area>` tags.  
+
+```html
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+```
+
+* `usemap` attribute - used to create a relationship between the image and the image map.  
+* `<map>` element is used to create an image map, and is linked to the image by using the required name attribute;
+* `name` attribute must have the same value as the `<img>`'s usemap attribute;  
+* `<area>` element - define the shape of the clickable area:
+  * `rect` - defines a rectangular region;  
+  * `circle` - defines a circular region;  
+  * `poly` - defines a polygonal region;  
+  * `default` - defines the entire region.  
+* `coords` - define some coordinates to be able to place the clickable area onto the image.   
+
+### Background Images
+
+To add a background image on an HTML element, use the HTML `style` attribute and the CSS `background-image` property:
+
+```html
+<div style="background-image: url('img_girl.jpg');">
+```
+
+You can also specify the background image in the `<style>` element, in the `<head>` section:
+
+```html
+<style>
+div {
+  background-image: url('img_girl.jpg');
+}
+</style>
+```
+
+If you want the entire page to have a background image, you must specify the background image on the `<body>` element:
+
+```html
+<style>
+body {
+  background-image: url('img_girl.jpg');
+}
+</style>
+```
+
+**Background Repeat**:  
+If the background image is smaller than the element, the image will repeat itself, horizontally and vertically, until it reaches the end of the element.  
+To avoid the background image from repeating itself, set the `background-repeat` property to `no-repeat`:  
+
+```html
+<style>
+body {
+  background-image: url('example_img_girl.jpg');
+  background-repeat: no-repeat;
+}
+</style>
+```
+
+**Background Cover**:  
+If you want the background image to cover the entire element, you can set the `background-size` property to `cover`.  
+Also, to make sure the entire element is always covered, set the `background-attachment` property to `fixed`.  
+This way, the background image will cover the entire element, with no stretching (the image will keep its original proportions):  
+
+```html
+<style>
+body {
+  background-image: url('img_girl.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+```
+
+**Background Stretch**:  
+If you want the background image to stretch to fit the entire element, you can set the `background-size` property to `100% 100%`:
+
+```html
+<style>
+body {
+  background-image: url('img_girl.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+```
+
+### HTML `<picture>` Element
+
+The HTML `<picture>` element allows you to display different pictures for different devices or screen sizes.  
+The `<picture>` element contains one or more `<source>` elements, each referring to different images through the `srcset` attribute.  
+This way the browser can choose the image that best fits the current view and/or device.  
+
+Each `<source>` element has a media attribute that defines when the image is the most suitable.
+
+```html
+<picture>
+  <source media="(min-width: 650px)" srcset="img_food.jpg">
+  <source media="(min-width: 465px)" srcset="img_car.jpg">
+  <img src="img_girl.jpg">
+</picture>
+```
+
+Note: Always specify an `<img>` element as the last child element of the `<picture>` element.  
+The `<img>` element is used by browsers that do not support the `<picture>` element, or if none of the `<source>` tags match.
+
 
 
