@@ -1042,3 +1042,987 @@ By default, the text in `<th>` elements are bold and centered, but you can chang
 | `<tbody>` | Groups the body content in a table |
 | `<tfoot>` | Groups the footer content in a table |
 
+### Table Borders
+
+HTML tables can have borders of different styles and shapes.  
+When you add a border to a table, you also add borders around each table cell.  
+To add a border, use the CSS `border` property on `table`, `th`, and `td` elements:  
+
+```html
+table, th, td {
+  border: 1px solid black;
+}
+```
+
+**Collapsed Table Borders**:  
+To avoid having double borders like in the example above, set the CSS `border-collapse` property to `collapse`.
+
+```thml
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+```
+
+**Style Table Borders**:  
+If you set a background color of each cell, and give the border a white color (the same as the document background), you get the impression of an invisible border:
+
+```html
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+```
+
+**Round Table Borders**:  
+With the `border-radius` property, the borders get rounded corners:
+
+```
+html
+table, th, td {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+```
+
+Skip the border around the table by leaving out `table` from the css selector:
+
+```html
+th, td {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+```
+
+**Dotted Table Borders**:  
+With the `border-style` property, you can set the appereance of the border.  
+The following values are allowed:
+
+* dotted
+* dashed
+* solid
+* double
+* groove
+* ridge
+* inset
+* outset
+* none
+* hidden
+
+```html
+th, td {
+  border-style: dotted;
+}
+```
+
+**Border Color**:  
+With the border-color property, you can set the color of the border. 
+
+```html
+ th, td {
+  border-color: #96D4D4;
+}
+```
+
+### Table Sizes
+
+Use the `style` attribute with the `width` or `height` properties to specify the size of a table, row or column.  
+To set the width of a table, add the `style` attribute to the `<table>` element.  
+To set the size of a specific column, add the `style` attribute on a `<th>` or `<td>` element.  
+To set the height of a specific row, add the `style` attribute on a table row element.  
+
+```html
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr style="height:200px">
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+```
+
+### Table Headers
+
+HTML tables can have headers for each column or row, or for many columns/rows.  
+Table headers are defined with `th` elements, each `th` element represents a table cell.  
+
+**Vertical Table Headers**:  
+To use the first column as table headers, define the first cell in each row as a `th` element:  
+
+```html
+<table>
+  <tr>
+    <th>Firstname</th>
+    <td>Jill</td>
+    <td>Eve</td>
+  </tr>
+  <tr>
+    <th>Lastname</th>
+    <td>Smith</td>
+    <td>Jackson</td>
+  </tr>
+  <tr>
+    <th>Age</th>
+    <td>94</td>
+    <td>50</td>
+  </tr>
+</table>
+```
+
+**Align Table Headers**:  
+By default, table headers are bold and centered.  
+To left-align the table headers, use the CSS text-align property:
+
+```html
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+}
+</style>
+```
+
+**Header for Multiple Columns**:  
+HTML tables can have cells that spans over multiple rows and/or columns.  
+
+To make a cell span over multiple columns, use the `colspan` attribute on the `<th>` element.  
+The value of the `colspan` attribute represents the number of columns to span.  
+
+```html
+<table>
+  <tr>
+    <th colspan="2">Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+```
+
+To make a cell span over multiple rows, use the `rowspan` attribute:
+
+```html
+<table>
+  <tr>
+    <th>Name</th>
+    <td>Jill</td>
+  </tr>
+  <tr>
+    <th rowspan="2">Phone</th>
+    <td>555-1234</td>
+  </tr>
+  <tr>
+    <td>555-8745</td>
+</tr>
+</table>
+```
+
+**Table Caption**:  
+You can add a caption that serves as a heading for the entire table.  
+To add a caption to a table, use the `<caption>` tag.  
+The `<caption>` tag should be inserted immediately after the `<table>` tag.  
+
+```html
+<table style="width:100%">
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+```
+
+### Table Padding & Spacing
+
+HTML tables can adjust the padding inside the cells, and also the space between the cells.  
+
+**Table - Cell Padding**:  
+Cell padding is the space between the cell edges and the cell content.  
+By default the padding is set to 0.  
+To add padding on table cells, use the CSS padding property:  
+
+```html
+th, td {
+  padding: 15px;
+}
+```
+
+To add padding only above the content, use the `padding-top` property.  
+And the others sides with the `padding-bottom`, `padding-left`, and `padding-right` properties:  
+
+```html
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+```
+
+**Table - Cell Spacing**:  
+Cell spacing is the space between each cell.  
+By default the space is set to 2 pixels.  
+To change the space between table cells, use the CSS `border-spacing` property on the table element:  
+
+```html
+table {
+  border-spacing: 30px;
+}
+```
+
+### Table Styling
+
+**Zebra Stripes**:  
+If you add a background color on every other table row, you will get a nice zebra stripes effect.  
+
+To style every other table row element, use the `:nth-child(even)` selector like this:
+
+```html
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+```
+
+Note: If you use (`odd`) instead of (`even`), the styling will occur on row 1,3,5 etc. instead of 2,4,6 etc.  
+
+**Vertical Zebra Stripes**:  
+To make vertical zebra stripes, style every other column, instead of every other row.  
+Set the `:nth-child(even)` for table data elements like this:  
+
+```html
+td:nth-child(even), th:nth-child(even) {
+  background-color: #D6EEEE;
+}
+```
+
+Note: Put the `:nth-child()` selector on both `th` and `td` elements if you want to have the styling on both headers and regular table cells.  
+
+**Combine Vertical and Horizontal Zebra Stripes**:  
+You can combine the styling from the two examples above and you will have stripes on every other row and every other column.  
+If you use a transparent color you will get an overlapping effect.  
+Use an rgba() color to specify the transparency of the color:  
+
+```html
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+```
+
+**Horizontal Dividers**:  
+If you specify borders only at the bottom of each table row, you will have a table with horizontal dividers.  
+Add the `border-bottom` property to all `tr` elements to get horizontal dividers:
+
+```html
+tr {
+  border-bottom: 1px solid #ddd;
+}
+```
+
+**Hoverable Table**:  
+Use the `:hover` selector on `tr` to highlight table rows on mouse over:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
+}
+
+tr:hover {background-color: #D6EEEE;}
+</style>
+```
+
+**Table Colgroup**:  
+The `<colgroup>` element is used to style specific columns of a table.  
+If you want to style the two first columns of a table, use the `<colgroup>` and `<col>` elements.  
+
+The `<colgroup>` element should be used as a container for the column specifications.  
+Each group are specified with a `<col>` element.  
+The `span` attribute specifies how many columns that gets the style.  
+The `style` attribute specifies the style to give the columns.  
+
+The `<colgroup>` tag must be a child of a `<table>` element and should be placed before any other table elements, like `<thead>`, `<tr>`, `<td>` etc., but after the `<caption>` element, if present.
+  
+```html
+<table>
+  <colgroup>
+    <col span="2" style="background-color: #D6EEEE">
+  </colgroup>
+  <tr>
+    <th>MON</th>
+    <th>TUE</th>
+    <th>WED</th>
+    <th>THU</th>
+...
+```
+
+There are only a very limited selection of CSS properties that are allowed to be used in the colgroup:
+
+* width property
+* visibility property
+* background properties
+* border properties
+
+All other CSS properties will have no effect on your tables.
+
+**Multiple Col Elements**:  
+If you want to style more columns with different styles, use more `<col>` elements inside the `<colgroup>`:
+
+```html
+<table>
+  <colgroup>
+    <col span="2" style="background-color: #D6EEEE">
+    <col span="3" style="background-color: pink">
+  </colgroup>
+  <tr>
+    <th>MON</th>
+    <th>TUE</th>
+    <th>WED</th>
+    <th>THU</th>
+...
+```
+
+**Empty Colgroups**:  
+If you want to style columns in the middle of a table, insert a "empty" `<col>` element (with no styles) for the columns before:  
+
+```html
+<table>
+  <colgroup>
+    <col span="3">
+    <col span="2" style="background-color: pink">
+  </colgroup>
+  <tr>
+    <th>MON</th>
+    <th>TUE</th>
+    <th>WED</th>
+    <th>THU</th>
+...
+```
+
+**Hide Columns**:  
+You can hide columns with the `visibility: collapse` property:  
+
+```html
+<table>
+  <colgroup>
+    <col span="2">
+    <col span="3" style="visibility: collapse">
+  </colgroup>
+  <tr>
+    <th>MON</th>
+    <th>TUE</th>
+    <th>WED</th>
+    <th>THU</th>
+...
+```
+
+## HTML Lists
+
+**Unordered HTML List**:  
+An unordered list starts with the `<ul>` tag.  
+Each list item starts with the `<li>` tag.  
+The list items will be marked with bullets (small black circles) by default:
+
+```html
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+```
+
+The CSS `list-style-type` property is used to define the style of the list item marker.  
+It can have one of the following values:
+
+| Value | Description |
+| ----- | ----------- |
+| disc | Sets the list item marker to a bullet (default) |
+| circle | Sets the list item marker to a circle |
+| square | Sets the list item marker to a square |
+| none | The list items will not be marked |
+
+```html
+<ul style="list-style-type:circle;">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+```
+
+**Ordered HTML List**:  
+An ordered list starts with the `<ol>` tag. Each list item starts with the `<li>` tag.  
+The list items will be marked with numbers by default:  
+
+```html
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+```
+
+The `type` attribute of the `<ol>` tag, defines the type of the list item marker:
+| Type | Description |
+| ---- | ----------- |
+| type="1" | The list items will be numbered with numbers (default) |
+| type="A" | The list items will be numbered with uppercase letters |
+| type="a" | The list items will be numbered with lowercase letters |
+| type="I" | The list items will be numbered with uppercase roman numbers |
+| type="i" | The list items will be numbered with lowercase roman numbers |
+
+```html
+<ol type="A">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+```
+
+By default, an ordered list will start counting from 1.  
+If you want to start counting from a specified number, you can use the `start` attribute:
+
+```html
+<ol start="50">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+```
+
+**Nested HTML Lists**:  
+Lists can be nested (list inside list):
+
+```html
+<ol>
+  <li>Coffee</li>
+  <li>Tea
+    <ol>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ol>
+  </li>
+  <li>Milk</li>
+</ol>
+```
+
+**Description Lists**:  
+A description list is a list of terms, with a description of each term.  
+The `<dl>` tag defines the description list, the `<dt>` tag defines the term (name), and the `<dd>` tag describes each term:
+
+```html
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
+```
+
+**HTML List Tags**:  
+| Tag | Description |
+| --- | ----------- |
+| `<ul>` | Defines an unordered list |
+| `<ol>` | Defines an ordered list |
+| `<li>` | Defines a list item |
+| `<dl>` | Defines a description list |
+| `<dt>` | Defines a term in a description list |
+| `<dd>` | Describes the term in a description list |
+
+## HTML Block and Inline Elements
+
+Every HTML element has a default display value, depending on what type of element it is.  
+There are two display values: block and inline.  
+
+### Block-level Elements
+
+A block-level element always starts on a new line.  
+A block-level element always takes up the full width available (stretches out to the left and right as far as it can).  
+A block level element has a top and a bottom margin, whereas an inline element does not.  
+
+Here are the block-level elements in HTML:
+
+`<address>` `<article>` `<aside>` `<blockquote>` `<canvas>` `<dd>` `<div>` `<dl>` `<dt>`  
+`<fieldset>` `<figcaption>` `<figure>` `<footer>` `<form>` `<h1>`-`<h6>` `<header>` `<hr>`  
+`<li>` `<main>` `<nav>` `<noscript>` `<ol>` `<p>` `<pre>` `<section>` `<table>` `<tfoot>` `<ul>`  
+
+### Inline Elements
+
+An inline element does not start on a new line.  
+An inline element only takes up as much width as necessary.  
+An inline element cannot contain a block-level element!  
+
+Here are the inline elements in HTML:
+
+`<a>` `<abbr>` `<acronym>` `<b>` `<bdo>` `<big>` `<br>` `<button>` `<cite>` `<code>` `<dfn>`  
+`<em>` `<i>` `<img>` `<input>` `<kbd>` `<label>` `<map>` `<object>` `<output>` `<q>` `<samp>`  
+`<script>` `<select>` `<small>` `<span>` `<strong>` `<sub>` `<sup>` `<textarea>` `<time>` `<tt>` `<var>`  
+
+**The `<div>` Element**:  
+The `<div>` element is often used as a container for other HTML elements.  
+The `<div>` element has no required attributes, but style, class and id are common.  
+When used together with CSS, the `<div>` element can be used to style blocks of content:  
+
+```html
+<div style="background-color:black;color:white;padding:20px;">
+  <h2>London</h2>
+  <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+</div>
+```
+
+**The `<span>` Element**:  
+The `<span>` element is an inline container used to mark up a part of a text, or a part of a document.  
+The `<span>` element has no required attributes, but style, class and id are common.  
+When used together with CSS, the `<span>` element can be used to style parts of the text:
+
+```html
+<p>My mother has <span style="color:blue;font-weight:bold">blue</span> eyes and my father has <span style="color:darkolivegreen;font-weight:bold">dark green</span> eyes.</p>
+```
+
+## HTML class Attribute
+
+The HTML `class` attribute is used to specify a class for an HTML element.  
+Multiple HTML elements can share the same class.  
+Tip: The class attribute can be used on any HTML element.  
+Note: The class name is case sensitive!  
+
+In the following example we have three `<div>` elements with a class attribute with the value of "city".  
+All of the three `<div>` elements will be styled equally according to the `.city` style definition in the `head` section:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.city {
+  background-color: tomato;
+  color: white;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="city">
+  <h2>London</h2>
+  <p>London is the capital of England.</p>
+</div>
+
+<div class="city">
+  <h2>Paris</h2>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div class="city">
+  <h2>Tokyo</h2>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+</body>
+</html>
+```
+
+In the following example we have two `<span>` elements with a class attribute with the value of "note".  
+Both `<span>` elements will be styled equally according to the `.note` style definition in the head section:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.note {
+  font-size: 120%;
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h1>My <span class="note">Important</span> Heading</h1>
+<p>This is some <span class="note">important</span> text.</p>
+
+</body>
+</html>
+```
+
+**The Syntax For Class**:  
+To create a class; write a period (.) character, followed by a class name.  
+Then, define the CSS properties within curly braces {}.  
+
+**Multiple Classes**:  
+HTML elements can belong to more than one class.  
+To define multiple classes, separate the class names with a space, e.g. `<div class="city main">`.  
+The element will be styled according to all the classes specified.  
+In the following example, the first `<h2>` element belongs to both the city class and also to the main class, and will get the CSS styles from both of the classes.  
+
+**Different Elements Can Share Same Class**:  
+Different HTML elements can point to the same class name.  
+In the following example, both `<h2>` and `<p>` points to the "city" class and will share the same style.  
+
+## HTML id Attribute
+
+The id attribute specifies a unique id for an HTML element.  
+The value of the id attribute must be unique within the HTML document.  
+The id attribute is used to point to a specific style declaration in a style sheet.  
+It is also used by JavaScript to access and manipulate the element with the specific id.  
+
+The syntax for id is: write a hash character (#), followed by an id name.  
+Then, define the CSS properties within curly braces {}.
+
+The id name is case sensitive!  
+The id name must contain at least one character, cannot start with a number, and must not contain whitespaces (spaces, tabs, etc.).  
+
+In the following example we have an `<h1>` element that points to the id name "myHeader".  
+This `<h1>` element will be styled according to the #myHeader style definition in the head section:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1 id="myHeader">My Header</h1>
+
+</body>
+</html>
+```
+
+**Difference Between Class and ID**:  
+A class name can be used by multiple HTML elements, while an id name must only be used by one HTML element within the page:
+
+```html
+<style>
+/* Style the element with the id "myHeader" */
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Style all elements with the class name "city" */
+.city {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+}
+</style>
+
+<!-- An element with a unique id -->
+<h1 id="myHeader">My Cities</h1>
+
+<!-- Multiple elements with same class -->
+<h2 class="city">London</h2>
+<p>London is the capital of England.</p>
+
+<h2 class="city">Paris</h2>
+<p>Paris is the capital of France.</p>
+
+<h2 class="city">Tokyo</h2>
+<p>Tokyo is the capital of Japan.</p>
+```
+
+### HTML Bookmarks with ID and Links
+
+HTML bookmarks are used to allow readers to jump to specific parts of a webpage.  
+Bookmarks can be useful if your page is very long.  
+To use a bookmark, you must first create it, and then add a link to it.  
+Then, when the link is clicked, the page will scroll to the location with the bookmark.
+
+Example:  
+First, create a bookmark with the id attribute:
+
+```html
+<h2 id="C4">Chapter 4</h2>
+```
+
+Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page:
+
+```html
+<a href="#C4">Jump to Chapter 4</a>
+```
+
+Or, add a link to the bookmark ("Jump to Chapter 4"), from another page:
+
+```html
+<a href="html_demo.html#C4">Jump to Chapter 4</a>
+```
+
+**Using The id Attribute in JavaScript**:  
+The id attribute can also be used by JavaScript to perform some tasks for that specific element.  
+JavaScript can access an element with a specific id with the getElementById() method:  
+
+```html
+<script>
+function displayResult() {
+  document.getElementById("myHeader").innerHTML = "Have a nice day!";
+}
+</script>
+```
+
+## HTML Iframes
+
+An HTML iframe is used to display a web page within a web page.  
+The HTML `<iframe>` tag specifies an inline frame.  
+An inline frame is used to embed another document within the current HTML document.  
+
+```html
+<iframe src="url" title="description"></iframe>
+```
+
+It is a good practice to always include a title attribute for the `<iframe>`.  
+This is used by screen readers to read out what the content of the iframe is.  
+
+**Iframe - Set Height and Width**:  
+Use the `height` and `width` attributes to specify the size of the iframe.  
+The height and width are specified in pixels by default:
+
+```html
+<iframe src="demo_iframe.htm" height="200" width="300" title="Iframe Example"></iframe>
+```
+
+Or you can add the style attribute and use the CSS height and width properties:
+
+```html
+<iframe src="demo_iframe.htm"    title="Iframe Example"></iframe>
+```
+
+**Iframe - Remove the Border**:  
+By default, an iframe has a border around it.  
+To remove the border, add the `style` attribute and use the CSS `border` property:
+
+```html
+<iframe src="demo_iframe.htm" style="border:none;" title="Iframe Example"></iframe>
+```
+
+With CSS, you can also change the size, style and color of the iframe's border:
+
+```html
+<iframe src="demo_iframe.htm" style="border:2px solid red;" title="Iframe Example"></iframe>
+```
+
+**Iframe - Target for a Link**:  
+An iframe can be used as the target frame for a link.  
+The `target` attribute of the link must refer to the `name` attribute of the iframe:
+
+```html
+<iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+
+<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+```
+
+## HTML JavaScript
+
+**The HTML `<script>` Tag**:  
+The HTML `<script>` tag is used to define a client-side script (JavaScript).  
+The `<script>` element either contains script statements, or it points to an external script file through the src attribute.  
+Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.  
+To select an HTML element, JavaScript most often uses the `document.getElementById()` method.  
+
+**The HTML `<noscript>` Tag**:  
+The HTML `<noscript>` tag defines an alternate content to be displayed to users that have disabled scripts in their browser or have a browser that doesn't support scripts:
+
+```html
+<script>
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script>
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+```
+
+## HTML File Paths
+
+A file path describes the location of a file in a web site's folder structure.
+
+**Absolute File Paths** - An absolute file path is the full URL to a file:
+
+```html
+<img src="https://www.w3schools.com/images/picture.jpg" alt="Mountain">
+```
+
+**Relative File Paths** - A relative file path points to a file relative to the current page.  
+In the following example, the file path points to a file in the images folder located at the root of the current web:
+
+```html
+<img src="/images/picture.jpg" alt="Mountain">
+```
+
+It is best practice to use relative file paths (if possible).  
+When using relative file paths, your web pages will not be bound to your current base URL.  
+All links will work on your own computer (localhost) as well as on your current public domain and your future public domains.  
+
+## HTML - The Head Element
+
+The HTML `<head>` element is a container for the following elements: `<title>`, `<style>`, `<meta>`, `<link>`, `<script>`, and `<base>`.  
+
+The `<head>` element is a container for metadata (data about data) and is placed between the `<html>` tag and the `<body>` tag.  
+HTML metadata is data about the HTML document. Metadata is not displayed.  
+
+Metadata typically define the document title, character set, styles, scripts, and other meta information.  
+
+**HTML head Elements**:  
+| Tag | Description |
+| --- | ----------- |
+| `<head>` | Defines information about the document |
+| `<title>` | Defines the title of a document |
+| `<base>` | Defines a default address or a default target for all links on a page |
+| `<link>` | Defines the relationship between a document and an external resource |
+| `<meta>` | Defines metadata about an HTML document |
+| `<script>` | Defines a client-side script |
+| `<style>` | Defines style information for a document |
+
+### The HTML `<title>` Element
+
+The `<title>` element defines the title of the document.  
+The title must be text-only, and it is shown in the browser's title bar or in the page's tab.  
+
+The `<title>` element is required in HTML documents!
+The contents of a page title is very important for search engine optimization (SEO)!  
+The page title is used by search engine algorithms to decide the order when listing pages in search results.  
+
+The `<title>` element:
+
+* defines a title in the browser toolbar
+* provides a title for the page when it is added to favorites
+* displays a title for the page in search engine-results
+So, try to make the title as accurate and meaningful as possible!
+
+### The HTML `<style>` Element
+
+The `<style>` element is used to define style information for a single HTML page.
+
+### The HTML `<link>` Element
+
+The `<link>` element defines the relationship between the current document and an external resource.  
+The `<link>` tag is most often used to link to external style sheets:
+
+```html
+<link rel="stylesheet" href="mystyle.css">
+```
+
+### The HTML `<meta>` Element
+
+The `<meta>` element is typically used to specify the character set, page description, keywords, author of the document, and viewport settings.  
+The metadata will not be displayed on the page, but are used by browsers (how to display content or reload page), by search engines (keywords), and other web services.
+
+Examples:  
+Define the character set used:  
+`<meta charset="UTF-8">`
+
+Define keywords for search engines:  
+`<meta name="keywords" content="HTML, CSS, JavaScript">`
+
+Define a description of your web page:  
+`<meta name="description" content="Free Web tutorials">`
+
+Define the author of a page:  
+`<meta name="author" content="John Doe">`
+
+Refresh document every 30 seconds:  
+`<meta http-equiv="refresh" content="30">`
+
+Setting the viewport to make your website look good on all devices:  
+`<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+
+### Setting The Viewport
+
+The viewport is the user's visible area of a web page.  
+It varies with the device - it will be smaller on a mobile phone than on a computer screen.  
+You should include the following `<meta>` element in all your web pages:
+
+`<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+
+This gives the browser instructions on how to control the page's dimensions and scaling.  
+The `width=device-width` part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).  
+The `initial-scale=1.0` part sets the initial zoom level when the page is first loaded by the browser.
+
+### The HTML `<script>` Element
+
+The `<script>` element is used to define client-side JavaScripts.
+
+### The HTML `<base>` Element
+
+The `<base>` element specifies the base URL and/or target for all relative URLs in a page.  
+The `<base>` tag must have either an `href` or a `target` attribute present, or both.  
+
+There can only be one single `<base>` element in a document!
+
+```html
+<head>
+<base href="https://www.w3schools.com/" target="_blank">
+</head>
+
+<body>
+<img src="images/stickman.gif" width="24" height="39" alt="Stickman">
+<a href="tags/tag_base.asp">HTML base Tag</a>
+</body>
+```
+
+## HTML Layout Elements and Techniques
+
+Websites often display content in multiple columns (like a magazine or a newspaper).  
+
+**HTML Layout Elements**:  
+HTML has several semantic elements that define the different parts of a web page:
+
+* `<header>` - Defines a header for a document or a section
+* `<nav>` - Defines a set of navigation links
+* `<section>` - Defines a section in a document
+* `<article>` - Defines an independent, self-contained content
+* `<aside>` - Defines content aside from the content (like a sidebar)
+* `<footer>` - Defines a footer for a document or a section
+* `<details>` - Defines additional details that the user can open and close on demand
+* `<summary>` - Defines a heading for the `<details>` element
+
+**HTML Layout Techniques**:  
+There are four different techniques to create multicolumn layouts. Each technique has its pros and cons:
+
+* CSS framework
+* CSS float property
+* CSS flexbox
+* CSS grid
+
