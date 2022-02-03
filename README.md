@@ -2026,3 +2026,732 @@ There are four different techniques to create multicolumn layouts. Each techniqu
 * CSS flexbox
 * CSS grid
 
+## HTML Computer Code Elements
+
+HTML contains several elements for defining user input and computer code.
+
+* The `<kbd>` element defines keyboard input
+* The `<samp>` element defines sample output from a computer program
+* The `<code>` element defines a piece of computer code
+* The `<var>` element defines a variable in programming or in a mathematical expression
+* The `<pre>` element defines preformatted text
+
+### HTML `<code>` For Computer Code
+
+The HTML `<code>` element  is used to define a piece of computer code.  
+The content inside is displayed in the browser's default monospace font.  
+
+```html
+<code>
+x = 5;
+y = 6;
+z = x + y;
+</code>
+```
+
+Notice that the `<code>` element does not preserve extra whitespace and line-breaks.  
+To fix this, you can put the `<code>` element inside a `<pre>` element:
+
+### HTML `<kbd>` For Keyboard Input
+
+The HTML `<kbd>` element is used to define keyboard input.  
+The content inside is displayed in the browser's default monospace font.
+
+```html
+<p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+```
+
+### HTML `<samp>` For Program Output
+
+The HTML `<samp>` element is used to define sample output from a computer program.  
+The content inside is displayed in the browser's default monospace font.
+
+```html
+<p>Message from my computer:</p>
+<p><samp>File not found.<br>Press F1 to continue</samp></p>
+```
+
+### HTML `<var>` For Variables
+
+The HTML `<var>` element  is used to define a variable in programming or in a mathematical expression.  
+The content inside is typically displayed in italic.
+
+```html
+<p>The area of a triangle is: 1/2 x <var>b</var> x <var>h</var>, where <var>b</var> is the base, and <var>h</var> is the vertical height.</p>
+```
+
+## HTML Semantic Elements
+
+A semantic element clearly describes its meaning to both the browser and the developer.  
+Examples of non-semantic elements: `<div>` and `<span>` - Tells nothing about its content.  
+Examples of semantic elements: `<form>`, `<table>`, and `<article>` - Clearly defines its content.
+
+Below is a list of some of the semantic elements in HTML.
+
+| Tag | Description |
+| `<article>` | Defines independent, self-contained content |
+| `<aside>` | Defines content aside from the page content |
+| `<details>` | Defines additional details that the user can view or hide |
+| `<figcaption>` | Defines a caption for a `<figure>` element |
+| `<figure>` | Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc. |
+| `<footer>` | Defines a footer for a document or section |
+| `<header>` | Specifies a header for a document or section |
+| `<main>` | Specifies the main content of a document |
+| `<mark>` | Defines marked/highlighted text |
+| `<nav>` | Defines navigation links |
+| `<section>` | Defines a section in a document |
+| `<summary>` | Defines a visible heading for a `<details>` element |
+| `<time>` | Defines a date/time |
+
+### HTML `<section>` Element
+
+The `<section>` element defines a section in a document.  
+Examples of where a `<section>` element can be used:
+
+* Chapters
+* Introduction
+* News items
+* Contact information
+
+A web page could normally be split into sections for introduction, content, and contact information.
+
+### HTML `<article>` Element
+
+The `<article>` element specifies independent, self-contained content.  
+An article should make sense on its own, and it should be possible to distribute it independently from the rest of the web site.  
+Examples of where the `<article>` element can be used:
+
+* Forum posts
+* Blog posts
+* User comments
+* Product cards
+* Newspaper articles
+
+```html
+<html>
+<head>
+<style>
+.all-browsers {
+  margin: 0;
+  padding: 5px;
+  background-color: lightgray;
+}
+
+.all-browsers > h1, .browser {
+  margin: 10px;
+  padding: 5px;
+}
+
+.browser {
+  background: white;
+}
+
+.browser > h2, p {
+  margin: 4px;
+  font-size: 90%;
+}
+</style>
+</head>
+<body>
+
+<article class="all-browsers">
+  <h1>Most Popular Browsers</h1>
+  <article class="browser">
+    <h2>Google Chrome</h2>
+    <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+  </article>
+```
+
+### HTML `<header>` Element
+
+The `<header>` element represents a container for introductory content or a set of navigational links.  
+A `<header>` element typically contains:
+
+* one or more heading elements (`<h1> - <h6>`)
+* logo or icon
+* authorship information
+
+Note: You can have several `<header>` elements in one HTML document.  
+However, `<header>` cannot be placed within a `<footer>`, `<address>` or another `<header>` element.
+
+```html
+<article>
+  <header>
+    <h1>What Does WWF Do?</h1>
+    <p>WWF's mission:</p>
+  </header>
+  <p>WWF's mission is to stop the degradation of our planet's natural environment,
+  and build a future in which humans live in harmony with nature.</p>
+</article>
+```
+
+### HTML `<footer>` Element
+
+The `<footer>` element defines a footer for a document or section.  
+A `<footer>` element typically contains:
+
+* authorship information
+* copyright information
+* contact information
+* sitemap
+* back to top links
+* related documents
+
+You can have several `<footer>` elements in one document.
+
+```html
+<footer>
+  <p>Author: Hege Refsnes</p>
+  <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+</footer>
+```
+
+### HTML `<nav>` Element
+
+The `<nav>` element defines a set of navigation links.  
+Notice that NOT all links of a document should be inside a `<nav>` element.  
+The `<nav>` element is intended only for major block of navigation links.  
+
+```html
+<nav>
+  <a href="/html/">HTML</a> |
+  <a href="/css/">CSS</a> |
+  <a href="/js/">JavaScript</a> |
+  <a href="/jquery/">jQuery</a>
+</nav>
+```
+
+### HTML `<aside>` Element
+
+The `<aside>` element defines some content aside from the content it is placed in (like a sidebar).  
+The `<aside>` content should be indirectly related to the surrounding content.  
+
+```html
+<html>
+  <head>
+<style>
+aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+}
+</style>
+</head>
+<body>
+
+<p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+
+<aside>
+<p>The Epcot center is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+</aside>
+
+<p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+```
+
+### HTML `<figure>` and `<figcaption>` Elements
+
+The `<figure>` tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.  
+The `<figcaption>` tag defines a caption for a `<figure>` element.  
+The `<figcaption>` element can be placed as the first or as the last child of a `<figure>` element.  
+The `<img>`   element defines the actual image/illustration.  
+
+```html
+<figure>
+  <img src="pic_trulli.jpg" alt="Trulli">
+  <figcaption>Fig1. - Trulli, Puglia, Italy.</figcaption>
+</figure>
+```
+
+## HTML Style Guide
+
+A consistent, clean, and tidy HTML code makes it easier for others to read and understand your code.  
+Here are some guidelines and tips for creating good HTML code.  
+
+**Always Declare Document Type**:  
+Always declare the document type as the first line in your document.  
+The correct document type for HTML is:  
+`<!DOCTYPE html>`
+
+**Use Lowercase Element Names and Lowercase Attribute Names**;
+HTML allows mixing uppercase and lowercase letters in element names.  
+However, we recommend using lowercase element names.  
+
+**Close All HTML Elements**:  
+In HTML, you do not have to close all elements (for example the `<p>` element).  
+However, we strongly recommend closing all HTML elements.
+
+**Always Quote Attribute Values**:  
+HTML allows attribute values without quotes.  
+However, we recommend quoting attribute values.  
+
+**Always Specify alt, width, and height for Images**:  
+Always specify the alt attribute for images.  
+This attribute is important if the image for some reason cannot be displayed.  
+Also, always define the width and height of images.  
+This reduces flickering, because the browser can reserve space for the image before loading.
+
+**Spaces and Equal Signs**:  
+HTML allows spaces around equal signs.  
+But space-less is easier to read and groups entities better together.  
+Good:  
+`<link rel="stylesheet" href="styles.css">`
+
+**Avoid Long Code Lines**:  
+When using an HTML editor, it is NOT convenient to scroll right and left to read the HTML code.  
+Try to avoid too long code lines.
+
+**Blank Lines and Indentation**:  
+Do not add blank lines, spaces, or indentations without a reason.  
+For readability, add blank lines to separate large or logical code blocks.  
+For readability, add two spaces of indentation. Do not use the tab key.  
+
+Good:  
+```html
+<body>
+
+<h1>Famous Cities</h1>
+
+<h2>Tokyo</h2>
+<p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+and the most populous metropolitan area in the world.
+It is the seat of the Japanese government and the Imperial Palace,
+and the home of the Japanese Imperial Family.</p>
+
+</body>
+```
+
+**Never Skip the `<title>` Element**:  
+The `<title>` element is required in HTML.  
+The contents of a page title is very important for search engine optimization (SEO)! The page title is used by search engine algorithms to decide the order when listing pages in search results.
+The `<title>` element:
+
+* defines a title in the browser toolbar
+* provides a title for the page when it is added to favorites
+* displays a title for the page in search-engine results
+
+**Omitting `<html>` and `<body>`**?  
+An HTML page will validate without the `<html>` and `<body>` tags.  
+However, we strongly recommend to always add the `<html>` and `<body>` tags!  
+Omitting `<body>` can produce errors in older browsers.  
+Omitting `<html>` and `<body>` can also crash DOM and XML software.
+
+**Omitting `<head>`**?  
+The HTML `<head>` tag can also be omitted.  
+Browsers will add all elements before `<body>`, to a default `<head>` element.  
+However, we recommend using the `<head>` tag.
+
+**Close Empty HTML Elements**?  
+In HTML, it is optional to close empty elements.  
+In HTML, it is optional to close empty elements.
+
+Allowed:  
+`<meta charset="utf-8">`
+Also Allowed:  
+`<meta charset="utf-8" />`
+
+If you expect XML/XHTML software to access your page, keep the closing slash (/), because it is required in XML and XHTML.
+
+**Add the `lang` Attribute**:  
+You should always include the lang attribute inside the `<html>` tag, to declare the language of the Web page. This is meant to assist search engines and browsers.
+
+**Meta Data**:  
+To ensure proper interpretation and correct search engine indexing, both the language and the character encoding `<meta charset="charset">` should be defined as early as possible in an HTML document.  
+
+**Setting The Viewport**:  
+The viewport is the user's visible area of a web page.  
+It varies with the device - it will be smaller on a mobile phone than on a computer screen.
+
+You should include the following `<meta>` element in all your web pages:
+
+`<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+
+This gives the browser instructions on how to control the page's dimensions and scaling.  
+The `width=device-width` part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).  
+The `initial-scale=1.0` part sets the initial zoom level when the page is first loaded by the browser.
+
+**HTML Comments**:  
+Short comments should be written on one line, like this:  
+`<!-- This is a comment -->`
+
+Comments that spans more than one line, should be written like this:  
+
+```html
+<!--
+  This is a long comment example. This is a long comment example.
+  This is a long comment example. This is a long comment example.
+-->
+```
+
+Long comments are easier to observe if they are indented with two spaces.
+
+**Using Style Sheets**:  
+Use simple syntax for linking to style sheets (the type attribute is not necessary):  
+`<link rel="stylesheet" href="styles.css">`
+
+Short CSS rules can be written compressed, like this:  
+`p.intro {font-family:Verdana;font-size:16em;}`
+
+Long CSS rules should be written over multiple lines:
+
+```html
+body {
+  background-color: lightgrey;
+  font-family: "Arial Black", Helvetica, sans-serif;
+  font-size: 16em;
+  color: black;
+}
+```
+
+* Place the opening bracket on the same line as the selector
+* Use one space before the opening bracket
+* Use two spaces of indentation
+* Use semicolon after each property-value pair, including the last
+* Only use quotes around values if the value contains spaces
+* Place the closing bracket on a new line, without leading spaces
+
+**Loading JavaScript in HTML**:  
+Use simple syntax for loading external scripts (the type attribute is not necessary):  
+`<script src="myscript.js">`
+
+**Use Lower Case File Names**:  
+Some web servers (Apache, Unix) are case sensitive about file names: "london.jpg" cannot be accessed as "London.jpg".  
+Other web servers (Microsoft, IIS) are not case sensitive: "london.jpg" can be accessed as "London.jpg".  
+If you use a mix of uppercase and lowercase, you have to be aware of this.
+
+If you move from a case-insensitive to a case-sensitive server, even small errors will break your web!  
+To avoid these problems, always use lowercase file names!  
+
+**File Extensions**:  
+HTML files should have a .html extension (.htm is allowed).  
+CSS files should have a .css extension.  
+JavaScript files should have a .js extension.  
+
+**Differences Between .htm and .html**?  
+There is no difference between the .htm and .html file extensions!  
+Both will be treated as HTML by any web browser and web server.  
+
+**Default Filenames**:  
+When a URL does not specify a filename at the end (like "https://www.w3schools.com/"), the server just adds a default filename, such as "index.html", "index.htm", "default.html", or "default.htm".  
+If your server is configured only with "index.html" as the default filename, your file must be named "index.html", and not "default.html".  
+However, servers can be configured with more than one default filename; usually you can set up as many default filenames as you want.
+
+## HTML Forms
+
+An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+
+**The `<form>` Element**:  
+The HTML `<form>` element is used to create an HTML form for user input.  
+The `<form>` element is a container for different types of input elements, such as: text fields, checkboxes, radio buttons, submit buttons, etc.  
+
+**The `<input>` Element**:  
+The HTML `<input>` element is the most used form element.  
+An `<input>` element can be displayed in many ways, depending on the type attribute.
+
+Here are the different input types you can use in HTML:
+
+* `input type="button">` - Displays a clickable button
+* `<input type="checkbox">` - Displays a checkbox (for selecting zero or more of many choices)
+* `<input type="color">`
+* `<input type="date">`
+* `<input type="datetime-local">`
+* `<input type="email">`
+* `<input type="file">`
+* `<input type="hidden">`
+* `<input type="image">`
+* `<input type="month">`
+* `<input type="number">`
+* `<input type="password">`
+* `<input type="radio">` - Displays a radio button (for selecting one of many choices)
+* `<input type="range">`
+* `<input type="reset">`
+* `<input type="search">`
+* `<input type="submit">` - Displays a submit button (for submitting the form)
+* `<input type="tel">`
+* `<input type="text">` - Displays a single-line text input field
+* `<input type="time">`
+* `<input type="url">`
+* `<input type="week">`
+
+Tip: The default value of the type attribute is "text".
+
+**The `<label>` Element**:  
+The `<label>` tag defines a label for many form elements.  
+The `<label>` element is useful for screen-reader users, because the screen-reader will read out loud the label when the user focus on the input element.  
+The `<label>` element also help users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - because when the user clicks the text within the <label> element, it toggles the radio button/checkbox.  
+The for attribute of the `<label>` tag should be equal to the id attribute of the `<input>` element to bind them together.
+
+**Radio Buttons**:  
+The `<input type="radio">` defines a radio button.
+Radio buttons let a user select ONE of a limited number of choices.
+
+```html
+<p>Choose your favorite Web language:</p>
+
+<form>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">JavaScript</label>
+</form>
+```
+
+**Input Type Button**:  
+`<input type="button">` defines a button:
+
+```html
+<input type="button" onclick="alert('Hello World!')" value="Click Me!">
+```
+
+**Input Type Color**:  
+The `<input type="color">` is used for input fields that should contain a color.  
+Depending on browser support, a color picker can show up in the input field.
+
+```html
+<form>
+  <label for="favcolor">Select your favorite color:</label>
+  <input type="color" id="favcolor" name="favcolor">
+</form>
+```
+
+**Input Type Date**:  
+The `<input type="date">` is used for input fields that should contain a date.  
+Depending on browser support, a date picker can show up in the input field.
+
+```html
+<form>
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday">
+</form>
+```
+
+You can also use the min and max attributes to add restrictions to dates:
+
+```html
+<form>
+  <label for="datemax">Enter a date before 1980-01-01:</label>
+  <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+  <label for="datemin">Enter a date after 2000-01-01:</label>
+  <input type="date" id="datemin" name="datemin" min="2000-01-02">
+</form>
+```
+
+**Input Type File**:  
+The `<input type="file">` defines a file-select field and a "Browse" button for file uploads.
+
+```html
+<form>
+  <label for="myfile">Select a file:</label>
+  <input type="file" id="myfile" name="myfile">
+</form>
+```
+
+**Checkboxes**;  
+The `<input type="checkbox">` defines a checkbox.  
+Checkboxes let a user select ZERO or MORE options of a limited number of choices.
+
+```html
+<form>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1"> I have a bike</label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label>
+</form>
+```
+
+**The Submit Button**:  
+The `<input type="submit">` defines a button for submitting the form data to a form-handler.  
+The form-handler is typically a file on the server with a script for processing input data.  
+The form-handler is specified in the form's action attribute.  
+
+```html
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form>
+```
+
+**The Name Attribute for `<input>`**:  
+Notice that each input field must have a name attribute to be submitted.  
+If the name attribute is omitted, the value of the input field will not be sent at all.
+
+### HTML Form Attributes
+
+List of All `<form>` Attributes
+
+| Attribute | Description |
+| accept-charset | Specifies the character encodings used for form submission |
+| action | Specifies where to send the form-data when a form is submitted |
+| autocomplete | Specifies whether a form should have autocomplete on or off |
+| enctype | Specifies how the form-data should be encoded when submitting it to the server (only for method="post") |
+| method | Specifies the HTTP method to use when sending form-data |
+| name | Specifies the name of the form |
+| novalidate | Specifies that the form should not be validated when submitted |
+| rel | Specifies the relationship between a linked resource and the current document |
+| target | Specifies where to display the response that is received after submitting the form |
+
+**The Action Attribute**:  
+The action attribute defines the action to be performed when the form is submitted.  
+Usually, the form data is sent to a file on the server when the user clicks on the submit button.  
+If the action attribute is omitted, the action is set to the current page.  
+In the example below, the form data is sent to a file called "action_page.php". This file contains a server-side script that handles the form data:
+
+```html
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form>
+```
+
+**The Target Attribute**:  
+The target attribute specifies where to display the response that is received after submitting the form.  
+The target attribute can have one of the following values:  
+
+| Value | Description |
+| `_blank` | The response is displayed in a new window or tab |
+| `_self` | The response is displayed in the current window |
+| `_parent` | The response is displayed in the parent frame |
+| `_top` | The response is displayed in the full body of the window |
+| `framename` | The response is displayed in a named iframe |
+
+The default value is `_self` which means that the response will open in the current window.
+
+**The Method Attribute**:  
+The method attribute specifies the HTTP method to be used when submitting the form data.  
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").  
+The default HTTP method when submitting form data is GET. 
+
+*Notes on GET:*  
+
+* Appends the form data to the URL, in name/value pairs
+* NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+* The length of a URL is limited (2048 characters)
+* Useful for form submissions where a user wants to bookmark the result
+* GET is good for non-secure data, like query strings in Google
+
+*Notes on POST:*
+
+* Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+* POST has no size limitations, and can be used to send large amounts of data.
+* Form submissions with POST cannot be bookmarked
+
+Tip: Always use POST if the form data contains sensitive or personal information!
+
+**The Autocomplete Attribute**:  
+The autocomplete attribute specifies whether a form should have autocomplete on or off.  
+When autocomplete is on, the browser automatically complete values based on values that the user has entered before.  
+
+**The Novalidate Attribute**:  
+The novalidate attribute is a boolean attribute.  
+When present, it specifies that the form-data (input) should not be validated when submitted.  
+
+`<form action="/action_page.php" novalidate>`
+
+### HTML Form Elements
+
+The HTML `<form>` element can contain one or more of the following form elements:
+
+* `<input>`
+* `<label>`
+* `<select>`
+* `<textarea>`
+* `<button>`
+* `<fieldset>`
+* `<legend>`
+* `<datalist>`
+* `<output>`
+* `<option>`
+* `<optgroup>`
+
+**The `<input>` Element**:  
+One of the most used form element is the `<input>` element.  
+The `<input>` element can be displayed in several ways, depending on the type attribute.  
+
+```html
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname">
+```
+
+**The `<label>` Element**:  
+The `<label>` element defines a label for several form elements.  
+The `<label>` element is useful for screen-reader users, because the screen-reader will read out loud the label when the user focus on the input element.  
+The `<label>` element also help users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - because when the user clicks the text within the `<label>` element, it toggles the radio button/checkbox.  
+The `for` attribute of the `<label>` tag should be equal to the id attribute of the `<input>` element to bind them together.
+
+**The `<select>` Element**:  
+The `<select>` element defines a drop-down list:
+
+```html
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+```
+
+The `<option>` elements defines an option that can be selected.  
+By default, the first item in the drop-down list is selected.  
+To define a pre-selected option, add the selected attribute to the option:  
+
+`<option value="fiat" selected>Fiat</option>`
+
+**Visible Values**:  
+Use the size attribute to specify the number of visible values:
+
+```html
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars" size="3">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+```
+
+**Allow Multiple Selections**:  
+Use the multiple attribute to allow the user to select more than one value:
+
+```html
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars" size="4" multiple>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+```
+
+**The `<textarea>` Element**:  
+The `<textarea>` element defines a multi-line input field (a text area):
+
+```html
+<textarea name="message" rows="10" cols="30">
+The cat was playing in the garden.
+</textarea>
+```
+
+The `rows` attribute specifies the visible number of lines in a text area.  
+The `cols` attribute specifies the visible width of a text area.
+
+You can also define the size of the text area by using CSS:
+
+```html
+<textarea name="message" style="width:200px; height:600px;">
+The cat was playing in the garden.
+</textarea>
+```
+

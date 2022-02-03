@@ -6,53 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My own Plan</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/eva.jpg">
-    <style>
-        .point {
-            background-color: rgb(190, 136, 166);
-            color: rgb(58, 19, 19);
-            border: 2px solid black;
-            margin: 20px;
-            padding: 20px;
-        }
-        .practicing {
-            background-color: rgb(134, 163, 150);
-            color:rgb(58, 19, 19);
-            border: 2px solid black;
-            margin: 20px;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: rgb(190, 136, 166);
-        }
-        h2 {
-            text-align: center;
-            color: white;
-        }
-        p {
-            color: rgb(58, 19, 19);
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            color: rgb(58, 19, 19);
-        }
-
-        td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #DDD;
-        }
-
-        th {
-            text-align: center;
-        }
-
-        tr:hover {background-color: #D6EEEE;}
-</style>
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <article class="all">
     <h1>My own Plan </h1>
     <div class="point">
         <h2> TOP necessary Professionals</h1>
@@ -87,6 +44,9 @@
             Location
         </h2>
         <p>Need to choose what it should be ...</p>
+        <aside>
+        <p>Hope It will been done till the Spring</p>
+        </aside>
         <ul style="list-style-type: circle;">
             <li><a href="https://www.instagram.com/gaia.od/" target="_blank">Gaya</a></li>
             <li>Baraboi</li>
@@ -102,6 +62,52 @@
         <p><a href="./inv.html" target="invitation">Invitation Example</a></p>
     </div>
 
+    <div class="point">
+        <h2>Guest list</h2>
+        <p>Tag guests who have confirmed their presence</p>
+        <form>
+        <input type="checkbox" id="par1" name="guests" value="parents A">
+        <label for="par1">Parents A</label><br>
+
+        <input type="checkbox" id="per2" name="guests" value="parents V">
+        <label for="par2">Parents V</label><br>
+
+        <input type="checkbox" id="edik" name="guests" value="Edik+Karina">
+        <label for="edik">Edik+Karina</label><br>
+
+        <input type="checkbox" id="m+o" name="guests" value="Misha+Olga">
+        <label for="m+o">Misha+Olga</label><br>
+
+        <input type="checkbox" id="sakelari" name="guests" value="Sakelari D+K">
+        <label for="sakelari">Sakelari D+K</label><br>
+
+        <input type="checkbox" id="vlad" name="guests" value="Vlad+1">
+        <label for="vlad">Vlad+1</label><br>
+
+        <input type="checkbox" id="fuli" name="guests" value="Fulli J+S">
+        <label for="fuli">Fulli J+S</label><br>
+
+        <input type="checkbox" id="yra" name="guests" value="Yura+Lilya">
+        <label for="yra">Yura+Lilya</label><br>
+
+        <input type="checkbox" id="marina" name="guests" value="Marina+Lesha">
+        <label for="marina">Marina+Lesha</label><br>
+
+        <input type="checkbox" id="sverdchek" name="guests" value="Sverdchek+Vika">
+        <label for="sverdchek">Sverdchek+Vika</lable><br>
+         
+        <input type="checkbox" id="oleg" name="guests" value="Oleg+1">
+        <label for="oleg">Oleg+1</lable><br>
+         
+        <input type="checkbox" id="kodesh" name="guests" value="Kodesh D+L">
+        <label for="kodesh">Kodesh D+L</lable><br>    
+
+        <input type="checkbox" id="kyrylo" name="guests" value="Kyryl+Vika">
+        <label for="kyrylo">Kyryl+Vika</lable><br>   
+
+        </form>
+    </div>
+
     <div class="practicing">
         <h1 style="color:green;">Test Env</h1>
         <p style="text-align:right;">And here I'm just practicing with HTML: <a href="./for_tests.html" target="_blank">See Practises</a></p>
@@ -112,6 +118,7 @@
         <br>
         
     </div>
+</article>
 
 </body>
 </html>

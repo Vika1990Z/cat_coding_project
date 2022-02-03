@@ -1,13 +1,57 @@
-body {
-    background-color: rgb(103, 185, 196);
-  }
-  h1 {
-    color:rgb(65, 24, 8);
-    text-align: center;
-  }
-  p {
-    border: 2px solid Tomato;
-    padding: 20 px;
-    margin: 60 px;
-    font-family: Times New Roman;
-  }
+.point {
+  background-color: rgb(190, 136, 166);
+  color: rgb(58, 19, 19);
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+.all {
+  margin: 0;
+  padding: 10px;
+  background-color: lightgray;
+}
+
+.practicing {
+  background-color: rgb(134, 163, 150);
+  color:rgb(58, 19, 19);
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: rgb(58, 19, 19);
+}
+h2 {
+  text-align: center;
+  color: lightgray;
+}
+p {
+  color: rgb(58, 19, 19);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: rgb(58, 19, 19);
+}
+
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #DDD;
+}
+
+th {
+  text-align: center;
+}
+
+tr:hover {background-color: #D6EEEE;}
+
+aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+  background-color: lightgray;
+}
