@@ -1805,7 +1805,7 @@ function displayResult() {
 </script>
 ```
 
-## HTML Iframes
+<!-- ## HTML Iframes -->
 
 An HTML iframe is used to display a web page within a web page.  
 The HTML `<iframe>` tag specifies an inline frame.  
@@ -2007,7 +2007,7 @@ There can only be one single `<base>` element in a document!
 Websites often display content in multiple columns (like a magazine or a newspaper).  
 
 **HTML Layout Elements**:  
-HTML has several semantic elements that define the different parts of a web page:
+HTML has several  c elements that define the different parts of a web page:
 
 * `<header>` - Defines a header for a document or a section
 * `<nav>` - Defines a set of navigation links
@@ -2096,7 +2096,7 @@ Below is a list of some of the semantic elements in HTML.
 | `<figure>` | Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc. |
 | `<footer>` | Defines a footer for a document or section |
 | `<header>` | Specifies a header for a document or section |
-| `<main>` | Specifies the main content of a document |
+| `<main>` | Specifies the main content of a document tн может повторяться|
 | `<mark>` | Defines marked/highlighted text |
 | `<nav>` | Defines navigation links |
 | `<section>` | Defines a section in a document |
@@ -2309,6 +2309,7 @@ For readability, add blank lines to separate large or logical code blocks.
 For readability, add two spaces of indentation. Do not use the tab key.  
 
 Good:  
+
 ```html
 <body>
 
@@ -2452,7 +2453,7 @@ An `<input>` element can be displayed in many ways, depending on the type attrib
 
 Here are the different input types you can use in HTML:
 
-* `input type="button">` - Displays a clickable button
+* `<input type="button">` - Displays a clickable button
 * `<input type="checkbox">` - Displays a checkbox (for selecting zero or more of many choices)
 * `<input type="color">`
 * `<input type="date">`
@@ -2754,4 +2755,3 @@ You can also define the size of the text area by using CSS:
 The cat was playing in the garden.
 </textarea>
 ```
-
