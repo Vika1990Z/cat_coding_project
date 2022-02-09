@@ -1,0 +1,269 @@
+* {
+    color:rgb(58, 19, 19);
+}
+
+.header, .footer {
+    color: white;
+    margin: 50px;
+    padding: 20px;
+}
+
+::selection {
+    background-color: rgba(48, 60, 94, 0.863);
+}
+
+::marker {
+    color: red;
+    font-size: 23px;
+    font-weight: bold;
+
+}
+body, html {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;  
+}
+
+.all {
+    padding: 10px;
+    background:url(assets/img/ph1.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.all h1, h2, h3, h4, h5, h5 {
+    text-align: center;
+    font-size: 2vw;
+}
+
+.all h1 {
+    color: rgb(255, 254, 254);
+    font-family: "Audiowide", sans-serif;
+    font-size: 5vw;
+    text-shadow: 5px 5px 5px rgb(58, 19, 19);
+}
+
+/*
+h1:hover {
+    color:rgb(58, 19, 19);
+    border: 2px solid rgb(58, 19, 19);
+    margin-right: 200px;
+    margin-left: 200px;
+    background-color: rgba(190, 136, 166, 0.8);
+    padding: 20px;
+}
+*/
+
+.all h2 {
+    font-size: 3.5vw;
+    text-shadow: 1px 1px 3px white;
+    font-family: "Brush Script MT", cursive;
+    
+}
+
+.all h2::first-letter {
+    color: #ff0000;
+    font-size: 200%;
+    border: 2px solid rgb(58, 19, 19);
+    font-family: "Times New Roman", Times, serif;
+}
+
+.all p {
+    font-size: 1.2vw;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px white;
+    word-wrap: break-word;
+}
+
+.all .tootlip {
+    visibility: hidden;
+    background-color: rgba(190, 136, 166, 0.8);
+    font-family: "Brush Script MT", cursive;
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.all div:hover .tootlip {
+    visibility: visible;
+} 
+
+.point {
+    background-color: transparent;
+    color: rgb(58, 19, 19);
+    border: 3px solid black;
+    margin: 50px auto;
+    padding: 20px;
+    text-shadow: 1px 1px 3px white;
+    overflow: auto;
+    max-width: 600px;
+    max-height: 650px;
+}
+.all .point div:hover {
+    background-color: rgba(190, 136, 166, 0.5);
+    outline: 10px solid rgba(190, 136, 166, 0.3);
+    border: 3px solid black;
+}
+
+#practicing {   
+    background-color: rgb(134, 163, 150);
+    color:rgb(58, 19, 19);
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+} 
+
+.all table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 500px; 
+    color: rgb(58, 19, 19);
+    font-weight: bold;
+}
+
+.all td {
+    padding: 8px;
+    text-align: left;
+    text-transform: capitalize;
+    font-style: italic;
+    text-shadow: 1px 1px 3px white;
+    border-bottom: 1px solid rgb(58, 19, 19);
+}
+
+.all th {
+    padding: 8px;
+    text-transform:uppercase;
+    text-align: left;
+    text-shadow: 1px 1px 3px white;
+    border-bottom: 1px solid rgb(58, 19, 19);
+}
+
+.all tr:hover {
+    background-color: rgba(77, 57, 67, 0.8);
+    cursor: pointer;
+}
+
+.all form {
+    background-color: transparent;
+    text-align: left;
+    width: 50%;
+    max-width: 300px;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.all form:hover {
+    background-color: rgba(77, 57, 67, 0.8);
+    cursor: pointer;
+}
+
+.location a:link {
+    color: rgb(58, 19, 19);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.location a:visited {
+    color: rgb(58, 19, 19);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.location  a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.location a:active {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.all iframe {
+    height:400px;
+    width:100%;
+    max-width: 300px;
+    border: 2px solid rgb(58, 19, 19);
+}
+
+ul {
+    font-style: italic;
+    list-style-type:disc;
+}
+
+.topmenu {
+    list-style-type: none;
+    font-family: Copperplate, Papyrus, fantasy;
+    position: -webkit-sticky; /* Safari */
+    float: right;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow:scroll;
+    background-color: rgba(119, 119, 119, 0.3);
+}
+.topmenu li {
+    float: right;
+    width: auto;
+    font-size: 1.2vw;
+}
+
+.topmenu li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.topmenu li a:hover {
+    background-color: rgba(34, 34, 34, 0.8);
+}
+
+.topmenu li a.active {
+    color: white;
+    background-color: #4CAF50;
+}  
+
+.topmenu li a::first-letter {
+    color: #ff0000;
+    font-size: 200%;
+    border: 1px solid rgb(58, 19, 19);
+    font-family: "Times New Roman", Times, serif;
+}
+
+.special {
+    color: #ff0000;
+    font-size: 200%;
+    font-family: "Times New Roman", Times, serif;
+}
+.special a:link {
+    color: rgb(255, 254, 254);
+    font-family: "Audiowide", sans-serif;
+    text-shadow: 5px 5px 5px rgb(58, 19, 19);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.special a:visited {
+    color: rgb(255, 254, 254);
+    font-family: "Audiowide", sans-serif;
+    text-shadow: 5px 5px 5px rgb(58, 19, 19);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.special a:hover {
+    color: rgb(255, 254, 254);
+    font-family: "Audiowide", sans-serif;
+    text-shadow: 5px 5px 5px rgb(58, 19, 19);
+    background-color: transparent;
+    text-decoration: none;
+}

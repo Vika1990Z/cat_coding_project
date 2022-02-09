@@ -638,7 +638,7 @@ The style attribute can contain any CSS property.
 ```
 
 **Multiple Style Sheets**:  
-If some properties have been defined for the same selector (element) in different style sheets, the value from the last read style sheet will be used. 
+If some properties have been defined for the same selector (element) in different style sheets, the value from the last read style sheet will be used.
 
 **Cascading Order**:  
 What style will be used when there is more than one style specified for an HTML element?
@@ -1447,14 +1447,14 @@ Explanation of the different parts:
 * **Border** - A border that goes around the padding and content
 * **Margin** - Clears an area outside the border. The margin is transparent
 
-The box model allows us to add a border around elements, and to define space between elements. 
+The box model allows us to add a border around elements, and to define space between elements.
 
 **Width and Height of an Element**:  
 In order to set the width and height of an element correctly in all browsers, you need to know how the box model works.  
 Important: When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the full size of an element, you must also add padding, borders and margins.
 
 Example:  
-This `<div>` element will have a total width of 350px: 
+This `<div>` element will have a total width of 350px:
 
 ```css
 div {
@@ -1849,11 +1849,11 @@ In CSS there are five generic font families:
 
 * Serif fonts have a small stroke at the edges of each letter. They create a sense of formality and elegance.
 * Sans-serif fonts have clean lines (no small strokes attached). They create a modern and minimalistic look.
-* Monospace fonts - here all the letters have the same fixed width. They create a mechanical look. 
+* Monospace fonts - here all the letters have the same fixed width. They create a mechanical look.
 * Cursive fonts imitate human handwriting.
 * Fantasy fonts are decorative/playful fonts.
 
-All the different font names belong to one of the generic font families. 
+All the different font names belong to one of the generic font families.
 
 **The CSS font-family Property**:  
 In CSS, we use the font-family property to specify the font of a text.  
@@ -2073,4 +2073,1577 @@ That way the text size will follow the size of the browser window:
 
 Viewport is the browser window size. 1vw = 1% of viewport width.  
 If the viewport is 50cm wide, 1vw is 0.5cm.
+
+### Google Fonts
+
+If you do not want to use any of the standard fonts in HTML, you can use Google Fonts.  
+Google Fonts are free to use, and have more than 1000 fonts to choose from.  
+
+```html
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<style>
+body {
+  font-family: "Sofia", sans-serif;
+}
+</style>
+</head>
+```
+
+`<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">`
+
+**Use Multiple Google Fonts**:  
+Note: Requesting multiple fonts may slow down your web pages! So be careful about that.  
+To use multiple Google fonts, just separate the font names with a pipe character (|), like this:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+<style>
+h1.a {
+  font-family: "Audiowide", sans-serif;
+}
+h1.b {
+  font-family: "Sofia", sans-serif;
+}
+h1.c {
+  font-family: "Trirong", serif;
+}
+</style>
+</head>
+<body>
+<h1 class="a">Audiowide Font</h1>
+<h1 class="b">Sofia Font</h1>
+<h1 class="c">Trirong Font</h1>
+</body>
+</html>
+```
+
+**Styling Google Fonts**:  
+
+```html
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<style>
+body {
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+  text-shadow: 3px 3px 3px #ababab;
+}
+</style>
+</head>
+```
+
+**Enabling Font Effects**:  
+Google have also enabled different font effects that you can use.  
+First add effect=effectname to the Google API, then add a special class name to the element that is going to use the special effect.  
+The class name always starts with font-effect- and ends with the effectname.
+
+```html
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+<style>
+body {
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1 class="font-effect-fire">Sofia on Fire</h1>
+
+</body>
+```
+
+To request multiple font effects, just separate the effect names with a pipe character (|), like this:
+
+```html
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+<style>
+body {
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1 class="font-effect-neon">Neon Effect</h1>
+<h1 class="font-effect-outline">Outline Effect</h1>
+<h1 class="font-effect-emboss">Emboss Effect</h1>
+<h1 class="font-effect-shadow-multiple">Multiple Shadow Effect</h1>
+
+</body>
+```
+
+### CSS Great Font Pairings
+
+**Font Pairing Rules**:  
+Here are some basic rules to create great font pairings:
+
+1. Complement.  
+It is always safe to find font pairings that complement one another.  
+A great font combination should harmonize, without being too similar or too different.
+
+2. Use Font Superfamilies.  
+A font superfamily is a set of fonts designed to work well together. So, using different fonts within the same superfamily is safe.  
+For example, the Lucida superfamily contains the following fonts: Lucida Sans, Lucida Serif, Lucida Typewriter Sans, Lucida Typewriter Serif and Lucida Math.
+
+3. Contrast is King.  
+Two fonts that are too similar will often conflict. However, contrasts, done the right way, brings out the best in each font.  
+Example: Combining serif with sans serif is a well known combination.  
+A strong superfamily includes both serif and sans serif variations of the same font (e.g. Lucida and Lucida Sans).
+
+4. Choose Only One Boss.  
+One font should be the boss. This establishes a hierarchy for the fonts on your page. This can be achieved by varying the size, weight and color.  
+
+**Examples**:  
+
+* Georgia and Verdana;
+
+```html
+body {
+  background-color: black;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  color: gray;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 60px;
+  color: white;
+}
+```
+
+* Helvetica and Garamond;
+
+**Popular Google Font Pairings**:  
+
+* Merriweather and Open Sans
+* Ubuntu and Lora
+* Abril Fatface and Poppins
+* Cinzel and Fauna One
+* Fjalla One and Libre Baskerville
+* Space Mono and Muli
+* Spectral and Rubik
+* Oswald and Noto Sans
+
+### CSS Font Property
+
+To shorten the code, it is also possible to specify all the individual font properties in one property.  
+The font property is a shorthand property for:
+
+* font-style
+* font-variant
+* font-weight
+* font-size/line-height
+* font-family
+Note: The font-size and font-family values are required. If one of the other values is missing, their default value are used.
+
+```html
+p.a {
+  font: 20px Arial, sans-serif;
+}
+
+p.b {
+  font: italic small-caps bold 12px/30px Georgia, serif;
+}
+```
+
+**All CSS Font Properties**:  
+
+| Property | Description |
+| font | Sets all the font properties in one declaration |
+| font-family | Specifies the font family for text |
+| font-size | Specifies the font size of text |
+| font-style | Specifies the font style for text |
+| font-variant | Specifies whether or not a text should be displayed in a small-caps font |
+| font-weight | Specifies the weight of a font |
+
+## CSS Icons
+
+The simplest way to add an icon to your HTML page, is with an icon library, such as Font Awesome.  
+Add the name of the specified icon class to any inline HTML element (like `<i>` or `<span>`).  
+All the icons in the icon libraries below, are scalable vectors that can be customized with CSS (size, color, shadow, etc.).  
+Note: No downloading or installation is required!
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<!--Get your code at fontawesome.com-->
+</head>
+<body>
+
+<i class="fas fa-band-aid"></i>
+<i class="fas fa-cat"></i>
+<i class="fas fa-dragon"></i>
+<i class="far fa-clock"></i>
+<i class="fas fa-clock"></i>
+
+</body>
+</html>
+```
+
+**Font Awesome 4 Icons**:  
+To use the Font Awesome 4 icons, add the following line inside the `<head>` section of your HTML page:  
+Note: No downloading or installation is required!
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<i class="fa fa-cloud"></i>
+<i class="fa fa-heart"></i>
+<i class="fa fa-car"></i>
+<i class="fa fa-file"></i>
+<i class="fa fa-bars"></i>
+
+</body>
+</html>
+```
+
+**List Icons**:  
+The fa-ul and fa-li classes are used to replace default bullets in unordered lists.  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Font Awesome Icons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!--Get your own code at fontawesome.com-->
+</head>
+<body style="font-size:24px;">
+
+<ul class="fa-ul">
+  <li><span class="fa-li"><i class="fas fa-check-square"></i></span>List Item</li>
+  <li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span>List Item</li>
+  <li><span class="fa-li"><i class="fas fa-square"></i></span>List Item</li>
+</ul>
+
+</body>
+</html>
+
+```
+
+**Bootstrap Icons**:  
+To use the Bootstrap glyphicons, add the following line inside the `<head>` section of your HTML page:  
+`<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">`
+
+Note: No downloading or installation is required!
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<i class="glyphicon glyphicon-cloud"></i>
+<i class="glyphicon glyphicon-remove"></i>
+<i class="glyphicon glyphicon-user"></i>
+<i class="glyphicon glyphicon-envelope"></i>
+<i class="glyphicon glyphicon-thumbs-up"></i>
+
+</body>
+</html>
+```
+
+## CSS Links
+
+**Styling Links**:  
+Links can be styled with any CSS property (e.g. color, font-family, background, etc.).
+
+```css
+a {
+  color: hotpink;
+}
+```
+
+In addition, links can be styled differently depending on what state they are in.
+
+The four links states are:
+
+* a:link - a normal, unvisited link
+* a:visited - a link the user has visited
+* a:hover - a link when the user mouses over it
+* a:active - a link the moment it is clicked
+
+When setting the style for several link states, there are some order rules:
+
+* a:hover MUST come after a:link and a:visited
+* a:active MUST come after a:hover
+
+**Text Decoration**:  
+The text-decoration property is mostly used to remove underlines from links:
+
+```css
+a:link {
+  text-decoration: none;
+}
+```
+
+**Background Color**:  
+The background-color property can be used to specify a background color for links:
+
+```css
+a:link {
+  background-color: yellow;
+}
+```
+
+**Link Buttons**:  
+This example demonstrates a more advanced example where we combine several CSS properties to display links as boxes/buttons:
+
+```css
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+```
+
+This example demonstrates the different types of cursors (can be useful for links):
+
+```html
+<span style="cursor: auto">auto</span><br>
+<span style="cursor: crosshair">crosshair</span><br>
+<span style="cursor: default">default</span><br>
+<span style="cursor: e-resize">e-resize</span><br>
+<span style="cursor: help">help</span><br>
+<span style="cursor: move">move</span><br>
+<span style="cursor: n-resize">n-resize</span><br>
+<span style="cursor: ne-resize">ne-resize</span><br>
+<span style="cursor: nw-resize">nw-resize</span><br>
+<span style="cursor: pointer">pointer</span><br>
+<span style="cursor: progress">progress</span><br>
+<span style="cursor: s-resize">s-resize</span><br>
+<span style="cursor: se-resize">se-resize</span><br>
+<span style="cursor: sw-resize">sw-resize</span><br>
+<span style="cursor: text">text</span><br>
+<span style="cursor: w-resize">w-resize</span><br>
+<span style="cursor: wait">wait</span>
+```
+
+## CSS Lists
+
+In HTML, there are two main types of lists:
+
+* unordered lists (`<ul>`) - the list items are marked with bullets
+* ordered lists (`<ol>`) - the list items are marked with numbers or letters
+
+The CSS list properties allow you to:
+
+* Set different list item markers for ordered lists
+* Set different list item markers for unordered lists
+* Set an image as the list item marker
+* Add background colors to lists and list items
+
+**All CSS List Properties**:  
+
+| Property | Description |
+| list-style | Sets all the properties for a list in one declaration |
+| list-style-image | Specifies an image as the list-item marker |
+| list-style-position | Specifies the position of the list-item markers (bullet points) |
+| list-style-type | Specifies the type of list-item marker |
+
+**Different List Item Markers**:  
+The list-style-type property specifies the type of list item marker.  
+The following example shows some of the available list item markers:
+
+```css
+ul.a {
+  list-style-type: circle;
+}
+
+ul.b {
+  list-style-type: square;
+}
+
+ol.c {
+  list-style-type: upper-roman;
+}
+
+ol.d {
+  list-style-type: lower-alpha;
+}
+```
+
+**An Image as The List Item Marker**:  
+The list-style-image property specifies an image as the list item marker:
+
+```css
+ul {
+  list-style-image: url('sqpurple.gif');
+}
+```
+
+**Position The List Item Markers**:  
+The list-style-position property specifies the position of the list-item markers (bullet points).  
+`"list-style-position: outside;"` means that the bullet points will be outside the list item.  
+The start of each line of a list item will be aligned vertically.  
+`"list-style-position: inside;"` means that the bullet points will be inside the list item.  
+As it is part of the list item, it will be part of the text and push the text at the start:
+
+```css
+ul.a {
+  list-style-position: outside;
+}
+
+ul.b {
+  list-style-position: inside;
+}
+```
+
+**Remove Default Settings**:  
+The list-style-type:none property can also be used to remove the markers/bullets.  
+Note that the list also has default margin and padding.  
+To remove this, add margin:0 and padding:0 to `<ul>` or `<ol>`:
+
+```css
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+```
+
+**List - Shorthand property**:  
+The list-style property is a shorthand property.  
+It is used to set all the list properties in one declaration:
+
+```css
+ul {
+  list-style: square inside url("sqpurple.gif");
+}
+```
+
+When using the shorthand property, the order of the property values are:
+
+* list-style-type (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed)
+* list-style-position (specifies whether the list-item markers should appear inside or outside the content flow)
+* list-style-image (specifies an image as the list item marker)
+
+If one of the property values above are missing, the default value for the missing property will be inserted, if any.
+
+**Styling List With Colors**:  
+We can also style lists with colors, to make them look a little more interesting.  
+Anything added to the `<ol>` or `<ul>` tag, affects the entire list, while properties added to the `<li>` tag will affect the individual list items:
+
+```css
+ol {
+  background: #ff9999;
+  padding: 20px;
+}
+
+ul {
+  background: #3399ff;
+  padding: 20px;
+}
+
+ol li {
+  background: #ffe5e5;
+  padding: 5px;
+  margin-left: 35px;
+}
+
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+}
+
+```
+
+Customized list with a red left border:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  border-left: 5px solid red;
+  background-color: #f1f1f1;
+  list-style-type: none;
+  padding: 10px 20px;
+}
+</style>
+</head>
+<body>
+
+<h2>List with a red left border</h2>
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Coca Cola</li>
+</ul>
+
+</body>
+</html>
+
+```
+
+## CSS Tables
+
+**CSS Table Properties**:  
+
+| Property | Description |
+| border | Sets all the border properties in one declaration |
+| border-collapse | Specifies whether or not table borders should be collapsed |
+| border-spacing | Specifies the distance between the borders of adjacent cells |
+| caption-side | Specifies the placement of a table caption |
+| empty-cells | Specifies whether or not to display borders and background on empty cells in a table |
+| table-layout | Sets the layout algorithm to be used for a table |
+
+**Table Borders**:  
+To specify table borders in CSS, use the border property.  
+The example below specifies a black border for `<table>`, `<th>`, and `<td>` elements:
+
+```css
+table, th, td {
+  border: 1px solid black;
+}
+```
+
+**Double Borders**:  
+Notice that the table in the examples above have double borders.  
+This is because both the table and the `<th>` and `<td>` elements have separate borders.
+
+To remove double borders, take a look at the example below.
+
+**Collapse Table Borders**:  
+The border-collapse property sets whether the table borders should be collapsed into a single border:
+
+```css
+table {
+  border-collapse: collapse;
+}
+```
+
+If you only want a border around the table, only specify the border property for `<table>`:
+
+```css
+table {
+  border: 1px solid black;
+}
+```
+
+**Table Width and Height**:  
+The width and height of a table are defined by the width and height properties.  
+The example below sets the width of the table to 100%, and the height of the `<th>` elements to 70px:
+
+```css
+table {
+  width: 100%;
+}
+
+th {
+  height: 70px;
+}
+```
+
+**Horizontal Alignment**:  
+The text-align property sets the horizontal alignment (like left, right, or center) of the content in `<th>` or `<td>`.  
+By default, the content of `<th>` elements are center-aligned and the content of `<td>` elements are left-aligned.  
+To center-align the content of  `<td>` elements as well, use text-align: center:
+
+```css
+td {
+  text-align: center;
+}
+```
+
+**Vertical Alignment**:  
+The vertical-align property sets the vertical alignment (like top, bottom, or middle) of the content in `<th>` or `<td>`.  
+By default, the vertical alignment of the content in a table is middle (for both `<th>` and `<td>` elements).  
+The following example sets the vertical text alignment to bottom for `<td>` elements:
+
+```css
+td {
+  height: 50px;
+  vertical-align: bottom;
+}
+```
+
+**Table Padding**:  
+To control the space between the border and the content in a table, use the padding property on `<td>` and `<th>` elements:
+
+```css
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+```
+
+**Horizontal Dividers**:  
+Add the border-bottom property to `<th>` and `<td>` for horizontal dividers:
+
+```css
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+```
+
+**Hoverable Table**:  
+Use the :hover selector on `<tr>` to highlight table rows on mouse over:
+`tr:hover {background-color: yellow;}`
+
+**Striped Tables**:  
+For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows:  
+`tr:nth-child(even) {background-color: #f2f2f2;}`
+
+**Table Color**:  
+The example below specifies the background color and text color of `<th>` elements:  
+
+```css
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+```
+
+**Responsive Table**:  
+A responsive table will display a horizontal scroll bar if the screen is too small to display the full content.  
+Add a container element (like `<div>`) with overflow-x:auto around the `<table>` element to make it responsive:
+
+```html
+<div style="overflow-x:auto;">
+
+<table>
+... table content ...
+</table>
+
+</div>
+```
+
+**Set the position of the table caption**:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td, th {
+  border: 1px solid black;
+}
+
+caption {
+  caption-side: bottom;
+}
+</style>
+</head>
+```
+
+## CSS Layout - The display Property
+
+The display property specifies if/how an element is displayed.  
+Every HTML element has a default display value depending on what type of element it is.  
+The default display value for most elements is block or inline.
+
+**CSS Display/Visibility Properties**:  
+
+| Property | Description |
+| display | Specifies how an element should be displayed |
+| visibility | Specifies whether or not an element should be visible |
+
+**Block-level Elements**:  
+A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).  
+Examples of block-level elements:
+
+* `<div>`
+* `<h1> - <h6>`
+* `<p>`
+* `<form>`
+* `<header>`
+* `<footer>`
+* `<section>`
+
+**Inline Elements**:  
+An inline element does not start on a new line and only takes up as much width as necessary.  
+Examples of inline elements:
+
+* `<span>`
+* `<a>`
+* `<img>`
+
+**Display: none;**:  
+display: none; is commonly used with JavaScript to hide and show elements without deleting and recreating them.  
+
+The `<script>` element uses display: none; as default.  
+
+**Override The Default Display Value**:  
+As mentioned, every element has a default display value.  
+However, you can override this.  
+Changing an inline element to a block element, or vice versa, can be useful for making the page look a specific way, and still follow the web standards.  
+A common example is making inline `<li>` elements for horizontal menus:
+
+```css
+li {
+  display: inline;
+}
+```
+
+Note: Setting the display property of an element only changes how the element is displayed, NOT what kind of element it is.  
+So, an inline element with display: block; is not allowed to have other block elements inside it.
+
+**Hide an Element - display:none or visibility:hidden?**  
+
+Hiding an element can be done by setting the display property to none.  
+The element will be hidden, and the page will be displayed as if the element is not there:
+
+```css
+h1.hidden {
+  display: none;
+}
+```
+
+visibility:hidden; also hides an element.  
+However, the element will still take up the same space as before.  
+The element will be hidden, but still affect the layout:
+
+```css
+h1.hidden {
+  visibility: hidden;
+}
+```
+
+## CSS Layout - width and max-width
+
+**Using width, max-width and margin: auto;**
+
+As mentioned in the previous chapter; a block-level element always takes up the full width available (stretches out to the left and right as far as it can).  
+Setting the width of a block-level element will prevent it from stretching out to the edges of its container.  
+Then, you can set the margins to auto, to horizontally center the element within its container.  
+The element will take up the specified width, and the remaining space will be split equally between the two margins:
+
+Note: The problem with the `<div>` above occurs when the browser window is smaller than the width of the element.  
+The browser then adds a horizontal scrollbar to the page.
+
+Using max-width instead, in this situation, will improve the browser's handling of small windows.  
+This is important when making a site usable on small devices:
+
+```css
+div.ex2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+```
+
+## CSS Layout - The position Property
+
+The position property specifies the type of positioning method used for an element.  
+There are five different position values:
+
+* static
+* relative
+* fixed
+* absolute
+* sticky
+
+Elements are then positioned using the top, bottom, left, and right properties.  
+However, these properties will not work unless the position property is set first.  
+They also work differently depending on the position value.
+
+**All CSS Positioning Properties**:  
+
+| Property | Description |
+| bottom | Sets the bottom margin edge for a positioned box |
+| clip | Clips an absolutely positioned element |
+| left | Sets the left margin edge for a positioned box |
+| position | Specifies the type of positioning for an element |
+| right | Sets the right margin edge for a positioned box |
+| top | Sets the top margin edge for a positioned box |
+
+**position: static;**  
+HTML elements are positioned static by default.  
+Static positioned elements are not affected by the top, bottom, left, and right properties.  
+An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page.
+
+**position: relative;**  
+An element with position: relative; is positioned relative to its normal position.  
+Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position.  
+Other content will not be adjusted to fit into any gap left by the element.
+
+```css
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+```
+
+**position: fixed;**  
+An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled.  
+The top, right, bottom, and left properties are used to position the element.  
+A fixed element does not leave a gap in the page where it would normally have been located.  
+Notice the fixed element in the lower-right corner of the page. Here is the CSS that is used:
+
+```css
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+}
+```
+
+**position: absolute;**  
+An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).  
+However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.  
+Note: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+
+```css
+div.relative {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 3px solid #73AD21;
+}
+
+div.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+}
+```
+
+**position: sticky;**  
+An element with position: sticky; is positioned based on the user's scroll position.  
+A sticky element toggles between relative and fixed, depending on the scroll position.  
+It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
+
+Note: Internet Explorer does not support sticky positioning.  
+Safari requires a -webkit- prefix (see example below).  
+You must also specify at least one of top, right, bottom or left for sticky positioning to work.
+
+```css
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: green;
+  border: 2px solid #4CAF50;
+}
+```
+
+**Positioning Text In an Image**:  
+How to position text over an image:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  position: relative;
+}
+
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+img { 
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+}
+</style>
+</head>
+<body>
+
+<h2>Image Text</h2>
+<p>Add some text to an image in the top left corner:</p>
+
+<div class="container">
+  <img src="img_5terre_wide.jpg" alt="Cinque Terre" width="1000" height="300">
+  <div class="topleft">Top Left</div>
+</div>
+```
+
+**Set the shape of an element**:  
+This example demonstrates how to set the shape of an element. The element is clipped into this shape, and displayed.
+
+```css
+img {
+  position: absolute;
+  clip: rect(0px,60px,200px,0px);
+}
+```
+
+## CSS Layout - The z-index Property
+
+When elements are positioned, they can overlap other elements.  
+The z-index property specifies the stack order of an element (which element should be placed in front of, or behind, the others).  
+An element can have a positive or negative stack order:
+
+```css
+img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+```
+
+Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) and flex items (elements that are direct children of display: flex elements).
+
+**Without z-index**:  
+If two positioned elements overlap each other without a z-index specified, the element defined last in the HTML code will be shown on top.
+
+## CSS Layout - Overflow
+
+The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.  
+The overflow property has the following values:
+
+* visible - Default. The overflow is not clipped. The content renders outside the element's box
+* hidden - The overflow is clipped, and the rest of the content will be invisible
+* scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content. Note that this will add a scrollbar both horizontally and vertically (even if you do not need it)
+* auto - Similar to scroll, but it adds scrollbars only when necessary
+
+Note: The overflow property only works for block elements with a specified height.
+
+**All CSS Overflow Properties**:  
+
+| Property | Description |
+| overflow | Specifies what happens if content overflows an element's box |
+| overflow-wrap | Specifies whether or not the browser can break lines with long words, if they overflow its container |
+| overflow-x | Specifies what to do with the left/right edges of the content if it overflows the element's content area |
+| overflow-y | Specifies what to do with the top/bottom edges of the content if it overflows the element's content area |
+
+**overflow-x and overflow-y**:  
+The overflow-x and overflow-y properties specifies whether to change the overflow of content just horizontally or vertically (or both):
+
+* overflow-x specifies what to do with the left/right edges of the content.
+* overflow-y specifies what to do with the top/bottom edges of the content.
+
+```css
+div {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+}
+```
+
+## CSS Layout - float and clear
+
+The CSS float property specifies how an element should float.  
+The CSS clear property specifies what elements can float beside the cleared element and on which side.
+
+**All CSS Float Properties**:  
+
+| Property | Description  |
+| box-sizing | Defines how the width and height of an element are calculated: should they include padding and borders, or not |
+| clear | Specifies what should happen with the element that is next to a floating element |
+| float | Specifies whether an element should float to the left, right, or not at all |
+| overflow | Specifies what happens if content overflows an element's box |
+| overflow-x | Specifies what to do with the left/right edges of the content if it overflows the element's content area |
+| overflow-y | Specifies what to do with the top/bottom edges of the content if it overflows the element's content area |
+
+### The float Property
+
+The float property is used for positioning and formatting content e.g. let an image float left to the text in a container.  
+The float property can have one of the following values:
+
+* left - The element floats to the left of its container
+* right - The element floats to the right of its container
+* none - The element does not float (will be displayed just where it occurs in the text). This is default
+* inherit - The element inherits the float value of its parent
+
+In its simplest use, the float property can be used to wrap text around images.
+
+```css
+img {
+  float: right;
+}
+```
+
+**Float Next To Each Other**:  
+Normally div elements will be displayed on top of each other.  
+However, if we use float: left we can let elements float next to each other:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  float: left;
+  padding: 15px; 
+}
+
+.div1 {
+  background: red;
+}
+
+.div2 {
+  background: yellow;
+}
+
+.div3 {
+  background: green;
+}
+</style>
+</head>
+<body>
+
+<h2>Float Next To Each Other</h2>
+
+<p>In this example, the three divs will float next to each other.</p>
+
+<div class="div1">Div 1</div>
+<div class="div2">Div 2</div>
+<div class="div3">Div 3</div>
+
+</body>
+</html>
+```
+
+### The clear Property
+
+When we use the float property, and we want the next element below (not on right or left), we will have to use the clear property.  
+The clear property specifies what should happen with the element that is next to a floating element.  
+The clear property can have one of the following values:
+
+* none - The element is not pushed below left or right floated elements. This is default
+* left - The element is pushed below left floated elements
+* right - The element is pushed below right floated elements
+* both - The element is pushed below both left and right floated elements
+* inherit - The element inherits the clear value from its parent
+
+When clearing floats, you should match the clear to the float:  
+If an element is floated to the left, then you should clear to the left.  
+Your floated element will continue to float, but the cleared element will appear below it on the web page.
+
+```css
+div1 {
+  float: left;
+}
+
+div2 {
+  clear: left;
+}
+```
+
+**The clearfix Hack**:  
+If a floated element is taller than the containing element, it will "overflow" outside of its container.  
+We can then add a clearfix hack to solve this problem:
+
+```css
+.clearfix {
+  overflow: auto;
+}
+```
+
+The overflow: auto clearfix works well as long as you are able to keep control of your margins and padding (else you might see scrollbars).  
+The new, modern clearfix hack however, is safer to use, and the following code is used for most webpages:
+
+```css
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+```
+
+### Examples
+
+**Grid of Boxes / Equal Width Boxes**:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+<h2>Grid of Boxes</h2>
+<p>Float boxes side by side:</p>
+
+<div class="clearfix">
+  <div class="box" style="background-color:#bbb">
+  <p>Some text inside the box.</p>
+  </div>
+  <div class="box" style="background-color:#ccc">
+  <p>Some text inside the box.</p>
+  </div>
+  <div class="box" style="background-color:#ddd">
+  <p>Some text inside the box.</p>
+  </div>
+</div>
+```
+
+What is box-sizing?
+
+You can easily create three floating boxes side by side.  
+However, when you add something that enlarges the width of each box (e.g. padding or borders), the box will break.  
+The box-sizing property allows us to include the padding and border in the box's total width (and height), making sure that the padding stays inside of the box and that it does not break.
+
+**Images Side By Side**:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.img-container {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+<h2>Images Side by Side</h2>
+<p>Float images side by side:</p>
+
+<div class="clearfix">
+  <div class="img-container">
+  <img src="img_5terre.jpg" alt="Italy" style="width:100%">
+  </div>
+  <div class="img-container">
+  <img src="img_forest.jpg" alt="Forest" style="width:100%">
+  </div>
+  <div class="img-container">
+  <img src="img_mountains.jpg" alt="Mountains" style="width:100%">
+  </div>
+</div>
+```
+
+**Equal Height Boxes**:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 50%;
+  padding: 50px;
+  height: 300px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+<h2>Equal Height Boxes</h2>
+<p>Floating boxes with equal heights:</p>
+
+<div class="clearfix">
+  <div class="box" style="background-color:#bbb">
+  <h2>Box 1</h2>
+  <p>Some content, some content, some content</p>
+  </div>
+  <div class="box" style="background-color:#ccc">
+  <h2>Box 2</h2>
+  <p>Some content, some content, some content</p>
+  <p>Some content, some content, some content</p>
+  <p>Some content, some content, some content</p>
+  </div>
+</div>
+```
+
+**Navigation Menu**:  
+You can also use float with a list of hyperlinks to create a horizontal menu:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#home" class="active">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+</body>
+</html>
+```
+
+**Web Layout Example**:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.header, .footer {
+  background-color: grey;
+  color: white;
+  padding: 15px;
+}
+
+.column {
+  float: left;
+  padding: 15px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.menu {
+  width: 25%;
+}
+
+.content {
+  width: 75%;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #33b5e5;
+  color: #ffffff;
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Chania</h1>
+</div>
+
+<div class="clearfix">
+  <div class="column menu">
+    <ul>
+      <li>The Flight</li>
+      <li>The City</li>
+      <li>The Island</li>
+      <li>The Food</li>
+    </ul>
+  </div>
+
+  <div class="column content">
+    <h1>The City</h1>
+    <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+    <p>You will learn more about web layout and responsive web pages in a later chapter.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Footer Text</p>
+</div>
+
+</body>
+</html>
+```
+
+**Let the first letter of a paragraph float to the left**:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+span {
+  float: left;
+  width: 0.7em;
+  font-size: 400%;
+  font-family: algerian, courier;
+  line-height: 80%;
+}
+</style>
+</head>
+<body>
+
+<h2>Style the first letter of a paragraph and let it float left</h2>
+
+<p>
+<span>H</span>ere, the first letter of this text is embedded in a span element.
+```
+
+## CSS Layout - display: inline-block
+
+**The display: inline-block Value**:  
+Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.  
+Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.  
+
+Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.  
+
+**Using inline-block to Create Navigation Links**:  
+One common use for display: inline-block is to display list items horizontally instead of vertically.  
+The following example creates horizontal navigation links:
+
+```css
+.nav {
+  background-color: yellow;
+  list-style-type: none;
+  text-align: center; 
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+```
+
+## CSS Layout - Horizontal & Vertical Align
+
+**Center Align Elements**:  
+To horizontally center a block element (like `<div>`), use margin: auto;  
+Setting the width of the element will prevent it from stretching out to the edges of its container.  
+The element will then take up the specified width, and the remaining space will be split equally between the two margins:
+
+```css
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+```
+
+Note: Center aligning has no effect if the width property is not set (or set to 100%).
+
+**Center Align Text**:  
+To just center the text inside an element, use text-align: center;
+
+```css
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+```
+
+**Center an Image**:  
+To center an image, set left and right margin to auto and make it into a block element:
+
+```css
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+```
+
+**Left and Right Align - Using position**
+One method for aligning elements is to use position: absolute;
+
+```css
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+```
+
+Note: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+
+**Left and Right Align - Using float**:  
+Another method for aligning elements is to use the float property:  
+
+```css
+.right {
+  float: right;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+```
+
+**The clearfix Hack**:  
+Note: If an element is taller than the element containing it, and it is floated, it will overflow outside of its container.  
+You can use the "clearfix hack" to fix this (see example below).  
+Then we can add the clearfix hack to the containing element to fix this problem:
+
+```css
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+```
+
+**Center Vertically - Using padding**:  
+There are many ways to center an element vertically in CSS. A simple solution is to use top and bottom padding:
+
+```css
+.center {
+  padding: 70px 0;
+  border: 3px solid green;
+}
+```
+
+To center both vertically and horizontally, use padding and text-align: center:
+
+```css
+.center {
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;
+}
+```
+
+**Center Vertically - Using line-height**:  
+Another trick is to use the line-height property with a value that is equal to the height property:
+
+```css
+.center {
+  line-height: 200px;
+  height: 200px;
+  border: 3px solid green;
+  text-align: center;
+}
+
+/* If the text has multiple lines, add the following: */
+.center p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+**Center Vertically - Using position & transform**:  
+If padding and line-height are not options, another solution is to use positioning and the transform property:
+
+```css
+.center {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+**Center Vertically - Using Flexbox**:  
+You can also use flexbox to center things. Just note that flexbox is not supported in IE10 and earlier versions:
+
+```css
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+}
+```
 

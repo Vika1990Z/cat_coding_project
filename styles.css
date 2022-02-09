@@ -2,6 +2,21 @@
   color:rgb(58, 19, 19);
 }
 
+.all {
+  margin: 0;
+  padding: 10px;
+  background: lightgray url(assets/img/ph1.jpg) no-repeat fixed;
+  background-position: center;
+  background-size: cover;
+
+}
+.header, .footer {
+  color: white;
+  margin: 50px;
+  padding: 20px;
+}
+
+
 ::selection {
   background-color: royalblue;
 }
@@ -26,7 +41,7 @@ h1, h2, h3, h4, h5, h5 {
 
 h1 {
   color: rgb(255, 254, 254);
-  font-family: Copperplate, Papyrus, fantasy;
+  font-family: "Audiowide", sans-serif;
   font-size: 3em;
   text-shadow: 2px 2px 5px red;
 }
@@ -72,6 +87,7 @@ p {
   margin-left: 15px;
   float: right;
   text-align: center;
+  font-size: 150%;
 }
 
 div:hover .tootlip {
@@ -80,24 +96,23 @@ div:hover .tootlip {
 
 div:hover {
   background-color: rgba(190, 136, 166, 0.5);
+  outline: 10px solid rgba(190, 136, 166, 0.3);
+  border: 3px solid black;
+}
+
+div:first-child:hover {
+  background-color: rgba(116, 113, 115, 0.5);
+  outline: none
 }
 
 .point {
   background-color: transparent;
   color: rgb(58, 19, 19);
-  border: 2px solid black;
+  border: 3px solid black;
   margin: 50px;
   padding: 20px;
   text-shadow: 1px 1px 3px white;
-}
-
-.all {
-  margin: 0;
-  padding: 10px;
-  background: lightgray url(assets/img/ph1.jpg) no-repeat fixed;
-  background-position: center;
-  background-size: cover;
-
+  overflow: auto;
 }
 
 #practicing {
@@ -112,37 +127,45 @@ div:hover {
 table {
   border-collapse: collapse;
   width: 100%;
+  max-width: 500px; 
   color: rgb(58, 19, 19);
   font-weight: bold;
 }
 
 td {
   padding: 8px;
-  text-align: center;
+  text-align: left;
+  text-transform: capitalize;
+  font-style: italic;
   text-shadow: 1px 1px 3px white;
   border-bottom: 1px solid rgb(58, 19, 19);
 }
 
 th {
   padding: 8px;
-  font-size: 120%;
-  text-align: center;
+  text-transform:uppercase;
+  text-align: left;
   text-shadow: 1px 1px 3px white;
   border-bottom: 1px solid rgb(58, 19, 19);
 }
 
-tr:hover {background-color: rgba(190, 136, 166, 0.8);}
+tr:hover {
+  background-color: rgba(77, 57, 67, 0.8);
+  cursor: pointer;
+}
 
 form {
   background-color: transparent;
   text-align: left;
   width: 50%;
+  max-width: 300px;
   font-style: italic;
   font-size: 0.9em;
 }
 
 form:hover {
-  background-color: rgba(190, 136, 166, 0.8);
+  background-color: rgba(77, 57, 67, 0.8);
+  cursor: pointer;
 }
 a:link {
   color: rgb(58, 19, 19);
@@ -160,6 +183,7 @@ a:hover {
   color: #146161;
   background-color: transparent;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 a:active {
@@ -176,5 +200,5 @@ iframe {
 }
 
 ul {
-  font-size: 0.8em;
+  font-style: italic;
 }
