@@ -1,0 +1,53 @@
+div.gallery {
+    margin: 5px;
+    border: 2px solid rgb(58, 19, 19);
+    float: left;
+    width: 32.1%;
+    height: 105;
+  
+  }
+  
+  div.gallery:hover {
+    border: 2px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+body {
+    background-color: rgba(46, 12, 12, 0.9);
+    padding: 10px;
+    /* background:url(assets/img/gaya-3.jpg) no-repeat fixed; */
+    background-position: center;
+    background-size: cover;
+
+
+}  
+
+.point-g {
+    background-color: rgba(190, 136, 166, 0.2);
+    color: rgb(58, 19, 19);
+    border: 3px solid black;
+    margin: 50px auto;
+    padding: 20px;
+    text-shadow: 1px 1px 3px white;
+    overflow: auto;
+    height: 40vw;
+}
+
+.header-g {
+    color: rgba(255, 254, 254, 1);
+    font-family: "Audiowide", sans-serif;
+    font-size: 1.8vw;
+    text-shadow: 5px 5px 5px rgb(58, 19, 19);
+    text-align: center;
+    padding-top: 0vw;
+}

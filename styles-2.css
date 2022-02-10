@@ -4,8 +4,8 @@
 
 .header, .footer {
     color: white;
-    margin: 50px;
-    padding: 20px;
+    margin: 0px;
+    padding: 0px;
 }
 
 ::selection {
@@ -34,26 +34,14 @@ body, html {
 
 .all h1, h2, h3, h4, h5, h5 {
     text-align: center;
-    font-size: 2vw;
 }
 
 .all h1 {
-    color: rgb(255, 254, 254);
+    color: rgba(255, 254, 254, 1);
     font-family: "Audiowide", sans-serif;
-    font-size: 5vw;
+    font-size: 4vw;
     text-shadow: 5px 5px 5px rgb(58, 19, 19);
 }
-
-/*
-h1:hover {
-    color:rgb(58, 19, 19);
-    border: 2px solid rgb(58, 19, 19);
-    margin-right: 200px;
-    margin-left: 200px;
-    background-color: rgba(190, 136, 166, 0.8);
-    padding: 20px;
-}
-*/
 
 .all h2 {
     font-size: 3.5vw;
@@ -67,6 +55,13 @@ h1:hover {
     font-size: 200%;
     border: 2px solid rgb(58, 19, 19);
     font-family: "Times New Roman", Times, serif;
+}
+
+.all h3::first-letter {
+    color: #ff0000;
+    font-size: 200%;
+    font-family: "Brush Script MT", cursive;  
+    text-decoration-line: underline;  
 }
 
 .all p {
@@ -92,8 +87,8 @@ h1:hover {
     visibility: visible;
 } 
 
-.point {
-    background-color: transparent;
+div.point {
+    background-color: rgba(190, 136, 166, 0.2);
     color: rgb(58, 19, 19);
     border: 3px solid black;
     margin: 50px auto;
@@ -200,19 +195,24 @@ ul {
     list-style-type: none;
     font-family: Copperplate, Papyrus, fantasy;
     position: -webkit-sticky; /* Safari */
-    float: right;
     position: sticky;
     top: 0;
     margin: 0;
     padding: 0;
     width: 100%;
     overflow:scroll;
-    background-color: rgba(119, 119, 119, 0.3);
+    
 }
+
 .topmenu li {
     float: right;
     width: auto;
     font-size: 1.2vw;
+    border-right: 1px solid transparent;
+}
+
+.topmenu li:first-child {
+    border-right: none;
 }
 
 .topmenu li a {
@@ -220,11 +220,13 @@ ul {
     color: white;
     text-align: center;
     padding: 16px;
+    font-size: 1.2vw;
     text-decoration: none;
+    background-color: rgb(129, 35, 35);
 }
 
 .topmenu li a:hover {
-    background-color: rgba(34, 34, 34, 0.8);
+    background-color: rgb(34, 34, 34);
 }
 
 .topmenu li a.active {
@@ -233,11 +235,18 @@ ul {
 }  
 
 .topmenu li a::first-letter {
-    color: #ff0000;
+    color: rgb(255, 0, 0);
     font-size: 200%;
     border: 1px solid rgb(58, 19, 19);
     font-family: "Times New Roman", Times, serif;
 }
+
+@media screen and (max-width: 300px) {
+    ul.topmenu {display:none; margin:auto; background-color: rgba(129, 35, 35, 0.8); }
+    ul.topmenu li a {font-size: small; width: auto; text-align: left;}
+    ul.topmenu li a.active {background-color: #4CAF50;}
+    ul.topmenu li {float:right; }
+  }
 
 .special {
     color: #ff0000;
@@ -267,3 +276,27 @@ ul {
     background-color: transparent;
     text-decoration: none;
 }
+
+.dropbtn {
+    cursor: pointer;
+    text-align: center;
+  }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin:auto;
+    color: #ff0000;
+    font-size: 200%;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+.dropdown-content {
+  display: none;
+  text-align: center;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: inline-block;
+  }
