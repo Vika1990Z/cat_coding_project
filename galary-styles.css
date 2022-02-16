@@ -1,11 +1,13 @@
-div.gallery {
+* {
+  box-sizing: border-box;
+}
+.gallery {
     margin: 5px;
     border: 2px solid rgb(58, 19, 19);
     float: left;
-    width: 32.1%;
     height: 105;
-  
-  }
+    width: 31.8%;
+    }
   
   div.gallery:hover {
     border: 2px solid #777;
@@ -13,8 +15,9 @@ div.gallery {
   
   div.gallery img {
     width: 100%;
-    height: auto;
+    height: 100%;
     text-align: center;
+    object-fit: cover;
   }
   
   div.desc {
@@ -22,26 +25,24 @@ div.gallery {
     text-align: center;
   }
 
-body {
-    background-color: rgba(46, 12, 12, 0.9);
-    padding: 10px;
-    /* background:url(assets/img/gaya-3.jpg) no-repeat fixed; */
-    background-position: center;
-    background-size: cover;
-
-
-}  
-
-.point-g {
-    background-color: rgba(190, 136, 166, 0.2);
-    color: rgb(58, 19, 19);
-    border: 3px solid black;
-    margin: 50px auto;
-    padding: 20px;
-    text-shadow: 1px 1px 3px white;
-    overflow: auto;
-    height: 40vw;
-}
+  @media only screen and (max-width: 700px) {
+    .gallery {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .gallery {
+      width: 100%;
+    }
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }  
 
 .header-g {
     color: rgba(255, 254, 254, 1);

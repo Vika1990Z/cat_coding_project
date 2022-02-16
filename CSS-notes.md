@@ -3664,7 +3664,7 @@ img:hover {
 
 When using the opacity property to add transparency to the background of an element, all of its child elements inherit the same transparency.  
 This can make the text inside a fully transparent element hard to read.  
-If you do not want to apply opacity to child elements, like in our example above, use RGBA color values. 
+If you do not want to apply opacity to child elements, like in our example above, use RGBA color values.
 
 ```css
 div {
@@ -4263,3 +4263,743 @@ Using image sprites will reduce the number of server requests and save bandwidth
 </html>
 ```
 
+## CSS Forms
+
+**Styling Input Fields**:  
+Use the width property to determine the width of the input field:
+
+```css
+input {
+  width: 100%;
+}
+```
+
+The example above applies to all `<input>` elements.  
+If you only want to style a specific input type, you can use attribute selectors:
+
+* `input[type=text]` - will only select text fields
+* `input[type=password]` - will only select password fields
+* `input[type=number]` - will only select number fields
+etc..
+
+**Padded Inputs**:  
+Use the padding property to add space inside the text field.  
+Tip: When you have many inputs after each other, you might also want to add some margin, to add more space outside of them:
+
+```css
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+```
+
+**Bordered Inputs**:  
+Use the border property to change the border size and color, and use the border-radius property to add rounded corners:
+
+```css
+input[type=text] {
+  border: 2px solid red;
+  border-radius: 4px;
+}
+```
+
+**Colored Inputs**:  
+Use the background-color property to add a background color to the input, and the color property to change the text color:
+
+```css
+input[type=text] {
+  background-color: #3CBC8D;
+  color: white;
+}
+```
+
+**Focused Inputs**:  
+By default, some browsers will add a blue outline around the input when it gets focus (clicked on).  
+You can remove this behavior by adding outline: none; to the input.  
+Use the :focus selector to do something with the input field when it gets focus:
+
+```css
+input[type=text]:focus {
+  background-color: lightblue;
+}
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+```
+
+**Input with icon/image**:  
+If you want an icon inside the input, use the background-image property and position it with the background-position property.  
+Also notice that we add a large left padding to reserve the space of the icon:
+
+```css
+input[type=text] {
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+```
+
+**Animated Search Input**:  
+In this example we use the CSS transition property to animate the width of the search input when it gets focus.  
+You will learn more about the transition property later, in our CSS Transitions chapter.
+
+```css
+input[type=text] {
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+```
+
+**Styling Textareas**:  
+Tip: Use the resize property to prevent textareas from being resized (disable the "grabber" in the bottom right corner):
+
+```css
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+```
+
+**Styling Select Menus**:  
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>Styling a select menu</h2>
+
+<form>
+  <select id="country" name="country">
+  <option value="au">Australia</option>
+  <option value="ca">Canada</option>
+  <option value="usa">USA</option>
+  </select>
+</form>
+
+</body>
+</html>
+```
+
+**Styling Input Buttons**:  
+
+```css
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Tip: use width: 100% for full-width buttons */
+```
+
+**Responsive Form**:  
+Resize the browser window to see the effect.  
+When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+```
+
+## CSS Counters
+
+CSS counters are "variables" maintained by CSS whose values can be incremented by CSS rules (to track how many times they are used).  
+Counters let you adjust the appearance of content based on its placement in the document.  
+
+**Automatic Numbering With Counters**:  
+CSS counters are like "variables".  
+The variable values can be incremented by CSS rules (which will track how many times they are used).
+
+To work with CSS counters we will use the following properties:
+
+* counter-reset - Creates or resets a counter
+* counter-increment - Increments a counter value
+* content - Inserts generated content
+* counter() or counters() function - Adds the value of a counter to an element
+To use a CSS counter, it must first be created with counter-reset.
+
+The following example creates a counter for the page (in the body selector), then increments the counter value for each `<h2>` element and adds "Section `<value of the counter>:`" to the beginning of each `<h2>` element:
+
+```css
+body {
+  counter-reset: section;
+}
+
+h2::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+```
+
+## CSS Website Layout
+
+**Header**:  
+A header is usually located at the top of the website (or right below a top navigation menu). It often contains a logo or the website name:
+
+```css
+.header {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 20px;
+}
+```
+
+**Navigation Bar**:  
+A navigation bar contains a list of links to help visitors navigating through your website:
+
+```CSS
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+```
+
+**Content**:  
+The layout in this section, often depends on the target users.  
+The most common layout is one (or combining them) of the following:
+
+1-column (often used for mobile browsers)
+2-column (often used for tablets and laptops)
+3-column layout (only used for desktops)
+
+We will create a 3-column layout, and change it to a 1-column layout on smaller screens:
+
+```css
+/* Create three equal columns that float next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+```
+
+**Unequal Columns**:  
+The main content is the biggest and the most important part of your site.
+
+It is common with unequal column widths, so that most of the space is reserved for the main content. The side content (if any) is often used as an alternative navigation or to specify information relevant to the main content.  
+Change the widths as you like, only remember that it should add up to 100% in total:
+
+```css
+.column {
+  float: left;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+```
+
+**Footer**:  
+The footer is placed at the bottom of your page.  
+It often contains information like copyright and contact info:
+
+```css
+.footer {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 10px;
+}
+```
+
+**Responsive Website Layout**:  
+By using some of the CSS code above, we have created a responsive website layout, which varies between two columns and full-width columns depending on screen width:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>My Website</h1>
+  <p>Resize the browser window to see the effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" style="float:right">Link</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
+</html>
+```
+
+## CSS Units
+
+CSS has several different units for expressing a length.  
+Many CSS properties take "length" values, such as width, margin, padding, font-size, etc.  
+Length is a number followed by a length unit, such as 10px, 2em, etc.
+
+Note: A whitespace cannot appear between the number and the unit.  
+However, if the value is 0, the unit can be omitted.
+
+For some CSS properties, negative lengths are allowed.  
+There are two types of length units: absolute and relative.
+
+**Absolute Lengths**:  
+The absolute length units are fixed and a length expressed in any of these will appear as exactly that size.
+Absolute length units are not recommended for use on screen, because screen sizes vary so much.  
+However, they can be used if the output medium is known, such as for print layout.
+
+| Unit | Description |
+| cm | centimeters |
+| mm | millimeters |
+| in | inches (1in = 96px = 2.54cm) |
+| px * | pixels (1px = 1/96th of 1in) |
+| pt | points (1pt = 1/72 of 1in) |
+| pc | picas (1pc = 12 pt) |
+
+**Relative Lengths**:  
+Relative length units specify a length relative to another length property.  
+Relative length units scales better between different rendering mediums.
+
+| Unit | Description |
+| em | Relative to the font-size of the element (2em means 2 times the size of the current font) |
+| ex | Relative to the x-height of the current font (rarely used) |
+| ch | Relative to width of the "0" (zero) |
+| rem | Relative to font-size of the root element |
+| vw | Relative to 1% of the width of the viewport`*` |
+| vh | Relative to 1% of the height of the viewport `*` |
+| vmin | Relative to 1% of viewport's `*` smaller dimension |
+| vmax | Relative to 1% of viewport's* larger dimension |
+| % | Relative to the parent element |
+
+## CSS Specificity
+
+If there are two or more CSS rules that point to the same element, the selector with the highest specificity value will "win", and its style declaration will be applied to that HTML element.
+
+**Specificity Hierarchy**:  
+Every CSS selector has its place in the specificity hierarchy.  
+There are four categories which define the specificity level of a selector:
+
+* Inline styles - Example: `<h1 style="color: pink;">`
+* IDs - Example: #navbar
+* Classes, pseudo-classes, attribute selectors - Example: .test, :hover, `[href]`
+* Elements and pseudo-elements - Example: h1, :before
+
+**How to Calculate Specificity?**:  
+Memorize how to calculate specificity!  
+Start at 0, add 100 for each ID value, add 10 for each class value (or pseudo-class or attribute selector), add 1 for each element selector or pseudo-element.  
+Note: Inline style gets a specificity value of 1000, and is always given the highest priority!  
+Note 2: There is one exception to this rule: if you use the !important rule, it will even override inline styles!
+
+The table below shows some examples on how to calculate specificity values:
+
+| Selector | Specificity Value | Calculation |
+| p | 1 | 1 |
+| p.test | 11 | 1 + 10 |
+| p#demo | 101 | 1 + 100 |
+| `<p style="color: pink;">` | 1000 | 1000 |
+| #demo | 100 | 100 |
+| .test | 10 | 10 |
+| p.test1.test2 | 21 | 1 + 10 + 10 |
+| #navbar p#demo | 201 | 100 + 1 + 100 |
+| * | 0 | 0 (the universal selector is ignored) |
+
+**Equal specificity:** the latest rule wins - If the same rule is written twice into the external style sheet, then the latest rule wins;
+
+**ID selectors have a higher specificity than attribute selectors** - Look at the following three code lines:
+
+```css
+div#a {background-color: green;}
+#a {background-color: yellow;}
+div[id=a] {background-color: blue;}
+```
+
+**Contextual selectors are more specific than a single element selector** - The embedded style sheet is closer to the element to be styled. So in the following situation
+the latter rule will be applied.
+
+```css
+From external CSS file:
+#content h1 {background-color: red;}
+
+In HTML file:
+<style>
+#content h1 {background-color: yellow;}
+</style>
+```
+
+**A class selector beats any number of element selectors** - a class selector such as .intro beats h1, p, div, etc:
+
+```css
+.intro {background-color: yellow;}
+h1 {background-color: red;}
+```
+
+The universal selector (*) and inherited values have a specificity of 0 - The universal selector (*) and inherited values are ignored!
+
+## CSS The !important Rule
+
+The !important rule in CSS is used to add more importance to a property/value than normal.  
+In fact, if you use the !important rule, it will override ALL previous styling rules for that specific property on that element!
+
+```css
+#myid {
+  background-color: blue;
+}
+
+.myclass {
+  background-color: gray;
+}
+
+p {
+  background-color: red !important;
+}
+```
+
+Example Explained:  
+In the example above. all three paragraphs will get a red background color, even though the ID selector and the class selector has a higher specificity. The !important rule overrides the background-color property in both cases.
+
+**mportant About !important**:  
+The only way to override an !important rule is to include another !important rule on a declaration with the same (or higher) specificity in the source code - and here the problem starts!  
+This makes the CSS code confusing and the debugging will be hard, especially if you have a large style sheet!
+
+**Maybe One or Two Fair Uses of !important**:  
+One way to use !important is if you have to override a style that cannot be overridden in any other way.  
+This could be if you are working on a Content Management System (CMS) and cannot edit the CSS code.  
+Then you can set some custom styles to override some of the CMS styles.
+
+Another way to use !important is: Assume you want a special look for all buttons on a page.  
+Here, buttons are styled with a gray background color, white text, and some padding and border.  
+The look of a button can sometimes change if we put it inside another element with higher specificity, and the properties get in conflict. Here is an example of this:
+
+To "force" all buttons to have the same look, no matter what, we can add the !important rule to the properties of the button, like this:
+
+```css
+.button {
+  background-color: #8c8c8c !important;
+  color: white !important;
+  padding: 5px !important;
+  border: 1px solid black !important;
+}
+
+#myDiv a {
+  color: red;
+  background-color: yellow;
+}
+```
+
+## CSS Math Functions
+
+The CSS math functions allow mathematical expressions to be used as property values.  
+Here, we will explain the calc(), max() and min() functions.
+
+**The calc() Function**:  
+The calc() function performs a calculation to be used as the property value.
+
+```css
+#div1 {
+  position: absolute;
+  left: 50px;
+  width: calc(100% - 100px);
+  border: 1px solid black;
+  background-color: yellow;
+  padding: 5px;
+}
+```
+
+**The max() Function**:  
+The max() function uses the largest value, from a comma-separated list of values, as the property value.
+
+Use max() to set the width of #div1 to whichever value is largest, 50% or 300px:
+
+```css
+#div1 {
+  background-color: yellow;
+  height: 100px;
+  width: max(50%, 300px);
+}
+```
+
+**The min() Function**:  
+The min() function uses the smallest value, from a comma-separated list of values, as the property value.
+
+```css
+Use min() to set the width of #div1 to whichever value is smallest, 50% or 300px:
+
+#div1 {
+  background-color: yellow;
+  height: 100px;
+  width: min(50%, 300px);
+}
+```

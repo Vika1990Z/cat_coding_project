@@ -1,12 +1,31 @@
-* {
-    color:rgb(58, 19, 19);
+body, html {
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;  
+    color:rgb(58, 19, 19);  
+    background-color: rgba(46, 12, 12, 0.9);
+    background:url(assets/img/ph1.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}    
+
+@keyframes opasity {
+    /* to {background-color: rgba(190, 136, 166, 0.9); */
+        to { background-color: rgba(129, 35, 35, 0.8);}
 }
 
+@keyframes extension {
+    to {font-size: 200%}
+}
+  
 .header, .footer {
     color: white;
     margin: 0px;
     padding: 0px;
 }
+
 
 ::selection {
     background-color: rgba(48, 60, 94, 0.863);
@@ -16,62 +35,63 @@
     color: red;
     font-size: 23px;
     font-weight: bold;
-
-}
-body, html {
-    margin: 0;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;  
 }
 
-.all {
-    padding: 10px;
-    background:url(assets/img/ph1.jpg) no-repeat fixed;
-    background-position: center;
-    background-size: cover;
-
-}
-
-.all h1, h2, h3, h4, h5, h5 {
+h1, h2, h3, h4, h5, h5 {
     text-align: center;
 }
 
-.all h1 {
+h1 {
     color: rgba(255, 254, 254, 1);
     font-family: "Audiowide", sans-serif;
-    font-size: 4vw;
+    font-size: max(4vw, 20px);
     text-shadow: 5px 5px 5px rgb(58, 19, 19);
 }
 
-.all h2 {
-    font-size: 3.5vw;
+h2 {
+    font-size: max(3.5vw, 20px);
     text-shadow: 1px 1px 3px white;
     font-family: "Brush Script MT", cursive;
     
 }
 
-.all h2::first-letter {
+h2::first-letter {
     color: #ff0000;
     font-size: 200%;
     border: 2px solid rgb(58, 19, 19);
     font-family: "Times New Roman", Times, serif;
 }
 
-.all h3::first-letter {
+h3 {
+    font-size: max(2.5vw, 16px);
+    color: #ff0000;
+    text-shadow: 1px 1px 3px white;
+    font-family: "Brush Script MT", cursive;
+    
+}
+
+h3::first-letter {
     color: #ff0000;
     font-size: 200%;
     font-family: "Brush Script MT", cursive;  
     text-decoration-line: underline;  
 }
 
-.all p {
-    font-size: 1.2vw;
+h4 {
+    font-size: max(2vw, 14px);
+    text-shadow: 1px 1px 3px white;
+    font-family: "Brush Script MT", cursive;
+    
+}
+
+p {
+    font-size: max(1.2vw, 14px);
     font-weight: bold;
     text-shadow: 1px 1px 3px white;
     word-wrap: break-word;
 }
 
-.all .tootlip {
+.tootlip {
     visibility: hidden;
     background-color: rgba(190, 136, 166, 0.8);
     font-family: "Brush Script MT", cursive;
@@ -80,28 +100,31 @@ body, html {
     margin-left: 15px;
     float: right;
     text-align: center;
-    font-size: 1vw;
+    font-size: max(1.2vw, 14px);
 }
 
-.all div:hover .tootlip {
+div:hover .tootlip {
     visibility: visible;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 } 
 
 div.point {
-    background-color: rgba(190, 136, 166, 0.2);
-    color: rgb(58, 19, 19);
-    border: 3px solid black;
     margin: 50px auto;
     padding: 20px;
-    text-shadow: 1px 1px 3px white;
-    overflow: auto;
     max-width: 600px;
     max-height: 650px;
+    /* background-color: rgba(190, 136, 166, 0.2); */
+    background-color: rgba(129, 35, 35, 0.2);
+    color: rgb(58, 19, 19);
+    text-shadow: 1px 1px 3px white;
+    overflow: scroll;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
-.all .point div:hover {
-    background-color: rgba(190, 136, 166, 0.5);
-    outline: 10px solid rgba(190, 136, 166, 0.3);
+div.point:hover {
     border: 3px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: opasity 2s forwards;
 }
 
 #practicing {   
@@ -112,15 +135,16 @@ div.point {
     padding: 20px;
 } 
 
-.all table {
-    border-collapse: collapse;
+table {
     width: 100%;
     max-width: 500px; 
+    border-collapse: collapse;
     color: rgb(58, 19, 19);
     font-weight: bold;
+    font-size: max(1.2vw, 14px);
 }
 
-.all td {
+td {
     padding: 8px;
     text-align: left;
     text-transform: capitalize;
@@ -129,7 +153,7 @@ div.point {
     border-bottom: 1px solid rgb(58, 19, 19);
 }
 
-.all th {
+th {
     padding: 8px;
     text-transform:uppercase;
     text-align: left;
@@ -137,21 +161,21 @@ div.point {
     border-bottom: 1px solid rgb(58, 19, 19);
 }
 
-.all tr:hover {
+tr:hover {
     background-color: rgba(77, 57, 67, 0.8);
     cursor: pointer;
 }
 
-.all form {
+form {
     background-color: transparent;
     text-align: left;
     width: 50%;
     max-width: 300px;
     font-style: italic;
-    font-size: 0.9em;
+    font-size: max(1.2vw, 14px);
 }
 
-.all form:hover {
+form:hover {
     background-color: rgba(77, 57, 67, 0.8);
     cursor: pointer;
 }
@@ -177,9 +201,16 @@ div.point {
 .location a:active {
     background-color: transparent;
     text-decoration: underline;
+    color:rgb(255, 0, 0)
 }
 
-.all iframe {
+.location a:visited {
+    background-color: transparent;
+    text-decoration: underline;
+    color:rgb(255, 0, 0)
+}
+
+iframe {
     height:400px;
     width:100%;
     max-width: 300px;
@@ -200,15 +231,14 @@ ul {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow:scroll;
-    
+    overflow:scroll;    
 }
 
 .topmenu li {
     float: right;
     width: auto;
-    font-size: 1.2vw;
-    border-right: 1px solid transparent;
+    border: 1px solid transparent;
+    text-align: center;
 }
 
 .topmenu li:first-child {
@@ -219,8 +249,8 @@ ul {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 16px;
-    font-size: 1.2vw;
+    padding: 5px;
+    font-size: max(1.2vw, 13px);
     text-decoration: none;
     background-color: rgb(129, 35, 35);
 }
@@ -241,41 +271,23 @@ ul {
     font-family: "Times New Roman", Times, serif;
 }
 
+@media screen and (max-width: 700px) {
+    .topmenu li {width: max(auto, 150px);}
+    .topmenu li a {
+      float: none;
+      width: 100%;
+      margin: 0;
+    }
+}
 @media screen and (max-width: 300px) {
-    ul.topmenu {display:none; margin:auto; background-color: rgba(129, 35, 35, 0.8); }
-    ul.topmenu li a {font-size: small; width: auto; text-align: left;}
-    ul.topmenu li a.active {background-color: #4CAF50;}
-    ul.topmenu li {float:right; }
+    .topmenu li {display: none;}
+    .topmenu li:first-child {
+      display: list-item;
+      float: none;
+      width: 100%;
+      margin: 0;
+    }
   }
-
-.special {
-    color: #ff0000;
-    font-size: 200%;
-    font-family: "Times New Roman", Times, serif;
-}
-.special a:link {
-    color: rgb(255, 254, 254);
-    font-family: "Audiowide", sans-serif;
-    text-shadow: 5px 5px 5px rgb(58, 19, 19);
-    background-color: transparent;
-    text-decoration: none;
-}
-
-.special a:visited {
-    color: rgb(255, 254, 254);
-    font-family: "Audiowide", sans-serif;
-    text-shadow: 5px 5px 5px rgb(58, 19, 19);
-    background-color: transparent;
-    text-decoration: none;
-}
-
-.special a:hover {
-    color: rgb(255, 254, 254);
-    font-family: "Audiowide", sans-serif;
-    text-shadow: 5px 5px 5px rgb(58, 19, 19);
-    background-color: transparent;
-    text-decoration: none;
-}
 
 .dropbtn {
     cursor: pointer;
