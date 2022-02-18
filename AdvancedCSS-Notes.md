@@ -2052,3 +2052,728 @@ div {
 }
 ```
 
+## CSS User Interface
+
+**CSS Resizing**:  
+The resize property specifies if (and how) an element should be resizable by the user.
+The following example lets the user resize only the width of a `<div>` element:
+
+```css
+div {
+  resize: horizontal;
+  overflow: auto;
+}
+```
+
+The following example lets the user resize only the height of a `<div>` element:
+
+```css
+div {
+  resize: vertical;
+  overflow: auto;
+}
+```
+
+The following example lets the user resize both the height and width of a `<div>` element:
+
+```css
+div {
+  resize: both;
+  overflow: auto;
+}
+```
+
+In many browsers, `<textarea>` is resizable by default. Here, we have used the resize property to disable the resizability:
+
+```css
+textarea {
+  resize: none;
+}
+```
+
+**CSS Outline Offset**:  
+The outline-offset property adds space between an outline and the edge or border of an element.  
+
+Note: Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other content.  
+Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by the width of the outline.
+
+The following example uses the outline-offset property to add space between the border and the outline:
+
+```css
+div.ex1 {
+  margin: 20px;
+  border: 1px solid black;
+  outline: 4px solid red;
+  outline-offset: 15px;
+}
+
+div.ex2 {
+  margin: 10px;
+  border: 1px solid black;
+  outline: 5px dashed blue;
+  outline-offset: 5px;
+}
+```
+
+## CSS Variables - The var() Function
+
+The var() function is used to insert the value of a CSS variable.  
+CSS variables have access to the DOM, which means that you can create variables with local or global scope, change the variables with JavaScript, and change the variables based on media queries.  
+A good way to use CSS variables is when it comes to the colors of your design.  
+Instead of copy and paste the same colors over and over again, you can place them in variables.
+
+**Syntax of the var() Function**:  
+The var() function is used to insert the value of a CSS variable.  
+The syntax of the var() function is as follows:
+
+`var(--name, value)`
+
+* name - Required. The variable name (must start with two dashes)
+* value - Optional. The fallback value (used if the variable is not found)
+
+**How var() Works**:  
+First of all: CSS variables can have a global or local scope.  
+Global variables can be accessed/used through the entire document, while local variables can be used only inside the selector where it is declared.  
+
+To create a variable with global scope, declare it inside the :root selector.  
+The :root selector matches the document's root element.
+
+To create a variable with local scope, declare it inside the selector that is going to use it.
+The following example is equal to the example above, but here we use the var() function.
+
+First, we declare two global variables (--blue and --white).  
+Then, we use the var() function to insert the value of the variables later in the style sheet:
+
+```css
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+body { background-color: var(--blue); }
+
+h2 { border-bottom: 2px solid var(--blue); }
+
+.container {
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+}
+
+button {
+  background-color: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px;
+}
+```
+
+**Advantages of using var() are:**:  
+
+* makes the code easier to read (more understandable)
+* makes it much easier to change the color values
+
+### CSS Overriding Variables
+
+**Override Global Variable With Local Variable**:  
+From the previous page we have learned that global variables can be accessed/used through the entire document, while local variables can be used only inside the selector where it is declared.
+
+Sometimes we want the variables to change only in a specific section of the page.  
+Assume we want a different color of blue for button elements.  
+Then, we can re-declare the --blue variable inside the button selector.  
+When we use var(--blue) inside this selector, it will use the local --blue variable value declared here.  
+We see that the local --blue variable will override the global --blue variable for the button elements:
+
+```css
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--blue);
+}
+
+h2 {
+  border-bottom: 2px solid var(--blue);
+}
+
+.container {
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+}
+
+button {
+  --blue: #0000ff; /* local variable will override global */
+  background-color: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px;
+}
+```
+
+**Add a New Local Variable**:  
+If a variable is to be used only one single place, we could also have declared a new local variable, like this:
+
+```css
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--blue);
+}
+
+h2 {
+  border-bottom: 2px solid var(--blue);
+}
+
+.container {
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+}
+
+button {
+  --button-blue: #0000ff; /* new local variable */
+  background-color: var(--white);
+  color: var(--button-blue);
+  border: 1px solid var(--button-blue);
+  padding: 5px;
+}
+```
+
+### CSS Using Variables in Media Queries
+
+```css
+/* Variable declarations */
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+.container {
+  --fontsize: 25px;
+}
+
+/* Styles */
+body {
+  background-color: var(--blue);
+}
+
+h2 {
+  border-bottom: 2px solid var(--blue);
+}
+
+.container {
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+  font-size: var(--fontsize);
+}
+
+@media screen and (min-width: 450px) {
+  .container {
+    --fontsize: 50px;
+  }
+}
+```
+
+## CSS Box Sizing
+
+The CSS box-sizing property allows us to include the padding and border in an element's total width and height.
+
+By default, the width and height of an element is calculated like this:
+
+width + padding + border = actual width of an element
+height + padding + border = actual height of an element
+
+This means: When you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the element's specified width/height).
+
+The box-sizing property solves this problem.
+If you set box-sizing: border-box; on an element, padding and border are included in the width and height:
+
+Since the result of using the box-sizing: border-box; is so much better, many developers want all elements on their pages to work this way.  
+The code below ensures that all elements are sized in this more intuitive way.  
+Many browsers already use box-sizing: border-box; for many form elements (but not all - which is why inputs and text areas look different at width: 100%;).  
+Applying this to all elements is safe and wise:
+
+```css
+* {
+  box-sizing: border-box;
+}
+```
+
+## CSS Media Queries
+
+**CSS2 Introduced Media Types**:  
+The @media rule, introduced in CSS2, made it possible to define different style rules for different media types.  
+Examples: You could have one set of style rules for computer screens, one for printers, one for handheld devices, one for television-type devices, and so on.  
+Unfortunately these media types never got a lot of support by devices, other than the print media type.
+
+**CSS3 Introduced Media Queries**:  
+Media queries in CSS3 extended the CSS2 media types idea:  
+Instead of looking for a type of device, they look at the capability of the device.
+Media queries can be used to check many things, such as:  
+
+* width and height of the viewport
+* width and height of the device
+* orientation (is the tablet/phone in landscape or portrait mode?)
+* resolution
+Using media queries are a popular technique for delivering a tailored style sheet to desktops, laptops, tablets, and mobile phones (such as iPhone and Android phones).
+
+**Media Query Syntax**:  
+A media query consists of a media type and can contain one or more expressions, which resolve to either true or false.
+
+```css
+@media not|only mediatype and (expressions) {
+  CSS-Code;
+}
+```
+
+The result of the query is true if the specified media type matches the type of device the document is being displayed on and all expressions in the media query are true. When a media query is true, the corresponding style sheet or style rules are applied, following the normal cascading rules.  
+Unless you use the not or only operators, the media type is optional and the all type will be implied.  
+You can also have different stylesheets for different media:  
+`<link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">`
+
+**CSS3 Media Types**:  
+
+| Value | Description |
+| all | Used for all media type devices |
+| print | Used for printers |
+| screen | Used for computer screens, tablets, smart-phones etc. |
+| speech | Used for screenreaders that "reads" the page out loud |
+
+```css
+@media screen and (min-width: 480px) {
+  #leftsidebar {width: 200px; float: left;}
+  #main {margin-left: 216px;}
+}
+```
+
+```css
+/* Set the background color of body to tan */
+body {
+  background-color: tan;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+}
+```
+
+**Media Queries For Columns**:
+
+```css
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+```
+
+Tip: A more modern way of creating column layouts, is to use CSS Flexbox (see example below).  
+However, it is not supported in Internet Explorer 10 and earlier versions.  
+If you require IE6-10 support, use floats (as shown above).
+
+```css
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal columns */
+.column {
+  flex: 25%;
+  padding: 20px;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+```
+
+**Hide Elements With Media Queries**:
+
+```css
+/* If the screen size is 600px wide or less, hide the element */
+@media screen and (max-width: 600px) {
+  div.example {
+    display: none;
+  }
+}
+```
+
+**Change Font Size With Media Queries**:  
+
+```css
+/* If screen size is more than 600px wide, set the font-size of <div> to 80px */
+@media screen and (min-width: 600px) {
+  div.example {
+    font-size: 80px;
+  }
+}
+
+/* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  div.example {
+    font-size: 30px;
+  }
+}
+```
+
+**Orientation: Portrait / Landscape**:  
+Media queries can also be used to change layout of a page depending on the orientation of the browser.  
+You can have a set of CSS properties that will only apply when the browser window is wider than its height, a so called "Landscape" orientation:
+
+```css
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+**Min Width to Max Width**:  
+You can also use the (max-width: ..) and (min-width: ..) values to set a minimum width and a maximum width.
+
+```css
+/* when the browser's width is between 600 and 900px, change the appearance of a <div> element: */
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  div.example {
+    font-size: 50px;
+    padding: 50px;
+    border: 8px solid black;
+    background: yellow;
+  }
+}
+```
+
+Using an additional value: In the example below, we add an additional media query to our already existing one using a comma (this will behave like an OR operator):
+
+```css
+/* When the width is between 600px and 900px OR above 1100px - change the appearance of <div> */
+@media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+  div.example {
+    font-size: 50px;
+    padding: 50px;
+    border: 8px solid black;
+    background: yellow;
+  }
+}
+```
+
+## CSS Flexbox
+
+Before the Flexbox Layout module, there were four layout modes:  
+Block, for sections in a webpage.  
+Inline, for text.  
+Table, for two-dimensional table data.  
+Positioned, for explicit position of an element.  
+
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+### Flexbox Elements
+
+To start using the Flexbox model, you need to first define a flex container.
+
+```css
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+```
+
+**Parent Element (Container)**:  
+Like we specified in the previous chapter, this is a flex container (the blue area) with three flex items:
+**The flex container properties are**:  
+flex-direction  
+flex-wrap  
+flex-flow  
+justify-content  
+align-items  
+align-content  
+
+**The flex-direction Property**:  
+The flex-direction property defines in which direction the container wants to stack the flex items.
+
+```css
+/*The column value stacks the flex items vertically (from top to bottom):*/
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+```
+
+The column value stacks the flex items vertically (from top to bottom).  
+The column-reverse value stacks the flex items vertically (but from bottom to top).  
+The row value stacks the flex items horizontally (from left to right).  
+The row-reverse value stacks the flex items horizontally (but from right to left).  
+
+**The flex-wrap Property**:  
+The flex-wrap property specifies whether the flex items should wrap or not.
+The examples below have 12 flex items, to better demonstrate the flex-wrap property.
+
+```css
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+```
+
+The wrap value specifies that the flex items will wrap if necessary.  
+The nowrap value specifies that the flex items will not wrap (this is default).  
+The wrap-reverse value specifies that the flexible items will wrap if necessary, in reverse order.  
+
+**The flex-flow Property**:  
+The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties.
+
+```css
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+```
+
+**The justify-content Property**:  
+The justify-content property is used to align the flex items.  
+
+```css
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+```
+
+The center value aligns the flex items at the center of the container.  
+The flex-start value aligns the flex items at the beginning of the container (this is default).  
+The flex-end value aligns the flex items at the end of the container.  
+The space-around value displays the flex items with space before, between, and after the lines.  
+The space-between value displays the flex items with space between the lines.  
+
+**The align-items Property**:  
+The align-items property is used to vertical align the flex items.  
+
+```css
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: center;
+}
+```
+
+The center value aligns the flex items in the middle of the container.  
+The flex-start value aligns the flex items at the top of the container.  
+The flex-end value aligns the flex items at the bottom of the container.  
+The stretch value stretches the flex items to fill the container (this is default).  
+The baseline value aligns the flex items such as their baselines aligns.  
+
+**The align-content Property**:  
+The align-content property is used to align the flex lines.
+
+```css
+.flex-container {
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+```
+
+The space-between value displays the flex lines with equal space between them.  
+The space-around value displays the flex lines with space before, between, and after them.  
+The stretch value stretches the flex lines to take up the remaining space (this is default).  
+The center value displays display the flex lines in the middle of the container.  
+The flex-start value displays the flex lines at the start of the container.  
+The flex-end value displays the flex lines at the end of the container.  
+
+**Perfect Centering**:  
+In the following example we will solve a very common style problem: perfect centering.
+
+SOLUTION: Set both the justify-content and align-items properties to center, and the flex item will be perfectly centered:
+
+```css
+.flex-container {
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+### CSS Flex Items
+
+**Child Elements (Items)**:  
+The direct child elements of a flex container automatically becomes flexible (flex) items.
+
+```css
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+</div>
+```
+
+**The order Property**:  
+The order property specifies the order of the flex items.  
+The first flex item in the code does not have to appear as the first item in the layout.  
+The order value must be a number, default value is 0.
+
+```css
+<div class="flex-container">
+  <div style="order: 3">1</div>
+  <div style="order: 2">2</div>
+  <div style="order: 4">3</div>
+  <div style="order: 1">4</div>
+</div>
+```
+
+**The flex-grow Property**:  
+The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items.  
+The value must be a number, default value is 0.
+
+```css
+<div class="flex-container">
+  <div style="flex-grow: 1">1</div>
+  <div style="flex-grow: 1">2</div>
+  <div style="flex-grow: 8">3</div>
+</div>
+```
+
+**The flex-shrink Property**:  
+The flex-shrink property specifies how much a flex item will shrink relative to the rest of the flex items.
+
+```css
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex-shrink: 0">3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+</div>
+```
+
+**The flex-basis Property**:  
+The flex-basis property specifies the initial length of a flex item.
+
+```css
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex-basis: 200px">3</div>
+  <div>4</div>
+</div>
+```
+
+**The flex Property**:  
+The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.
+
+```css
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="flex: 0 0 200px">3</div>
+  <div>4</div>
+</div>
+```
+
+**The align-self Property**:  
+The align-self property specifies the alignment for the selected item inside the flexible container.
+The align-self property overrides the default alignment set by the container's align-items property.
+
+```css
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div style="align-self: center">3</div>
+  <div>4</div>
+</div>
+```
+
+### CSS Flex Responsive
+
+For example, if you want to create a two-column layout for most screen sizes, and a one-column layout for small screen sizes (such as phones and tablets), you can change the flex-direction from row to column at a specific breakpoint (800px in the example below):
+
+```css
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+```
+
+Another way is to change the percentage of the flex property of the flex items to create different layouts for different screen sizes. Note that we also have to include flex-wrap: wrap; on the flex container for this example to work:
+
+```css
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+```
+
+

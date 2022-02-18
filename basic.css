@@ -1,0 +1,170 @@
+:root {
+    --bg:rgba(46, 12, 12, 0.9);
+    --bg_content:rgb(75, 70, 70) url(assets/img/ph1.jpg) no-repeat fixed;
+    --bg_selection:rgba(48, 60, 94, 0.863);
+    --bg_point_initial:rgba(117, 65, 85, 0.2);
+    --bg_point_hover:rgba(112, 59, 79, 0.9);
+    --color_body:rgb(58, 19, 19); 
+    --color_header:rgba(255, 254, 254, 1);
+    --color_em: rgb(145, 9, 9);
+    --color_marker: red;
+    --font_body:"Times New Roman", Times, serif;
+    --font_header:"Audiowide", sans-serif;
+    --font_cursive:"Brush Script MT", cursive;
+    --text_shadow_header:5px 5px 5px rgb(58, 19, 19);
+    --text_shadow_body:1px 1px 3px white;
+    --text_shadow_border:-1px 0 rgb(58, 19, 19), 0 1px rgb(58, 19, 19), 1px 0 rgb(58, 19, 19), 0 -1px rgb(58, 19, 19);
+    --border_first_letter:2px solid rgb(58, 19, 19);
+    --card_shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --h1_size:max(4vw, 35px);
+    --h2_size:max(3.5vw, 35px);
+    --h3_size:max(3vw, 30px);
+    --h4_size:max(2.5vw, 25px);
+    --h5_size:max(2vw, 20px);
+    --p_size:max(1.5vw, 20px);
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: var(--font_body);
+    font-weight: bold;  
+    color:var(--color_body);  
+    background:var(--bg_content);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}    
+
+.header, .footer{
+    color: var(--color_header);
+    font-family: var(--font_header);
+    text-align: center;
+}
+
+.content {
+    background: var(--bg_content);
+    margin: 0 auto;
+    font-family: var(--font_body);
+    font-weight: bold;  
+    color:var(--color_body);  
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+::selection {
+    background-color: var(--bg_selection)
+}
+
+::marker {
+    color: var(--color_marker);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+h2,h3,h4,h5 {
+    text-align: center;
+    text-shadow: var(--text_shadow_body);
+}
+
+h1 {
+    font-size: var(--h1_size);
+}
+
+h2 {
+    font-family: var(--font_cursive);
+    font-size: var(--h2_size);   
+}
+
+h2::first-letter {
+    color: var(--color_marker);
+    border: var(--border_first_letter);
+    font-family: var(--font_body);
+    font-size: 200%;
+    text-shadow: var(--text_shadow_border), var(--text_shadow_body);
+}
+
+h3 {
+    color: var(--color_marker);
+    font-family: var(--font_body);
+    font-size: var(--h3_size);
+    text-shadow: var(--text_shadow_border), var(--text_shadow_body);
+}
+
+h3::first-letter {
+    color: var(--color_marker);
+    font-family: var(--font_cursive);
+    font-size: 200%;
+    text-decoration-line: underline;  
+}
+
+h4 {
+    font-family: var(--font_cursive);
+    font-size: var(--h4_size);
+}
+
+h5 {
+    font-family: var(--font_header);
+    font-size: var(--h5_size);
+    color:var(--color_header);
+    text-shadow: var(--text_shadow_border), var(--text_shadow_body);
+}
+
+p {
+    font-family: var(--font_body);
+    font-size: var(--p_size);
+    font-weight: bold;
+    word-wrap: break-word;
+    text-shadow: var(--text_shadow_body);
+}
+
+p.inv {
+    font-family: var(--font_body);
+    font-size: var(--p_size);
+    font-weight: bold;
+    text-shadow: var(--text_shadow_border);
+    text-align:center;
+    color:var(--color_header)
+}
+
+div.point {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 600px;
+    max-height: 650px;
+    overflow: scroll;
+    background-color: var(--bg_point_initial);
+    box-shadow: var(--card_shadow);   
+}
+div.point:hover {
+    border: 2px solid var(--color_body);
+    animation: opasity 2s forwards;
+   
+}
+
+/* Column container */
+.row {  
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  .side {
+    display: none;
+    flex: 30%;
+    background-color: rgba(75, 70, 70, 0.8);
+    padding: 20px;
+  }
+    
+  /* Main column */
+  .main {
+    flex: 70%;
+    padding: 20px;
+  }
+  

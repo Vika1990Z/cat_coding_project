@@ -1,139 +1,12 @@
-body, html {
-    margin: 0 auto;
-    padding: 0;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;  
-    color:rgb(58, 19, 19);  
-    background-color: rgba(46, 12, 12, 0.9);
-    background:url(assets/img/ph1.jpg) no-repeat fixed;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}    
-
 @keyframes opasity {
     /* to {background-color: rgba(190, 136, 166, 0.9); */
-        to { background-color: rgba(129, 35, 35, 0.8);}
+        to { background-color: var(--bg_point_hover);
+        }
 }
 
 @keyframes extension {
     to {font-size: 200%}
 }
-  
-.header, .footer {
-    color: white;
-    margin: 0px;
-    padding: 0px;
-}
-
-
-::selection {
-    background-color: rgba(48, 60, 94, 0.863);
-}
-
-::marker {
-    color: red;
-    font-size: 23px;
-    font-weight: bold;
-}
-
-h1, h2, h3, h4, h5, h5 {
-    text-align: center;
-}
-
-h1 {
-    color: rgba(255, 254, 254, 1);
-    font-family: "Audiowide", sans-serif;
-    font-size: max(4vw, 20px);
-    text-shadow: 5px 5px 5px rgb(58, 19, 19);
-}
-
-h2 {
-    font-size: max(3.5vw, 20px);
-    text-shadow: 1px 1px 3px white;
-    font-family: "Brush Script MT", cursive;
-    
-}
-
-h2::first-letter {
-    color: #ff0000;
-    font-size: 200%;
-    border: 2px solid rgb(58, 19, 19);
-    font-family: "Times New Roman", Times, serif;
-}
-
-h3 {
-    font-size: max(2.5vw, 16px);
-    color: #ff0000;
-    text-shadow: 1px 1px 3px white;
-    font-family: "Brush Script MT", cursive;
-    
-}
-
-h3::first-letter {
-    color: #ff0000;
-    font-size: 200%;
-    font-family: "Brush Script MT", cursive;  
-    text-decoration-line: underline;  
-}
-
-h4 {
-    font-size: max(2vw, 14px);
-    text-shadow: 1px 1px 3px white;
-    font-family: "Brush Script MT", cursive;
-    
-}
-
-p {
-    font-size: max(1.2vw, 14px);
-    font-weight: bold;
-    text-shadow: 1px 1px 3px white;
-    word-wrap: break-word;
-}
-
-.tootlip {
-    visibility: hidden;
-    background-color: rgba(190, 136, 166, 0.8);
-    font-family: "Brush Script MT", cursive;
-    width: 30%;
-    padding-left: 15px;
-    margin-left: 15px;
-    float: right;
-    text-align: center;
-    font-size: max(1.2vw, 14px);
-}
-
-div:hover .tootlip {
-    visibility: visible;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-} 
-
-div.point {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 600px;
-    max-height: 650px;
-    /* background-color: rgba(190, 136, 166, 0.2); */
-    background-color: rgba(129, 35, 35, 0.2);
-    color: rgb(58, 19, 19);
-    text-shadow: 1px 1px 3px white;
-    overflow: scroll;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-}
-div.point:hover {
-    border: 3px solid black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    animation: opasity 2s forwards;
-}
-
-#practicing {   
-    background-color: rgb(134, 163, 150);
-    color:rgb(58, 19, 19);
-    border: 2px solid black;
-    margin: 20px;
-    padding: 20px;
-} 
 
 table {
     width: 100%;
@@ -289,26 +162,3 @@ ul {
     }
   }
 
-.dropbtn {
-    cursor: pointer;
-    text-align: center;
-  }
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin:auto;
-    color: #ff0000;
-    font-size: 200%;
-    font-family: "Times New Roman", Times, serif;
-  }
-
-.dropdown-content {
-  display: none;
-  text-align: center;
-
-}
-
-.dropdown:hover .dropdown-content {
-    display: inline-block;
-  }
