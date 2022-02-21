@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}   
+.navbar {
+height: 96px;
+width: max (100%,1440px);
+padding: 0 50px;
+
+display: flex;
+flex-flow: row;
+flex-wrap: wrap;
+align-items: center;
+
+box-shadow: 0px 4px 8px 0px #26323814;
+box-shadow: 0px 2px 4px 0px #26323829;
+}
+
+.menu {
+flex: 1 1 623px;
+height: 67px;
+
+display: flex;
+flex-flow: row;
+flex-wrap: nowrap;
+align-items: center;
+white-space: nowrap;
+
+}
+
+.menu > div {
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 32px;
+display: flex;
+align-items: center;
+text-align: center;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+color: #6C5CE7;
+margin:20px;
+
+}
+
+.menu div:after {
+content: ' \2022';
+margin:18%;
+font-weight: bold;
+color: #FDCB6E;
+}
+
+.menu div:last-child::after{
+content: none;
+}
+
+button.active {
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 32px;
+text-align: center;
+letter-spacing: 0.2px;
+padding: 0 20px;
+background-color: #6C5CE7;
+color: white;
+border-radius: 16px;
+box-shadow: 0px 4px 8px 0px #26323814;
+box-shadow: 0px 2px 4px 0px #26323829;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#how_it_works {
+font-weight: bold;
+color: #2D3436;
+}
+
+#sign_in {
+flex: 1 1 170px;
+} 
+
+
+#grid {
+flex: 1 1 200px;
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 56px;
+display: flex;
+align-items: flex-end;
+letter-spacing: -1px;
+color: #2D3436;
+}
+
