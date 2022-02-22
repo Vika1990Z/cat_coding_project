@@ -8,7 +8,6 @@ font-style: normal;
 padding: 0;
 margin: 0;
 background:url(card1_1.svg) no-repeat right top;
-
 }
 .navbar {
 height: 96px;
@@ -16,12 +15,10 @@ width: max (100%,1440px);
 padding: 0 50px;
 margin-bottom: 0px;
 background-color: white;
-
 display: flex;
 flex-flow: row;
 flex-wrap: wrap;
 align-items: center;
-
 box-shadow: 0px 4px 8px 0px #26323814;
 box-shadow: 0px 2px 4px 0px #26323829;
 border-radius: 20 20 0 0;
@@ -30,26 +27,22 @@ border-radius: 20 20 0 0;
 .menu {
 flex: 1 1 623px;
 height: 67px;
-
 display: flex;
 flex-flow: row;
 flex-wrap: nowrap;
 align-items: center;
 white-space: nowrap;
-
 }
 
 .menu > div {
 font-weight: normal;
-font-size: 18px;
-line-height: 32px;
+
 display: flex;
 align-items: center;
 text-align: center;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 color: #6C5CE7;
 margin:20px;
-
 }
 
 .menu div:after {
@@ -64,29 +57,57 @@ content: none;
 }
 
 button.active {
-font-weight: bold;
-font-size: 18px;
-line-height: 32px;
+font-family: Inter;
+font-style: normal;
 text-align: center;
-letter-spacing: 0.2px;
-padding: 0 20px;
+font-weight: bold;
 background-color: #6C5CE7;
+padding: 0 20px;
 color: white;
-border-radius: 16px;
+border-radius: 20px;
 box-shadow: 0px 4px 8px 0px #26323814;
 box-shadow: 0px 2px 4px 0px #26323829;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+#learn_more {
+margin: 10px;
+width: 270px;
+font-size: 32px;
+line-height: 48px;
+letter-spacing: -0.5px;
+}
+
+#learn_more_passive {
+margin: 10px;
+width: 146px;
+border: 1px solid #ADADAD;
+box-sizing: border-box;
+border-radius: 16px;
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 32px;
+letter-spacing: 0.2px;
+color: #6C5CE7;
+box-shadow: 0px 4px 8px 0px #26323814;
+box-shadow: 0px 2px 4px 0px #26323829;
+}
+
+#sign_in {
+width: 170px;
+font-size: 18px;
+line-height: 32px;
+letter-spacing: 0.2px;
+}  
+
+
+
 #how_it_works {
 font-weight: bold;
 color: #2D3436;
 }
-
-#sign_in {
-flex: 1 1 170px;
-} 
-
 
 #grid {
 flex: 1 1 200px;
@@ -101,13 +122,15 @@ color: #2D3436;
 
 .card1 {
 margin: 0;
-padding: 0;
-width: max (100%,1440px);
-height: 666px;
+width: min (100%,1440px);
+height: auto;
 background: url(card1_2.svg) no-repeat right top;
 background-origin:content-box;
 }
-
+.card1 header {
+width: min (100%,1440px);
+padding: 0 50px;
+}
 .card1 h1 {
 font-weight: 800;
 font-size: 96px;
@@ -117,7 +140,6 @@ letter-spacing: -3px;
 word-wrap:normal;
 color: #2D3436;
 text-shadow: 0px 4px 0px #FFFFFF;
-clear:right;
 }
 
 .card1 h2 {
@@ -127,8 +149,117 @@ line-height: 77px;
 text-align: center;
 letter-spacing: -1px;
 color: #2D3436;
-clear:right;
 }
 
+.card1_content {
+font-weight: normal;
+font-size: 18px;
+line-height: 32px;
+color: #2D3436;
+width: min (100%,1440px);
+margin-left: 50px;
+padding: 0 50px;
+display: flex;
+flex-wrap: nowrap;
+align-items: flex-start;
+flex-direction: row;
+}
 
+.card1_content img {
+padding: 10px;
+align-self: flex-start;
+}
+
+.small_column {
+flex: 25%;
+max-width: 270px;
+/* width: max(25%, 270px); */
+margin: 0px 50px 0px 0px;
+align-items: center;
+}
+
+.small_column p {
+margin: 10px;
+text-align: justify;
+text-justify: inter-word;
+}
+
+.big_column {
+flex: 75%;
+max-width: 1170px;
+/* width: max(75%, 1170px); */
+display: flex;
+flex-direction: row;
+margin: 10px;
+flex-wrap: wrap;
+align-items: top;
+text-align: left;
+}
+
+.card2 {
+margin: 0;
+width: min (100%,1440px);
+height: 666px;
+}
+
+.card2 header {
+width: min (100%,1440px);
+margin-left: 50px;
+padding: 0 50px;
+font-weight: normal;
+font-size: 24px;
+line-height: 36px;
+letter-spacing: -0.25px;
+color: #2D3436;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.card2 h4 {
+font-weight: bold;
+font-size: 32px;
+line-height: 48px;
+letter-spacing: -0.5px;
+color: #2D3436;
+}
+
+.card2 h5 {
+font-weight: bold;
+font-size: 24px;
+line-height: 36px;
+letter-spacing: 0.25px;
+color: #2D3436;
+}
+
+.card2_content {
+font-weight: normal;
+font-size: 18px;
+line-height: 32px;
+color: #2D3436;
+width: min (100%,1440px);
+margin-left: 50px;
+padding: 0 50px;
+display: flex;
+flex-wrap: nowrap;
+align-items: flex-start;
+flex-direction: row;
+}
+
+.card2_content > div {
+    flex: 25%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.card2_content img {
+border-radius: 50%;
+
+}
+
+div.card2_content img {
+    border-radius: 50%;
+    
+    }
+
+
+    
 
