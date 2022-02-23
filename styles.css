@@ -1,18 +1,32 @@
+@font-face {
+font-family: Inter-regular;
+src: url(Inter-Regular.woff);
+}
+
+@font-face {
+font-family: Inter-bold;
+src: url(Inter-Bold.woff);
+} 
+
+@font-face {
+font-family: Inter-extrabold;
+src: url(Inter-ExtraBold.woff);
+}  
+
 * {
 box-sizing: border-box;
 } 
 
 body {
-font-family: Inter;
-font-style: normal;
 padding: 0;
 margin: 0;
 background:url(card1_1.svg) no-repeat right top;
 }
+
 .navbar {
 height: 96px;
 width: max (100%,1440px);
-padding: 0 50px;
+padding: 0 100px;
 margin-bottom: 0px;
 background-color: white;
 display: flex;
@@ -35,8 +49,7 @@ white-space: nowrap;
 }
 
 .menu > div {
-font-weight: normal;
-
+font-family: Inter-regular;
 display: flex;
 align-items: center;
 text-align: center;
@@ -48,7 +61,7 @@ margin:20px;
 .menu div:after {
 content: ' \2022';
 margin:18%;
-font-weight: bold;
+font-family: Inter-extrabold;
 color: #FDCB6E;
 }
 
@@ -57,17 +70,15 @@ content: none;
 }
 
 button.active {
-font-family: Inter;
-font-style: normal;
+font-family: Inter-bold;
 text-align: center;
-font-weight: bold;
 background-color: #6C5CE7;
-padding: 0 20px;
+padding: 15px 20px;
 color: white;
-border-radius: 20px;
+border-radius: 40px;
 box-shadow: 0px 4px 8px 0px #26323814;
 box-shadow: 0px 2px 4px 0px #26323829;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 #learn_more {
@@ -76,33 +87,36 @@ width: 270px;
 font-size: 32px;
 line-height: 48px;
 letter-spacing: -0.5px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #learn_more_passive {
+position: absolute;
+bottom: 0px;
+left: 0px;
+font-family: Inter-bold;
 margin: 10px;
+padding: 10px;;
 width: 146px;
 border: 1px solid #ADADAD;
 box-sizing: border-box;
-border-radius: 16px;
-font-family: Inter;
-font-style: normal;
-font-weight: bold;
+border-radius: 18px;
 font-size: 18px;
 line-height: 32px;
-letter-spacing: 0.2px;
+letter-spacing: 0.3px;
 color: #6C5CE7;
+background-color: white;
 box-shadow: 0px 4px 8px 0px #26323814;
 box-shadow: 0px 2px 4px 0px #26323829;
 }
 
 #sign_in {
 width: 170px;
-font-size: 18px;
-line-height: 32px;
-letter-spacing: 0.2px;
+font-size: 24px;
+line-height: 36px;
+letter-spacing: 0.25px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }  
-
-
 
 #how_it_works {
 font-weight: bold;
@@ -111,7 +125,7 @@ color: #2D3436;
 
 #grid {
 flex: 1 1 200px;
-font-weight: bold;
+font-family: Inter-bold;
 font-size: 48px;
 line-height: 56px;
 display: flex;
@@ -127,11 +141,15 @@ height: auto;
 background: url(card1_2.svg) no-repeat right top;
 background-origin:content-box;
 }
+
 .card1 header {
+font-family: Inter-extrabold;
 width: min (100%,1440px);
 padding: 0 50px;
 }
+
 .card1 h1 {
+margin:0.8em 0 0.1em 0;
 font-weight: 800;
 font-size: 96px;
 line-height: 104px;
@@ -143,6 +161,7 @@ text-shadow: 0px 4px 0px #FFFFFF;
 }
 
 .card1 h2 {
+margin: 0 0 0.8em 0;
 font-weight: 900;
 font-size: 64px;
 line-height: 77px;
@@ -152,7 +171,7 @@ color: #2D3436;
 }
 
 .card1_content {
-font-weight: normal;
+font-family: Inter-regular;
 font-size: 18px;
 line-height: 32px;
 color: #2D3436;
@@ -199,7 +218,7 @@ text-align: left;
 .card2 {
 margin: 0;
 width: min (100%,1440px);
-height: 666px;
+height: auto;
 }
 
 .card2 header {
@@ -211,26 +230,42 @@ font-size: 24px;
 line-height: 36px;
 letter-spacing: -0.25px;
 color: #2D3436;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .card2 h4 {
+font-family: Inter-bold;
 font-weight: bold;
 font-size: 32px;
 line-height: 48px;
 letter-spacing: -0.5px;
+margin: 2em 0 0 0;
 color: #2D3436;
+
 }
 
+.card2 h6 {
+margin: 0.8em 0 0.8em 0;
+font-family: Inter-regular;
+font-weight: normal;
+font-size: 24px;
+line-height: 36px;
+display: flex;
+align-items: center;
+letter-spacing: -0.25px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .card2 h5 {
-font-weight: bold;
+font-family: Inter-bold;
 font-size: 24px;
 line-height: 36px;
 letter-spacing: 0.25px;
+margin: 1em 0 0 0;
 color: #2D3436;
+
 }
 
 .card2_content {
-font-weight: normal;
+font-family: Inter-regular;
 font-size: 18px;
 line-height: 32px;
 color: #2D3436;
@@ -244,22 +279,124 @@ flex-direction: row;
 }
 
 .card2_content > div {
-    flex: 25%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+position: relative;
+height: 380px;
+flex: 25%;
+padding: 10px;
+display: flex;
+flex-direction: column;
 }
 
 div.card2_content img {
 border-radius: 50%;
-
 }
 
-div.card2_content img {
-    border-radius: 50%;
-    
+.card3 {
+margin: 0;
+width: min (100%,1440px);
+height: auto;
+}
+
+.card3 header {
+width: min (100%,1440px);
+margin-left: 50px;
+}    
+
+.card3 h2 {
+font-family: Inter-extrabold;
+margin: 2em 0 0.2em 0;
+font-size: 64px;
+line-height: 77px;
+letter-spacing: -1px;
+color: #2D3436;
+text-align: center;
+}
+
+.card3 h4 {
+font-family: Inter-bold;
+margin: 0.8em 0;
+font-size: 32px;
+line-height: 48px;
+letter-spacing: -0.5px;
+color: #ADADAD;
+text-align: center;
+}
+
+
+.card3_content {
+width: min (100%,1440px);
+margin-left: 50px;
+padding: 0 50px;
+display: flex;
+flex-wrap: nowrap;
+align-items: flex-start;
+flex-direction: row;
+}
+
+.card3_content > div {
+flex: 33.33%;
+padding: 20px;
+display: flex;
+flex-direction: column;
+}
+
+.special {
+font-family: Inter-bold;
+font-size: 18px;
+line-height: 32px;
+letter-spacing: 0.2px;
+color: #6C5CE7;
+}
+
+.card3_content h3 {
+margin: 0.2em 0;
+text-align: left;
+font-family: Inter-bold;
+font-size: 48px;
+line-height: 56px;
+letter-spacing: -1px;
+color: #2D3436;
+}
+
+.card3_content sub {
+vertical-align: sub;
+font-family: Inter-bold;
+font-size: 12px;
+line-height: 15px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+}
+
+.card3_content ul li {
+
+font-family: Inter-regular;
+font-size: 18px;
+line-height: 32px;
+color: #2D3436;
+height: 50px; 
+position: relative;
+}
+
+ul li span {
+position: absolute;
+top: 0px;
+left: 15px;
+}
+
+ul.grey {
+list-style-image: url('grey_marker.svg');
+}
+
+
+ul.yellow {
+list-style-image: url('yellow_marker.svg');
+}
+
+ul.blue {
+    list-style-image: url('blue_marker.svg');
     }
 
-
-    
-
+div.shadowing {
+    box-shadow: 0px 4px 8px 0px #26323814;
+    box-shadow: 0px 2px 4px 0px #26323829;  
+}    
