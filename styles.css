@@ -23,6 +23,89 @@ margin: 0;
 background:url(card1_1.svg) no-repeat right top;
 }
 
+button.active_extra_rounded {
+font-family: Inter-bold;
+text-align: center;
+background-color: #6C5CE7;
+padding: 15px 20px;
+color: white;
+border-radius: 40px;
+box-shadow: 0px 4px 8px 0px #26323814;
+box-shadow: 0px 2px 4px 0px #26323829;
+}
+
+button.passive{
+font-family: Inter-bold;
+text-align: center;
+border: 1px solid #ADADAD;
+border-radius: 18px;
+font-size: 18px;
+line-height: 32px;
+letter-spacing: 0.3px;
+color: #6C5CE7;
+background-color: white;
+box-shadow: 0px 4px 8px 0px #26323814;
+box-shadow: 0px 2px 4px 0px #26323829;
+}
+
+button#learn_more_passive {
+position: absolute;
+bottom: 0px;
+left: 0px;
+margin: 10px;
+padding: 10px;;
+width: 146px;
+}
+
+button#learn_more {
+margin: 10px;
+width: 270px;
+font-size: 32px;
+line-height: 48px;
+letter-spacing: -0.5px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button#sign_in {
+width: 170px;
+font-size: 24px;
+line-height: 36px;
+letter-spacing: 0.25px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}  
+
+button#try_for_free {
+position: absolute;
+bottom: 30px;
+left: 0px;
+margin: 10px;
+padding: 10px;
+width: 306px;
+}
+
+button#extended_license {
+position: absolute;
+bottom: 30px;
+left: 75px;
+margin: 10px;
+padding: 10px;
+width: 306px;
+
+}
+
+
+button#regular_license {
+position: absolute;
+bottom: 30px;
+left: 30px;
+margin: 10px;
+padding: 10px;;
+width: 306px;
+background-color: #6C5CE7;
+color: white;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .navbar {
 height: 96px;
 width: max (100%,1440px);
@@ -68,55 +151,6 @@ color: #FDCB6E;
 .menu div:last-child::after{
 content: none;
 }
-
-button.active {
-font-family: Inter-bold;
-text-align: center;
-background-color: #6C5CE7;
-padding: 15px 20px;
-color: white;
-border-radius: 40px;
-box-shadow: 0px 4px 8px 0px #26323814;
-box-shadow: 0px 2px 4px 0px #26323829;
-
-}
-
-#learn_more {
-margin: 10px;
-width: 270px;
-font-size: 32px;
-line-height: 48px;
-letter-spacing: -0.5px;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#learn_more_passive {
-position: absolute;
-bottom: 0px;
-left: 0px;
-font-family: Inter-bold;
-margin: 10px;
-padding: 10px;;
-width: 146px;
-border: 1px solid #ADADAD;
-box-sizing: border-box;
-border-radius: 18px;
-font-size: 18px;
-line-height: 32px;
-letter-spacing: 0.3px;
-color: #6C5CE7;
-background-color: white;
-box-shadow: 0px 4px 8px 0px #26323814;
-box-shadow: 0px 2px 4px 0px #26323829;
-}
-
-#sign_in {
-width: 170px;
-font-size: 24px;
-line-height: 36px;
-letter-spacing: 0.25px;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}  
 
 #how_it_works {
 font-weight: bold;
@@ -240,7 +274,6 @@ line-height: 48px;
 letter-spacing: -0.5px;
 margin: 2em 0 0 0;
 color: #2D3436;
-
 }
 
 .card2 h6 {
@@ -254,6 +287,7 @@ align-items: center;
 letter-spacing: -0.25px;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .card2 h5 {
 font-family: Inter-bold;
 font-size: 24px;
@@ -261,7 +295,6 @@ line-height: 36px;
 letter-spacing: 0.25px;
 margin: 1em 0 0 0;
 color: #2D3436;
-
 }
 
 .card2_content {
@@ -322,11 +355,12 @@ color: #ADADAD;
 text-align: center;
 }
 
-
 .card3_content {
+background:url(bg_card3.svg) no-repeat 37% bottom;
+background-origin: border-box;
 width: min (100%,1440px);
 margin-left: 50px;
-padding: 0 50px;
+padding: 0 50px 20px 50px;
 display: flex;
 flex-wrap: nowrap;
 align-items: flex-start;
@@ -335,9 +369,13 @@ flex-direction: row;
 
 .card3_content > div {
 flex: 33.33%;
-padding: 20px;
 display: flex;
 flex-direction: column;
+height: 550px;
+position: relative;
+padding-bottom: 30px;
+margin-bottom: 20px;
+
 }
 
 .special {
@@ -368,7 +406,6 @@ text-transform: uppercase;
 }
 
 .card3_content ul li {
-
 font-family: Inter-regular;
 font-size: 18px;
 line-height: 32px;
@@ -383,20 +420,24 @@ top: 0px;
 left: 15px;
 }
 
-ul.grey {
+div.grey {
+padding-left: 0;
+padding-right: 50px;
 list-style-image: url('grey_marker.svg');
 }
 
-
-ul.yellow {
+div.yellow {
+background-color: white;
+padding: 30px;
 list-style-image: url('yellow_marker.svg');
+border-radius: 20px;
+box-shadow:0px 8px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
-ul.blue {
-    list-style-image: url('blue_marker.svg');
-    }
+div.blue {
+padding-right: 0;
+padding-left: 75px;
+list-style-image: url('blue_marker.svg');
+}
 
-div.shadowing {
-    box-shadow: 0px 4px 8px 0px #26323814;
-    box-shadow: 0px 2px 4px 0px #26323829;  
-}    
+
