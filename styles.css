@@ -99,11 +99,29 @@ position: absolute;
 bottom: 30px;
 left: 30px;
 margin: 10px;
-padding: 10px;;
+padding: 10px;
 width: 306px;
 background-color: #6C5CE7;
 color: white;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button#best {
+position: absolute;
+top:50px;
+right:75px;
+width: 90px;
+font-size: 12px;
+line-height: 15px;
+font-family: Inter-bold;
+text-align: center;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+border: 1px solid #6C5CE7;
+color:#2D3436;
+border-radius: 30px;
+background-color: white;
+padding: 5px 10px;
 }
 
 .navbar {
@@ -210,7 +228,7 @@ font-size: 18px;
 line-height: 32px;
 color: #2D3436;
 width: min (100%,1440px);
-margin-left: 50px;
+margin-left: 75px;
 padding: 0 50px;
 display: flex;
 flex-wrap: nowrap;
@@ -257,7 +275,7 @@ height: auto;
 
 .card2 header {
 width: min (100%,1440px);
-margin-left: 50px;
+margin: 0 75px;
 padding: 0 50px;
 font-weight: normal;
 font-size: 24px;
@@ -303,7 +321,7 @@ font-size: 18px;
 line-height: 32px;
 color: #2D3436;
 width: min (100%,1440px);
-margin-left: 50px;
+margin: 0 75px;
 padding: 0 50px;
 display: flex;
 flex-wrap: nowrap;
@@ -332,7 +350,7 @@ height: auto;
 
 .card3 header {
 width: min (100%,1440px);
-margin-left: 50px;
+margin: 75px;
 }    
 
 .card3 h2 {
@@ -359,7 +377,7 @@ text-align: center;
 background:url(bg_card3.svg) no-repeat 37% bottom;
 background-origin: border-box;
 width: min (100%,1440px);
-margin-left: 50px;
+margin: 0 75px;
 padding: 0 50px 20px 50px;
 display: flex;
 flex-wrap: nowrap;
@@ -420,9 +438,8 @@ top: 0px;
 left: 15px;
 }
 
-div.grey {
-padding-left: 0;
-padding-right: 50px;
+div.grey {  
+padding: 30px 50px 30px 0px;
 list-style-image: url('grey_marker.svg');
 }
 
@@ -435,9 +452,133 @@ box-shadow:0px 8px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
 div.blue {
-padding-right: 0;
-padding-left: 75px;
+padding: 30px 0 30px 75px;
 list-style-image: url('blue_marker.svg');
 }
 
+footer {
+    background: url(footer.svg) no-repeat bottom;
 
+width: min (100%,1440px);
+height: auto;
+padding: 50px;
+display: flex;
+align-items: flex-start;
+flex-direction: row;
+}
+
+.footer_column {
+flex: 50%;
+margin: 50px 50px 75px 75px;
+align-items: center;
+}
+
+.footer_icons {
+display: flex;
+width: 60%;
+height: 90px;
+align-items: flex-start;
+justify-content: space-between;
+flex-direction: row;
+
+}
+
+#follow_us_information {
+margin: 12px 0;
+font-family: Inter-bold;
+font-size: 12px;
+line-height: 15px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: #ADADAD;
+}
+
+#email {
+margin: 12px 0;
+font-family: Inter-extrabold; 
+height: 90px;
+font-size: 32px;
+line-height: 48px;
+letter-spacing: -0.5px;
+color: #6C5CE7;
+}
+
+.information {
+display: flex;
+flex-direction: row;
+}
+
+.information div {
+flex: 33.33%;
+font-family: Inter-regular;
+font-size: 14px;
+line-height: 24px;
+letter-spacing: 0.25px;
+color: #2D3436;
+}
+
+.forms1 {
+padding: 6px 0;
+margin: 0;
+display: flex;
+flex-direction: row; 
+justify-content: space-between;
+align-items:baseline;
+}
+
+.first_part input {
+flex: 50%;
+width: 270px;
+padding: 5px 10px;
+font-family: Inter-regular;
+font-size: 18px;
+line-height: 32px;
+color: #050505;
+}
+
+#form_name input{
+background: rgba(241, 241, 241) url('form_icon_1.svg') no-repeat right;
+border: 2px solid transparent;
+border-radius: 16px;
+}
+
+#email input{
+background: rgba(241, 241, 241) url('form_icon_2.svg') no-repeat right;
+border: 2px solid transparent;
+border-radius: 16px;
+}
+
+.forms2 {
+display: flex;
+flex-direction: row; 
+justify-content: space-between;
+margin: 0px;
+}
+
+.second_part textarea {
+flex: 70%;
+width: 370px;
+height: 80px;
+padding: 5px 10px 5px 10px;
+font-family: Inter-bold;
+font-size: 18px;
+line-height: 32px;
+letter-spacing: 0.2px;
+color: #6C5CE7;
+background: rgba(241, 241, 241) url('form_icon_3.svg') no-repeat right top;
+border: 2px solid rgba(108, 92, 231, 0.24);  
+border-radius: 16px;
+}
+
+.third_part button {
+width: 170px;
+height: 80px;
+text-transform: uppercase;
+font-size: 24px;
+line-height: 36px;
+letter-spacing: 0.25px;
+background: #6C5CE7;
+border: 2px solid transparent;
+border-radius: 16px;
+text-shadow: 0px 2px 4px rgba(38, 50, 56, 0.16), 0px 4px 8px rgba(38, 50, 56, 0.08);
+}
