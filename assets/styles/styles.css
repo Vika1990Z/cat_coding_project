@@ -1,16 +1,16 @@
 @font-face {
 font-family: Inter-regular;
-src: url(Inter-Regular.woff);
+src: url(../fonts/Inter-Regular.woff);
 }
 
 @font-face {
 font-family: Inter-bold;
-src: url(Inter-Bold.woff);
+src: url(../fonts/Inter-Bold.woff);
 } 
 
 @font-face {
 font-family: Inter-extrabold;
-src: url(Inter-ExtraBold.woff);
+src: url(../fonts/Inter-ExtraBold.woff);
 }  
 
 * {
@@ -20,7 +20,7 @@ box-sizing: border-box;
 body {
 padding: 0;
 margin: 0;
-background:url(card1_1.svg) no-repeat right top;
+background:url(../img/card1_1.svg) no-repeat right top;
 }
 
 button.active_extra_rounded {
@@ -190,7 +190,7 @@ color: #2D3436;
 margin: 0;
 width: min (100%,1440px);
 height: auto;
-background: url(card1_2.svg) no-repeat right top;
+background: url(../img/card1_2.svg) no-repeat right top;
 background-origin:content-box;
 }
 
@@ -374,7 +374,7 @@ text-align: center;
 }
 
 .card3_content {
-background:url(bg_card3.svg) no-repeat 37% bottom;
+background:url(../img/bg_card3.svg) no-repeat 37% bottom;
 background-origin: border-box;
 width: min (100%,1440px);
 margin: 0 75px;
@@ -440,24 +440,24 @@ left: 15px;
 
 div.grey {  
 padding: 30px 50px 30px 0px;
-list-style-image: url('grey_marker.svg');
+list-style-image: url(../img/grey_marker.svg);
 }
 
 div.yellow {
 background-color: white;
 padding: 30px;
-list-style-image: url('yellow_marker.svg');
+list-style-image: url(../img/yellow_marker.svg);
 border-radius: 20px;
 box-shadow:0px 8px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
 div.blue {
 padding: 30px 0 30px 75px;
-list-style-image: url('blue_marker.svg');
+list-style-image: url(../img/blue_marker.svg);
 }
 
 footer {
-    background: url(footer.svg) no-repeat bottom;
+    background: url(../img/footer.svg) no-repeat bottom;
 
 width: min (100%,1440px);
 height: auto;
@@ -537,13 +537,13 @@ color: #050505;
 }
 
 #form_name input{
-background: rgba(241, 241, 241) url('form_icon_1.svg') no-repeat right;
+background: rgba(241, 241, 241) url(../img/form_icon_1.svg) no-repeat right;
 border: 2px solid transparent;
 border-radius: 16px;
 }
 
 #email input{
-background: rgba(241, 241, 241) url('form_icon_2.svg') no-repeat right;
+background: rgba(241, 241, 241) url(../img/form_icon_2.svg) no-repeat right;
 border: 2px solid transparent;
 border-radius: 16px;
 }
@@ -556,6 +556,7 @@ margin: 0px;
 }
 
 .second_part textarea {
+margin-right: 30px;
 flex: 70%;
 width: 370px;
 height: 80px;
@@ -565,7 +566,7 @@ font-size: 18px;
 line-height: 32px;
 letter-spacing: 0.2px;
 color: #6C5CE7;
-background: rgba(241, 241, 241) url('form_icon_3.svg') no-repeat right top;
+background: rgba(241, 241, 241) url(../img/form_icon_3.svg) no-repeat right top;
 border: 2px solid rgba(108, 92, 231, 0.24);  
 border-radius: 16px;
 }
