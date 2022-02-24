@@ -201,6 +201,7 @@ padding: 0 50px;
 }
 
 .card1 h1 {
+position: relative;
 margin:0.8em 0 0.1em 0;
 font-weight: 800;
 font-size: 96px;
@@ -210,6 +211,13 @@ letter-spacing: -3px;
 word-wrap:normal;
 color: #2D3436;
 text-shadow: 0px 4px 0px #FFFFFF;
+}
+
+img#header_form1 {
+position: absolute;
+bottom:0;
+left: 46%;
+z-index: -1;
 }
 
 .card1 h2 {
@@ -364,6 +372,7 @@ text-align: center;
 }
 
 .card3 h4 {
+position: relative;
 font-family: Inter-bold;
 margin: 0.8em 0;
 font-size: 32px;
@@ -372,6 +381,13 @@ letter-spacing: -0.5px;
 color: #ADADAD;
 text-align: center;
 }
+
+img#header_form2 {
+position: absolute;
+bottom:10%;
+left: 44.5%;
+z-index: -1;
+} 
 
 .card3_content {
 background:url(../img/bg_card3.svg) no-repeat 37% bottom;
@@ -457,7 +473,7 @@ list-style-image: url(../img/blue_marker.svg);
 }
 
 footer {
-    background: url(../img/footer.svg) no-repeat bottom;
+background: url(../img/footer.svg) no-repeat bottom;
 
 width: min (100%,1440px);
 height: auto;
