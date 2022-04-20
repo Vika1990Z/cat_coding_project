@@ -1,3 +1,9 @@
+:root {
+--max_width: 1440px;
+--reg_font_size: 18px;
+
+}
+
 @font-face {
 font-family: Inter-regular;
 src: url(../fonts/Inter-Regular.woff);
@@ -17,6 +23,10 @@ src: url(../fonts/Inter-ExtraBold.woff);
 box-sizing: border-box;
 } 
 
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
 body {
 padding: 0;
 margin: 0;
@@ -28,7 +38,7 @@ font-family: Inter-bold;
 text-align: center;
 background-color: #6C5CE7;
 padding: 15px 20px;
-color: white;
+color: #ffffff;
 border-radius: 40px;
 box-shadow: 0px 4px 8px 0px #26323814;
 box-shadow: 0px 2px 4px 0px #26323829;
@@ -67,6 +77,7 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 button#sign_in {
+white-space: nowrap;
 width: 170px;
 font-size: 24px;
 line-height: 36px;
@@ -90,9 +101,7 @@ left: 75px;
 margin: 10px;
 padding: 10px;
 width: 306px;
-
 }
-
 
 button#regular_license {
 position: absolute;
@@ -125,14 +134,13 @@ padding: 5px 10px;
 }
 
 .navbar {
-height: 96px;
+height: auto;
 width: max (100%,1440px);
-padding: 0 100px;
-margin-bottom: 0px;
+padding: 20px 100px;
 background-color: white;
 display: flex;
 flex-flow: row;
-flex-wrap: wrap;
+flex-wrap: nowrap;
 align-items: center;
 box-shadow: 0px 4px 8px 0px #26323814;
 box-shadow: 0px 2px 4px 0px #26323829;
@@ -202,8 +210,7 @@ padding: 0 50px;
 
 .card1 h1 {
 position: relative;
-margin:0.8em 0 0.1em 0;
-font-weight: 800;
+margin:0.8em 0 0.1em 0; 
 font-size: 96px;
 line-height: 104px;
 text-align: center;
@@ -222,7 +229,6 @@ z-index: -1;
 
 .card1 h2 {
 margin: 0 0 0.8em 0;
-font-weight: 900;
 font-size: 64px;
 line-height: 77px;
 text-align: center;
@@ -270,7 +276,7 @@ max-width: 1170px;
 display: flex;
 flex-direction: row;
 margin: 10px;
-flex-wrap: wrap;
+flex-wrap: nowrap;
 align-items: top;
 text-align: left;
 }
@@ -339,11 +345,10 @@ flex-direction: row;
 
 .card2_content > div {
 position: relative;
-height: 380px;
+height: 100%;
 flex: 25%;
 padding: 10px;
-display: flex;
-flex-direction: column;
+
 }
 
 div.card2_content img {

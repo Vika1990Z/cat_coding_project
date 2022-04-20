@@ -2776,4 +2776,871 @@ Another way is to change the percentage of the flex property of the flex items t
 }
 ```
 
+## CSS Responsive
 
+The viewport is the user's visible area of a web page.
+
+You should include the following `<meta>` viewport element in all your web pages:  
+`<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+
+The `width=device-width` part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).  
+The `initial-scale=1.0` part sets the initial zoom level when the page is first loaded by the browser.  
+
+Some additional rules to follow:  
+
+1. Do NOT use large fixed width elements;  
+For example, if an image is displayed at a width wider than the viewport it can cause the viewport to scroll horizontally.  
+Remember to adjust this content to fit within the width of the viewport.
+
+2. Do NOT let the content rely on a particular viewport width to render well;  
+Since screen dimensions and width in CSS pixels vary widely between devices, content should not rely on a particular viewport width to render well.
+
+3. Use CSS media queries to apply different styling for small and large screens;  
+Setting large absolute CSS widths for page elements will cause the element to be too wide for the viewport on a smaller device.  
+Instead, consider using relative width values, such as width: 100%. Also, be careful of using large absolute positioning values.  
+It may cause the element to fall outside the viewport on small devices.  
+
+### Grid-View
+
+A responsive grid-view often has 12 columns, and has a total width of 100%, and will shrink and expand as you resize the browser window.  
+
+#### Building a Responsive Grid-View
+
+First ensure that all HTML elements have the box-sizing property set to border-box.  
+This makes sure that the padding and border are included in the total width and height of the elements.  
+Add the following code in your CSS:
+
+```css
+* {
+  box-sizing: border-box;
+}
+```
+
+However, we want to use a responsive grid-view with 12 columns, to have more control over the web page.  
+First we must calculate the percentage for one column: 100% / 12 columns = 8.33%.  
+Then we make one class for each of the 12 columns, class="col-" and a number defining how many columns the section should span:  
+
+```css
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+```
+
+All these columns should be floating to the left, and have a padding of 15px:
+
+```css
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+```
+
+Each row should be wrapped in a `<div>`.  
+The number of columns inside a row should always add up to 12:
+
+```html
+<div class="row">
+  <div class="col-3">...</div> <!-- 25% -->
+  <div class="col-9">...</div> <!-- 75% -->
+</div>
+```
+
+The columns inside a row are all floating to the left, and are therefore taken out of the flow of the page, and other elements will be placed as if the columns do not exist.  
+To prevent this, we will add a style that clears the flow:
+
+```css
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+```
+
+We also want to add some styles and colors to make it look better:
+
+```css
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color :#33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+```
+
+### Media Queries
+
+The @media rule is used in media queries to apply different styles for different media types/devices.
+
+**Media queries can be used to check many things, such as:**
+
+* width and height of the viewport
+* width and height of the device
+* orientation (is the tablet/phone in landscape or portrait mode?)
+* resolution
+
+**CSS Syntax**:  
+
+```css
+@media not|only mediatype and (mediafeature and|or|not mediafeature) {
+  CSS-Code;
+}
+```
+
+**meaning of the not, only and and keywords:**:  
+
+* not: The not keyword inverts the meaning of an entire media query.
+* only: The only keyword prevents older browsers that do not support media queries with media features from applying the specified styles. It has no effect on modern browsers.
+* and: The and keyword combines a media feature with a media type or other media features.
+
+They are all optional. However, if you use not or only, you must also specify a media type.
+
+You can also have different stylesheets for different media, like this:
+
+```html
+<link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css">
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="smallscreen.css">
+....
+```
+
+**Media Types**:  
+
+| Value | Description |
+| all | Default. Used for all media type devices |
+| print | Used for printers |
+| screen | Used for computer screens, tablets, smart-phones etc. |
+| speech | Used for screenreaders that "reads" the page out loud |
+
+**Media Features**:  
+
+| Value | Description |
+| any-hover | Does any available input mechanism allow the user to hover over elements? (added in Media Queries Level 4) |
+| any-pointer | Is any available input mechanism a pointing device, and if so, how accurate is it? (added in Media Queries Level 4) |
+| aspect-ratio | The ratio between the width and the height of the viewport |
+| color | The number of bits per color component for the output device |
+| color-gamut | The approximate range of colors that are supported by the user agent and output device (added in Media Queries Level 4) |
+| color-index | The number of colors the device can display |
+| grid | Whether the device is a grid or bitmap |
+| height | The viewport height |
+| hover | Does the primary input mechanism allow the user to hover over elements? (added in Media Queries Level 4) |
+| inverted-colors | Is the browser or underlying OS inverting colors? (added in Media Queries Level 4) |
+| light-level | Current ambient light level (added in Media Queries Level 4) |
+| max-aspect-ratio | The maximum ratio between the width and the height of the display area |
+| max-color | The maximum number of bits per color component for the output device |
+| max-color-index | The maximum number of colors the device can display |
+| max-height | The maximum height of the display area, such as a browser window |
+| max-monochrome | The maximum number of bits per "color" on a monochrome (greyscale) device |
+| max-resolution | The maximum resolution of the device, using dpi or dpcm |
+| max-width | The maximum width of the display area, such as a browser window |
+| min-aspect-ratio | The minimum ratio between the width and the height of the display area |
+| min-color | The minimum number of bits per color component for the output device |
+| min-color-index | The minimum number of colors the device can display |
+| min-height | The minimum height of the display area, such as a browser window |
+| min-monochrome | The minimum number of bits per "color" on a monochrome (greyscale) device |
+| min-resolution | The minimum resolution of the device, using dpi or dpcm |
+| min-width | The minimum width of the display area, such as a browser window |
+| monochrome | The number of bits per "color" on a monochrome (greyscale) device |
+| orientation | The orientation of the viewport (landscape or portrait mode) |
+| overflow-block | How does the output device handle content that overflows the viewport along the block axis (added in Media Queries Level 4) |
+| overflow-inline | Can content that overflows the viewport along the inline axis be scrolled (added in Media Queries Level 4) |
+| pointer | Is the primary input mechanism a pointing device, and if so, how accurate is it? (added in Media Queries Level 4) |
+| resolution | The resolution of the output device, using dpi or dpcm |
+| scan | The scanning process of the output device |
+| scripting | Is scripting (e.g. JavaScript) available? (added in Media Queries Level 4) |
+| update | How quickly can the output device modify the appearance of the content (added in Media Queries Level 4) |
+| width | The viewport width |
+
+Media query is a CSS technique introduced in CSS3.  
+It uses the @media rule to include a block of CSS properties only if a certain condition is true.
+
+```css
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+### Add a Breakpoint
+
+Earlier in this tutorial we made a web page with rows and columns, and it was responsive, but it did not look good on a small screen.  
+Media queries can help with that. We can add a breakpoint where certain parts of the design will behave differently on each side of the breakpoint.
+
+```css
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+```
+
+**Always Design for Mobile First**:  
+Mobile First means designing for mobile before designing for desktop or any other device (This will make the page display faster on smaller devices).  
+This means that we must make some changes in our CSS.  
+Instead of changing styles when the width gets smaller than 768px, we should change the design when the width gets larger than 768px.  
+This will make our design Mobile First:  
+
+```css
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+```
+
+You can add as many breakpoints as you like.  
+We will also insert a breakpoint between tablets and mobile phones.  
+We do this by adding one more media query (at 600px), and a set of new classes for devices larger than 600px (but smaller than 768px):  
+
+```css
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+```
+
+```html
+<div class="row">
+  <div class="col-3 col-s-3">...</div>
+  <div class="col-6 col-s-9">...</div>
+  <div class="col-3 col-s-12">...</div>
+</div>
+```
+
+**Typical Device Breakpoints**:  
+There are tons of screens and devices with different heights and widths, so it is hard to create an exact breakpoint for each device. To keep things simple you could target five groups:
+
+```css
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
+```
+
+#### Orientation: Portrait / Landscape
+
+Media queries can also be used to change layout of a page depending on the orientation of the browser.  
+You can have a set of CSS properties that will only apply when the browser window is wider than its height, a so called "Landscape" orientation:  
+
+```css
+@media only screen and (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+#### Hide Elements With Media Queries
+
+Another common use of media queries, is to hide elements on different screen sizes:
+
+```css
+/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 600px) {
+  div.example {
+    display: none;
+  }
+}
+```
+
+#### Change Font Size With Media Queries
+
+You can also use media queries to change the font size of an element on different screen sizes:
+
+```css
+/* If the screen size is 601px or more, set the font-size of <div> to 80px */
+@media only screen and (min-width: 601px) {
+  div.example {
+    font-size: 80px;
+  }
+}
+
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+@media only screen and (max-width: 600px) {
+  div.example {
+    font-size: 30px;
+  }
+}
+```
+
+## Responsive Web Design - Images
+
+**Using The width Property**:  
+If the width property is set to a percentage and the height property is set to "auto", the image will be responsive and scale up and down:
+
+```css
+img {
+  width: 100%;
+  height: auto;
+}
+```
+
+Notice that in the example above, the image can be scaled up to be larger than its original size.  
+A better solution, in many cases, will be to use the max-width property instead.
+
+**Using The max-width Property**:  
+If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size:  
+
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+**Different Images for Different Devices**:  
+
+```css
+/* For width smaller than 400px: */
+body {
+  background-image: url('img_smallflower.jpg');
+}
+
+/* For width 400px and larger: */
+@media only screen and (min-width: 400px) {
+  body {
+    background-image: url('img_flowers.jpg');
+  }
+}
+```
+
+You can use the media query min-device-width, instead of min-width, which checks the device width, instead of the browser width. Then the image will not change when you resize the browser window:
+
+```css
+/* For devices smaller than 400px: */
+body {
+  background-image: url('img_smallflower.jpg');
+}
+
+/* For devices 400px and larger: */
+@media only screen and (min-device-width: 400px) {
+  body {
+    background-image: url('img_flowers.jpg');
+  }
+}
+```
+
+### The HTML `<picture>` Element
+
+The HTML `<picture>` element gives web developers more flexibility in specifying image resources.  
+The most common use of the `<picture>` element will be for images used in responsive designs.  
+Instead of having one image that is scaled up or down based on the viewport width, multiple images can be designed to more nicely fill the browser viewport.
+
+The `<picture>` element works similar to the `<video>` and `<audio>` elements.  
+You set up different sources, and the first source that fits the preferences is the one being used:
+
+```html
+<picture>
+  <source srcset="img_smallflower.jpg" media="(max-width: 400px)">
+  <source srcset="img_flowers.jpg">
+  <img src="img_flowers.jpg" alt="Flowers">
+</picture>
+```
+
+The `srcset` attribute is required, and defines the source of the image.  
+The media attribute is optional, and accepts the media queries you find in CSS @media rule.  
+You should also define an `<img>` element for browsers that do not support the `<picture>` element.
+
+## Responsive Web Design - Videos
+
+**Using The width Property**:  
+If the width property is set to 100%, the video player will be responsive and scale up and down:
+
+```css
+video {
+  width: 100%;
+  height: auto;
+}
+```
+
+Notice that in the example above, the video player can be scaled up to be larger than its original size. A better solution, in many cases, will be to use the max-width property instead.
+
+**Using The max-width Property**:  
+If the max-width property is set to 100%, the video player will scale down if it has to, but never scale up to be larger than its original size:
+
+```css
+video {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+**Add a Video to the Example Web Page**:  
+We want to add a video in our example web page. The video will be resized to always take up all the available space:
+
+```css
+video {
+  width: 100%;
+  height: auto;
+```
+
+## CSS Grid Layout Module
+
+The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
+
+Grid Elements
+A grid layout consists of a parent element, with one or more child elements.
+
+```html
+<div class="grid-container">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+</div>
+```
+
+A Grid Layout must have a parent element with the display property set to grid or inline-grid.  
+Direct child element(s) of the grid container automatically becomes grid items.  
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+```
+
+**Display Property**:  
+An HTML element becomes a grid container when its display property is set to grid or inline-grid.
+All direct children of the grid container automatically become grid items.
+
+```css
+.grid-container {
+  display: grid;
+}
+```
+
+**Grid Columns**:  
+The vertical lines of grid items are called columns.
+
+**Grid Rows**:  
+The horizontal lines of grid items are called rows.
+
+**Grid Gaps**:  
+The spaces between each column/row are called gaps.  
+You can adjust the gap size by using one of the following properties:  
+column-gap  
+row-gap  
+gap  
+
+```css
+.grid-container {
+  display: grid;
+  column-gap: 50px;
+}
+```
+
+**Grid Lines**:  
+The lines between columns are called column lines.  
+The lines between rows are called row lines.  
+Refer to line numbers when placing a grid item in a grid container:
+
+Place a grid item at column line 1, and let it end on column line 3:
+
+```css
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+```
+
+Place a grid item at row line 1, and let it end on row line 3:
+
+```css
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+```
+
+**All CSS Grid Properties**:  
+
+| Property | Description |
+| column-gap | Specifies the gap between the columns |
+| gap | A shorthand property for the row-gap and the column-gap properties |
+| grid | A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties |
+| grid-area | Either specifies a name for the grid item, or this property is a shorthand property for the grid-row-start, grid-column-start, grid-row-end, and grid-column-end properties |
+| grid-auto-columns | Specifies a default column size |
+| grid-auto-flow | Specifies how auto-placed items are inserted in the grid |
+| grid-auto-rows | Specifies a default row size |
+| grid-column | A shorthand property for the grid-column-start and the grid-column-end properties |
+| grid-column-end | Specifies where to end the grid item |
+| grid-column-gap | Specifies the size of the gap between columns |
+| grid-column-start | Specifies where to start the grid item |
+| grid-gap | A shorthand property for the grid-row-gap and grid-column-gap properties |
+| grid-row | A shorthand property for the grid-row-start and the grid-row-end properties |
+| grid-row-end | Specifies where to end the grid item |
+| grid-row-gap | Specifies the size of the gap between rows |
+| grid-row-start | Specifies where to start the grid item |
+| grid-template | A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties |
+| grid-template-areas | Specifies how to display columns and rows, using named grid items |
+| grid-template-columns | Specifies the size of the columns, and how many columns in a grid layout |
+| grid-template-rows | Specifies the size of the rows in a grid layout |
+| row-gap | Specifies the gap between the grid rows |
+
+### Grid Container
+
+To make an HTML element behave as a grid container, you have to set the display property to grid or inline-grid.  
+Grid containers consist of grid items, placed inside columns and rows.  
+
+**The grid-template-columns Property**:  
+The grid-template-columns property defines the number of columns in your grid layout, and it can define the width of each column.
+The value is a space-separated-list, where each value defines the width of the respective column.
+If you want your grid layout to contain 4 columns, specify the width of the 4 columns, or "auto" if all columns should have the same width.
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+```
+
+Note: If you have more than 4 items in a 4 columns grid, the grid will automatically add a new row to put the items in.
+
+The grid-template-columns property can also be used to specify the size (width) of the columns.
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 80px 200px auto 40px;
+}
+```
+
+**The grid-template-rows Property**:  
+The grid-template-rows property defines the height of each row.
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-rows: 80px 200px;
+}
+```
+
+**The justify-content Property**:  
+The justify-content property is used to align the whole grid inside the container.
+
+Note: The grid's total width has to be less than the container's width for the justify-content property to have any effect.
+
+```css
+.grid-container {
+  display: grid;
+  justify-content: space-evenly;
+}
+```
+
+**The align-content Property**:  
+The align-content property is used to vertically align the whole grid inside the container.
+Note: The grid's total height has to be less than the container's height for the align-content property to have any effect.
+
+```css
+.grid-container {
+  display: grid;
+  height: 400px;
+  align-content: center;
+}
+```
+
+### CSS Grid Item
+
+**Child Elements (Items)**:  
+A grid container contains grid items.
+By default, a container has one grid item for each column, in each row, but you can style the grid items so that they will span multiple columns and/or rows.
+
+**The grid-column Property**:  
+The grid-column property defines on which column(s) to place an item.  
+You define where the item will start, and where the item will end.  
+Note: The grid-column property is a shorthand property for the grid-column-start and the grid-column-end properties.
+
+To place an item, you can refer to line numbers, or use the keyword "span" to define how many columns the item will span.
+
+```css
+/* Make "item1" start on column 1 and end before column 5: */
+.item1 {
+  grid-column: 1 / 5;
+}
+```
+
+```css
+/* Make "item1" start on column 1 and span 3 columns: */
+.item1 {
+  grid-column: 1 / span 3;
+}
+```
+
+**The grid-row Property**:  
+The grid-row property defines on which row to place an item.  
+You define where the item will start, and where the item will end.  
+Note: The grid-row property is a shorthand property for the grid-row-start and the grid-row-end properties.
+
+To place an item, you can refer to line numbers, or use the keyword "span" to define how many rows the item will span:
+
+```css
+/* Make "item1" start on row-line 1 and end on row-line 4: */
+.item1 {
+  grid-row: 1 / 4;
+}
+```
+
+```css
+/* Make "item1" start on row 1 and span 2 rows: */
+.item1 {
+  grid-row: 1 / span 2;
+}
+```
+
+**The grid-row Property**:  
+The grid-row property defines on which row to place an item.  
+You define where the item will start, and where the item will end.  
+Note: The grid-row property is a shorthand property for the grid-row-start and the grid-row-end properties.
+
+To place an item, you can refer to line numbers, or use the keyword "span" to define how many rows the item will span:
+
+```css
+.item1 {
+  grid-row: 1 / 4;
+}
+```
+
+**The grid-area Property**:  
+The grid-area property can be used as a shorthand property for the grid-row-start, grid-column-start, grid-row-end and the grid-column-end properties.
+You can use the grid-area property to specify where to place an item.
+
+The syntax is:  
+`grid-row-start / grid-column-start / grid-row-end / grid-column-end.`
+
+```css
+/* Make "item8" start on row-line 1 and column-line 2, and end on row-line 5 and column line 6: */
+.item8 {
+  grid-area: 1 / 2 / 5 / 6;
+}
+```
+
+```css
+.item8 {
+  grid-area: 2 / 1 / span 2 / span 3;
+}
+```
+
+**Naming Grid Items**:  
+The grid-area property can also be used to assign names to grid items.  
+Named grid items can be referred to by the grid-template-areas property of the grid container.
+
+```css
+.item1 {
+  grid-area: myArea;
+}
+.grid-container {
+  grid-template-areas: 'myArea myArea myArea myArea myArea';
+}
+```
+
+Each row is defined by apostrophes (' ')
+
+The columns in each row is defined inside the apostrophes, separated by a space.
+
+```css
+/* Let "myArea" span two columns in a five columns grid layout (period signs represent items with no name): */
+.item1 {
+  grid-area: myArea;
+}
+.grid-container {
+  grid-template-areas: 'myArea myArea . . .';
+}
+```
+
+To define two rows, define the column of the second row inside another set of apostrophes:
+
+```css
+/* Make "item1" span two columns and two rows: */
+.grid-container {
+  grid-template-areas: 'myArea myArea . . .' 'myArea myArea . . .';
+}
+```
+
+Name all items, and make a ready-to-use webpage template:
+
+```css
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  ```
+
+**The Order of the Items**:  
+The Grid Layout allows us to position the items anywhere we like.  
+The first item in the HTML code does not have to appear as the first item in the grid.  
+
+```css
+.item1 { grid-area: 1 / 3 / 2 / 4; }
+.item2 { grid-area: 2 / 3 / 3 / 4; }
+.item3 { grid-area: 1 / 1 / 2 / 2; }
+.item4 { grid-area: 1 / 2 / 2 / 3; }
+.item5 { grid-area: 2 / 1 / 3 / 2; }
+.item6 { grid-area: 2 / 2 / 3 / 3; }
+```
+
+You can re-arrange the order for certain screen sizes, by using media queries:
+
+```css
+@media only screen and (max-width: 500px) {
+  .item1 { grid-area: 1 / span 3 / 2 / 4; }
+  .item2 { grid-area: 3 / 3 / 4 / 4; }
+  .item3 { grid-area: 2 / 1 / 3 / 2; }
+  .item4 { grid-area: 2 / 2 / span 2 / 3; }
+  .item5 { grid-area: 3 / 1 / 4 / 2; }
+  .item6 { grid-area: 2 / 3 / 3 / 4; }
+}
+```
+
+## Sass Tutorial
+
+Sass is a CSS pre-processor.  
+Sass reduces repetition of CSS and therefore saves time.
+
+```css
+/* Define standard variables and values for website */
+$bgcolor: lightblue;
+$textcolor: darkblue;
+$fontsize: 18px;
+
+/* Use the variables */
+body {
+  background-color: $bgcolor;
+  color: $textcolor;
+  font-size: $fontsize;
+}
+```

@@ -1,0 +1,48 @@
+@media (max-width: 800px) {
+
+.card1 {
+margin: 0;
+width: min (100%,800px);
+height: auto;
+background: url(../img/card1_2.svg) no-repeat right top;
+background-size: auto;
+}
+
+/* .card1 header {
+    background: url(../img/resp1.svg) no-repeat top;
+    background-size: cover;
+    } */
+
+.menu {
+display: none;
+}
+.card1 h2 {
+display: none;
+}
+.small_column {
+display: none;
+}
+
+.big_column {
+flex-wrap: wrap;
+max-width: 75%;
+justify-content: space-between;
+}
+
+.big_column p {
+display: none;
+}
+
+.card2_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card2_content > div {
+flex: 50%;
+max-width: 50%;
+}
+
+
+
+}
